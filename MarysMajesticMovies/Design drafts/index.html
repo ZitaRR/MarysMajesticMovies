@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <title>Mary's Majestic Movies</title>
+  <script type="text/javascript" src="script.js"></script>
+  <link href="style.css" rel="stylesheet" type="text/css">
+  <meta charset="UTF-8" name="viewport" content="user-scalable=no">
+</head>
+  <body id="mainpagebody" onload="document.body.style.opacity='1'">
+    <header>
+      <img src="logosmall.png" class="logo-small">
+        <div class="menu">
+          <button class="menubutton" onclick="maincontent.location.href='content.html';document.getElementById('maincontent').frameBorder=0" type="button" value="NYHETER">LATEST</button>
+          <button class="menubutton" onclick="maincontent.location.href='popular.html';document.getElementById('maincontent').frameBorder=0" type="button" value="POPULAR">POPULAR</button>
+          <button class="menubutton" onclick="maincontent.location.href='offers.html';document.getElementById('maincontent').frameBorder=0" type="button" value="MOVIE DEALS">MOVIE DEALS</button>
+          <button class="menubutton">CATEGORIES</button>
+        </div>
+      <button class="userpanel" onclick="maincontent.location.href='userpanel.html';document.getElementById('maincontent').frameBorder=0" type="button" value="USERPANEL"></button>
+    </header>
+    <section>
+      <iframe name="maincontent" class="content" src="content.html" frameborder="0" onload="this.style.visibility = 'visible';">
+        <p>Your browser does not support iframes.</p>
+      </iframe>
+    </section>
+    <footer>
+      <div class="footertitle">Mary's Majestic Movies</div>
+        <div class="footersearch">
+          <form>
+            <input class="search" type="text" name="search">
+          </form>
+        </div>
+      <div class="footeruser">Log in / <a href="register.html" target="maincontent">Create an account</a></div>
+    </footer>
+  </body>
+</html>
