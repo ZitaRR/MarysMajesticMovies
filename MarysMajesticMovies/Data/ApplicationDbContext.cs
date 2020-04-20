@@ -12,5 +12,7 @@ namespace MarysMajesticMovies.Data
         {
 
         }
+
+        public DbSet<User> User { get; set; }
     }
 }
