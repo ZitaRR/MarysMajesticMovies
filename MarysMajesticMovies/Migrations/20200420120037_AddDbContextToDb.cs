@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MarysMajesticMovies.Migrations
 {
-    public partial class SetUpDatabase : Migration
+    public partial class AddDbContextToDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -39,7 +39,14 @@ namespace MarysMajesticMovies.Migrations
                     TwoFactorEnabled = table.Column<bool>(nullable: false),
                     LockoutEnd = table.Column<DateTimeOffset>(nullable: true),
                     LockoutEnabled = table.Column<bool>(nullable: false),
-                    AccessFailedCount = table.Column<int>(nullable: false)
+                    AccessFailedCount = table.Column<int>(nullable: false),
+                    Discriminator = table.Column<string>(nullable: false),
+                    FirstName = table.Column<string>(nullable: true),
+                    LastName = table.Column<string>(nullable: true),
+                    Adress = table.Column<string>(nullable: true),
+                    ZipCode = table.Column<int>(nullable: true),
+                    City = table.Column<string>(nullable: true),
+                    Telephone = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {

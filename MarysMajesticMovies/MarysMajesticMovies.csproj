@@ -8,6 +8,12 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200417121027_SetUpDatabase.cs" />
     <Compile Remove="Migrations\20200417121027_SetUpDatabase.Designer.cs" />
+    <Compile Remove="Migrations\20200417121228_SetUpDatabase.cs" />
+    <Compile Remove="Migrations\20200417121228_SetUpDatabase.Designer.cs" />
+    <Compile Remove="Migrations\20200420081902_AddedUserToDb.cs" />
+    <Compile Remove="Migrations\20200420081902_AddedUserToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200420091526_AddDbContextToDb.cs" />
+    <Compile Remove="Migrations\20200420091526_AddDbContextToDb.Designer.cs" />
   </ItemGroup>
 
 
