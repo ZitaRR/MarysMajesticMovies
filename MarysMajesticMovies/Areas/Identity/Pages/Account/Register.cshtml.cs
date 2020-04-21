@@ -93,6 +93,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
         {
             returnUrl = returnUrl ?? Url.Content("~/");
             ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
+
             if (ModelState.IsValid)
             {
                 var user = new User { 
@@ -107,6 +108,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
                     PhoneNumber = Input.PhoneNumber
                 };
                 var result = await _userManager.CreateAsync(user, Input.Password);
+
                 if (result.Succeeded)
                 {
                     _logger.LogInformation("User created a new account with password.");
@@ -114,6 +116,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return LocalRedirect(returnUrl);
                 }
+
                 foreach (var error in result.Errors)
                 {
                     ModelState.AddModelError(string.Empty, error.Description);
@@ -122,6 +125,15 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
             // If we got this far, something failed, redisplay form
             return Page();
+        }
+
+        public async void OnDeleteAsync(string email = null)
+        {
+            if (email != null)
+            {
+                var user = await _userManager.FindByEmailAsync(email);
+                await _userManager.DeleteAsync(user);
+            }
         }
     }
 }
