@@ -18,6 +18,8 @@
     <Compile Remove="Migrations\20200420120037_AddDbContextToDb.Designer.cs" />
     <Compile Remove="Migrations\20200420142801_AddedDbContextToDb.cs" />
     <Compile Remove="Migrations\20200420142801_AddedDbContextToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200423225624_AddedMovieToDb.cs" />
+    <Compile Remove="Migrations\20200423225624_AddedMovieToDb.Designer.cs" />
   </ItemGroup>
 
 
