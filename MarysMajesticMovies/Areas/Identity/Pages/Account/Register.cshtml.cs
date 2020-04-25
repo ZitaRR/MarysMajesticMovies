@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Text;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
@@ -22,6 +24,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
         private readonly ILogger<RegisterModel> _logger;
+        static HttpClient client = new HttpClient();
 
         public RegisterModel(
             UserManager<User> userManager,
@@ -44,69 +47,64 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
         {
             [Required]
             [EmailAddress]
-            [Display(Name = "Email")]
+            [Display(Name = "* Email")]
             public string Email { get; set; }
 
             [Required]
             [StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password")]
+            [Display(Name = "* Password")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
+            [Display(Name = "* Confirm password")]
             [StringLength(20, MinimumLength = 6)]
-            [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+            [Compare("Password", ErrorMessage = "The confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
             [Required]
-            [Display(Name = "First Name")]
+            [Display(Name = "* First Name")]
             public string FirstName { get; set; }
 
             [Required]            
-            [Display(Name = "Last Name")]
+            [Display(Name = "* Last Name")]
             public string LastName { get; set; }
 
             [Required]            
-            [Display(Name = "Address")]
+            [Display(Name = "* Address")]
             public string Address { get; set; }
 
             [Required]            
-            [Display(Name = "ZipCode")]
+            [Display(Name = "* ZipCode")]
             public int ZipCode { get; set; }
 
             [Required]            
-            [Display(Name = "City")]
+            [Display(Name = "* City")]
             public string City { get; set; }
 
             [Required]            
-            [Display(Name = "Telephone")]
+            [Display(Name = "* Telephone")]
             public string PhoneNumber { get; set; }
-        }
-
-        public async Task OnGetAsync(string returnUrl = null)
-        {
-            ReturnUrl = returnUrl;
-            ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
         }
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");
-            ExternalLogins = (await _signInManager.GetExternalAuthenticationSchemesAsync()).ToList();
-            if (ModelState.IsValid)
+
+            if (ModelState.IsValid && await ValidateEmail(Input.Email))
             {
                 var user = new User { 
                     UserName = Input.Email, 
                     Email = Input.Email, 
                     EmailConfirmed = true, 
-                    FirstName=Input.FirstName, 
-                    LastName=Input.LastName, 
-                    Address=Input.Address, 
+                    FirstName = Input.FirstName, 
+                    LastName = Input.LastName, 
+                    Address = Input.Address, 
                     ZipCode = Input.ZipCode, 
-                    City=Input.City,
+                    City = Input.City,
                     PhoneNumber = Input.PhoneNumber
                 };
+
                 var result = await _userManager.CreateAsync(user, Input.Password);
                 if (result.Succeeded)
                 {
@@ -123,6 +121,38 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
             // If we got this far, something failed, redisplay form
             return Page();
+        }
+
+        public async Task<bool> ValidateEmail(string mail)
+        {
+            string APIKey = "Find in team folder";
+            string APIURL = $"https://api.verimail.io/v3/verify?email={mail}&key={APIKey}";
+
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync(APIURL);
+            
+                if (response.StatusCode == HttpStatusCode.OK)
+                {
+                    var myObject = await response.Content.ReadAsStringAsync();
+
+                    if (myObject.Contains("result\": \"deliverable"))
+                    {
+                        Console.WriteLine(myObject);
+                        return true;
+                    }
+
+                }
+                else if (response.StatusCode == HttpStatusCode.PaymentRequired)
+                {
+                    //No more free request!
+                }
+                return false;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
         }
     }
 }
