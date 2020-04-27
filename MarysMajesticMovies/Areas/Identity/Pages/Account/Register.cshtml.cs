@@ -60,7 +60,6 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password *")]
-            [StringLength(20, MinimumLength = 6)]
             [Compare("Password", ErrorMessage = "The confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
