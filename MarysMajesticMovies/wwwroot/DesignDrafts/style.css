@@ -45,6 +45,7 @@ background-size: cover;
 
 
 header {
+display: flex;
 position: fixed;
 left: 0;
 top: 0;
@@ -53,7 +54,7 @@ padding: 10px;
 height: 5em;
 margin: auto;
 background-color: #252525;
-display: flex;
+z-index: 2;
 }
 
 footer {
@@ -66,7 +67,7 @@ height: 5em;
 background-color: #252525;
 color: white;
 text-align: center;
-
+z-index: 2;
 }
 
 h1 {
@@ -198,8 +199,6 @@ padding: 0.8em;
 flex: 1;
 }
 
-
-
 .menubutton {
 color: white;
 background-color: rgba(0, 0, 0, 0);
@@ -309,7 +308,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.1), 0 0 5px 0 rgba(0,0,0,0.1);
 }
 
 .movie:hover {
-transform: scale(1.02);
+transform: scale(1.01);
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.2), 0 0 5px 0 rgba(0,0,0,0.2);
 }
 
