@@ -46,7 +46,7 @@ function randomImg(){
         for (let i = 1; i < 55; i++) {
             var randomNumber = Math.floor(Math.random() * 25) + 1;
             var imgName = randomNumber + ".jpg";
-            let src = "Filmer" + "/" + imgName;
+            let src = "DesignDrafts/Filmer/" + imgName;
             all.push([src, randomNumber])
             if (!collection[randomNumber]) {
                 collection[randomNumber] = 1; // this will be for count the appearances of the img
@@ -68,7 +68,7 @@ function randomImg2(){
         for (let i = 1; i < 55; i++) {
             var randomNumber = Math.floor(Math.random() * 25) + 1;
             var imgName = randomNumber + ".jpg";
-            let src = "Filmer" + "/" + imgName;
+            let src = "DesignDrafts/Filmer/" + imgName;
             all.push([src, randomNumber])
             if (!collection[randomNumber]) {
                 collection[randomNumber] = 1; // this will be for count the appearances of the img
@@ -90,7 +90,7 @@ function randomImg3(){
         for (let i = 1; i < 55; i++) {
             var randomNumber = Math.floor(Math.random() * 25) + 1;
             var imgName = randomNumber + ".jpg";
-            let src = "Filmer" + "/" + imgName;
+            let src = "DesignDrafts/Filmer/" + imgName;
             all.push([src, randomNumber])
             if (!collection[randomNumber]) {
                 collection[randomNumber] = 1; // this will be for count the appearances of the img
@@ -112,7 +112,7 @@ function randomImg4(){
         for (let i = 1; i < 55; i++) {
             var randomNumber = Math.floor(Math.random() * 25) + 1;
             var imgName = randomNumber + ".jpg";
-            let src = "Filmer" + "/" + imgName;
+            let src = "DesignDrafts/Filmer/" + imgName;
             all.push([src, randomNumber])
             if (!collection[randomNumber]) {
                 collection[randomNumber] = 1; // this will be for count the appearances of the img
@@ -134,7 +134,7 @@ function randomImg5(){
         for (let i = 1; i < 55; i++) {
             var randomNumber = Math.floor(Math.random() * 25) + 1;
             var imgName = randomNumber + ".jpg";
-            let src = "Filmer" + "/" + imgName;
+            let src = "DesignDrafts/Filmer/" + imgName;
             all.push([src, randomNumber])
             if (!collection[randomNumber]) {
                 collection[randomNumber] = 1; // this will be for count the appearances of the img
@@ -146,6 +146,6 @@ function randomImg5(){
             src = image[0]
             randomNumber = image[1]
             percent = collection[randomNumber] / 25
-            document.getElementById("container").innerHTML += `<img class="movie" src=${src} />`
+            document.getElementById("latest").innerHTML += `<img class="movie" src=${src} />`
         }
 }

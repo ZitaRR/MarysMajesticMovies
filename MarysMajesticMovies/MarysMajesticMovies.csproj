@@ -20,6 +20,61 @@
     <Compile Remove="Migrations\20200420142801_AddedDbContextToDb.Designer.cs" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Include="wwwroot\DesignDrafts\banner.jpg" />
+    <None Include="wwwroot\DesignDrafts\banner2.jpg" />
+    <None Include="wwwroot\DesignDrafts\banner3.jpg" />
+    <None Include="wwwroot\DesignDrafts\banner4.jpg" />
+    <None Include="wwwroot\DesignDrafts\content.html" />
+    <None Include="wwwroot\DesignDrafts\content.js" />
+    <None Include="wwwroot\DesignDrafts\Filmer\1.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\10.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\11.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\12.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\13.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\14.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\15.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\16.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\17.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\18.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\19.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\2.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\20.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\21.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\22.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\23.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\24.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\25.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\3.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\4.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\5.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\6.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\7.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\8.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\9.jpg" />
+    <None Include="wwwroot\DesignDrafts\Filmer\blank.png" />
+    <None Include="wwwroot\DesignDrafts\Filmer\movie-mock.psd" />
+    <None Include="wwwroot\DesignDrafts\index.html" />
+    <None Include="wwwroot\DesignDrafts\logo.png" />
+    <None Include="wwwroot\DesignDrafts\logosmall.png" />
+    <None Include="wwwroot\DesignDrafts\magnifying-glass.png" />
+    <None Include="wwwroot\DesignDrafts\movieinfo.html" />
+    <None Include="wwwroot\DesignDrafts\offers.html" />
+    <None Include="wwwroot\DesignDrafts\playicon.png" />
+    <None Include="wwwroot\DesignDrafts\popular.html" />
+    <None Include="wwwroot\DesignDrafts\register.html" />
+    <None Include="wwwroot\DesignDrafts\Roboto-Light.ttf" />
+    <None Include="wwwroot\DesignDrafts\Roboto-Medium.ttf" />
+    <None Include="wwwroot\DesignDrafts\Roboto-Regular.ttf" />
+    <None Include="wwwroot\DesignDrafts\script.js" />
+    <None Include="wwwroot\DesignDrafts\shoppingcarticon.png" />
+    <None Include="wwwroot\DesignDrafts\style.css" />
+    <None Include="wwwroot\DesignDrafts\top.jpg" />
+    <None Include="wwwroot\DesignDrafts\usericon.png" />
+    <None Include="wwwroot\DesignDrafts\usericon_hovered.png" />
+    <None Include="wwwroot\DesignDrafts\userpanel.html" />
+  </ItemGroup>
+
 
   <ItemGroup>
     <PackageReference Include="JavaScriptEngineSwitcher.Extensions.MsDependencyInjection" Version="3.3.0" />
