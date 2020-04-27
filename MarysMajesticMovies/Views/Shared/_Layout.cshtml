@@ -9,15 +9,21 @@
 <body id="mainpagebody">
     <div id="mySidebar" class="sidebar">
         <a href="javascript:void(0)" class="close-mobile-menu" onclick="closeNav()"></a>
-        <a href="#">Latest</a>
+        <div class="footersearch">
+            <form>
+                <input class="search" type="text" name="search" />
+            </form>
+        </div>
+        <a href="#" style="margin-top:35px;">Latest</a>
         <a href="#">Popular</a>
         <a href="#">Movie deals</a>
         <a href="#">Categories</a>
         <a href="#" style="margin-top:2em">Login</a>
         <a href="#">Prefrences</a>
+
     </div>
     <header>
-        <div class="mobile-menu">
+        <div class="mobile-menu">           
             <button class="mobile-menu-button" type="button" value="DROPDOWN" onclick="openNav()"></button>
         </div>
         <img src="~/DesignDrafts/logosmall.png" class="logo-small" />
@@ -27,6 +33,7 @@
             <button class="menubutton" type="button" value="MOVIE DEALS">MOVIE DEALS</button>
             <button class="menubutton">CATEGORIES</button>
         </div>
+        
         <button class="userpanel"></button>
     </header>
     <div class="container">
@@ -36,11 +43,7 @@
     </div>
     <footer>
         <div class="footertitle">Mary's Majestic Movies</div>
-        <div class="footersearch">
-            <form>
-                <input class="search" type="text" name="search" />
-            </form>
-        </div>
+
         <div class="footeruser">
             <p><a>Log in</a> or <a>create an account</a></p>
         </div>

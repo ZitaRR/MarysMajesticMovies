@@ -2,7 +2,9 @@
 background-color: #3b3b3b;
 color: white;
 scroll-behavior: smooth;
-margin: 10px;
+margin-top: 20px;
+margin-left: 0;
+margin-right: 0;
 display: flex;
 flex-direction: column;
 animation: fadeInAnimation ease 3s;
@@ -152,6 +154,10 @@ input.search[type=text]:focus {
 width: 100%;
 border: 1px solid #ccc;
 padding: 12px 20px 12px 50px;
+background-color: #252525;
+background-image: url();
+background-position: 12px 12px;
+background-repeat: no-repeat;
 }
 
 input[type=button], input[type=submit], input[type=reset] {
@@ -196,7 +202,7 @@ overflow: hidden;
 display: none;
 padding: 0.8em;
 margin-top: 1em;
-margin-left: 1em;
+margin-left: 0.55em;
 }
 
 .mobile-menu-button {
@@ -222,22 +228,28 @@ left: 0;
 background-color: #252525; 
 overflow-x: hidden;
 padding-top: 60px; 
-transition: 0.5s; 
+transition: 0.3s;
+
 }
 
-.sidebar a {
+.sidebar a:link {
+font-family: "Roboto-Light";
 padding: 8px 8px 8px 32px;
 text-decoration: none;
-font-size: 25px;
-color: #818181;
+font-size: 2em;
+color: white;
 display: block;
 transition: 0.3s;
 overflow: hidden;
 white-space:nowrap;
+
 }
 
 .sidebar a:hover {
-color: #f1f1f1;
+color: #252525;
+background-color: white;
+text-decoration: none;
+font-family: "Roboto-Regular";
 }
 
 .sidebar .close-mobile-menu {
@@ -250,8 +262,8 @@ width: 52px;
 cursor: pointer;
 color: white;
 border: none;
-margin-top: -0.85em;
-margin-left: 1.5em;
+margin-top: -0.65em;
+margin-left: 0.9em;
 }
 
 
@@ -315,14 +327,16 @@ float: right;
 font-size: 1em;
 color: white;
 font-family: "Roboto-Medium";
-
 flex: 1;
 flex-grow: 1;
 align-self: center;
 }
 
 .footersearch {
-font-size: 1em;
+margin-top: 1em;
+margin-left: 10px;
+top: 0;
+font-size: 1.2em;
 color: white;
 font-family: "Roboto-Medium";
 flex: 2;
@@ -532,27 +546,27 @@ src: url(Roboto-Medium.ttf);
 
 @media screen and (max-width: 992px) and (min-width: 500px) {
 
-    #mainpagebody {
-        transition: margin-left 0.2s; /* If you want a transition effect */
-        padding: 20px;
-    }
+#mainpagebody {
+transition: margin-left 0.2s;
+padding: 20px;
+}
 
-    /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-    @media screen and (max-height: 450px) {
-        .sidebar {
-            padding-top: 15px;
-        }
+@media screen and (max-height: 450px) {
+.sidebar {
+padding-top: 15px;
+}
 
-            .sidebar a {
-                font-size: 18px;
-            }
-    }
+.sidebar a {
+font-size: 18px;
+}
+}
 
 header {
 height: 7.5em;
 }
 footer {
 height: 7.5em;
+display: none;
 }
 
 h1 {
@@ -613,13 +627,13 @@ font-size: 2em;
 }
 
 input.search[type=text] {
-font-size: 3em;
-background-position: 26px 26px;
-padding: 12px 75px 12px 5px;
+font-size: 2em;
+background-position: 26px 15px;
+padding: 5px 75px 5px 5px;
 margin: auto;
 }
 
 input.search[type=text]:focus {
-padding: 12px 30px 12px 50px;
+padding: 5px 30px 5px 5px;
 margin: auto;
 }
