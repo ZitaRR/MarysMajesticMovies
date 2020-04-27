@@ -76,7 +76,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
             public string Address { get; set; }
 
             [Required]
-            [StringLength(5, ErrorMessage = "The zipcode must be 5 numbers long", MinimumLength = 5)]
+            [Range(9999, 99999, ErrorMessage = "The zipcode must be 5 numbers long")]
             [Display(Name = "ZipCode *")]
             public int ZipCode { get; set; }
 
