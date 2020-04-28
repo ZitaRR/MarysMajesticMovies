@@ -10,10 +10,10 @@
     <header>
         <img src="~/DesignDrafts/logosmall.png" class="logo-small" />
         <div class="menu">
-            <button class="menubutton" type="button" value="LATEST">LATEST</button>
-            <button class="menubutton" type="button" value="POPULAR">POPULAR</button>
-            <button class="menubutton" type="button" value="MOVIE DEALS">MOVIE DEALS</button>
-            <button class="menubutton">CATEGORIES</button>
+            <a class="menubutton" asp-action=".">LATEST</a>
+            <a class="menubutton" asp-action=".">POPULAR</a>
+            <a class="menubutton" asp-action=".">MOVIE DEALS</a>
+            <a class="menubutton" asp-action=".">CATEGORIES</a>
         </div>
         <button class="userpanel"></button>
     </header>
@@ -29,9 +29,7 @@
                 <input class="search" type="text" name="search" />
             </form>
         </div>
-        <div class="footeruser">
-            <p><a>Log in</a> or <a>create an account</a></p>
-        </div>
+        <partial name="_LoginPartial" />
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
