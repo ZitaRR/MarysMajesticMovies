@@ -8,6 +8,7 @@
 <div class="register">
     <h1>@ViewData["Title"]</h1>
     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
+        <div asp-validation-summary="All" style="color: #ff4747;"></div>
         <label>Name</label>
         <br />
         <input asp-for="Input.FirstName" type="text" placeholder="First name *" />
@@ -46,7 +47,7 @@
         <p>All fields marked with * are required.</p>
         <br />
         <br />
-        <input type="submit" value="Create" />
+        <input type="submit" value="Register" />
         <br />
         <p>By creating an account, you accept our <a href="#">Terms & Conditions</a>.</p>
     </form>

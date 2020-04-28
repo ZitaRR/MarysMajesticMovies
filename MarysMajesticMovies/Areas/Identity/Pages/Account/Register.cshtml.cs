@@ -58,8 +58,9 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
             [Display(Name = "Password")]
             public string Password { get; set; }
 
+            [Required]
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password")]
+            [Display(Name = "Confirm Password")]
             [Compare("Password", ErrorMessage = "The confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
@@ -67,24 +68,24 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
             [Display(Name = "First Name")]
             public string FirstName { get; set; }
 
-            [Required]            
+            [Required]
             [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
-            [Required]            
+            [Required]
             [Display(Name = "Address")]
             public string Address { get; set; }
 
             [Required]
             [Range(9999, 99999, ErrorMessage = "The zipcode must be 5 numbers long")]
-            [Display(Name = "ZipCode")]
+            [Display(Name = "Zip Code")]
             public int ZipCode { get; set; }
 
-            [Required]            
+            [Required]
             [Display(Name = "City")]
             public string City { get; set; }
 
-            [Required]            
+            [Required]
             [Display(Name = "Telephone")]
             public string PhoneNumber { get; set; }
         }
@@ -92,33 +93,38 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");
-            isEmailValid = await ValidateEmail(Input.Email);
+            isEmailValid = true;
 
-            if (ModelState.IsValid && isEmailValid)
+            if (ModelState.IsValid)
             {
-                var user = new User { 
-                    UserName = Input.Email, 
-                    Email = Input.Email, 
-                    EmailConfirmed = true, 
-                    FirstName = Input.FirstName, 
-                    LastName = Input.LastName, 
-                    Address = Input.Address, 
-                    ZipCode = Input.ZipCode, 
-                    City = Input.City,
-                    PhoneNumber = Input.PhoneNumber
-                };
+                isEmailValid = await ValidateEmail(Input.Email);
 
-                var result = await _userManager.CreateAsync(user, Input.Password);
-                if (result.Succeeded)
+                if (isEmailValid)
                 {
-                    _logger.LogInformation("User created a new account with password.");
+                    var user = new User { 
+                        UserName = Input.Email, 
+                        Email = Input.Email, 
+                        EmailConfirmed = true, 
+                        FirstName = Input.FirstName, 
+                        LastName = Input.LastName, 
+                        Address = Input.Address, 
+                        ZipCode = Input.ZipCode, 
+                        City = Input.City,
+                        PhoneNumber = Input.PhoneNumber
+                    };
 
-                    await _signInManager.SignInAsync(user, isPersistent: false);
-                    return LocalRedirect(returnUrl);
-                }
-                foreach (var error in result.Errors)
-                {
-                    ModelState.AddModelError(string.Empty, error.Description);
+                    var result = await _userManager.CreateAsync(user, Input.Password);
+                    if (result.Succeeded)
+                    {
+                        _logger.LogInformation("User created a new account with password.");
+
+                        await _signInManager.SignInAsync(user, isPersistent: false);
+                        return LocalRedirect(returnUrl);
+                    }
+                    foreach (var error in result.Errors)
+                    {
+                        ModelState.AddModelError(string.Empty, error.Description);
+                    }
                 }
             }
             return Page();
