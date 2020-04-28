@@ -10,6 +10,10 @@ animation-iteration-count: 1;
 animation-fill-mode: forwards;
 }
 
+.danger-text {
+    color: #ff4747;
+}
+
 .border{
     border: 2px solid red;
 }

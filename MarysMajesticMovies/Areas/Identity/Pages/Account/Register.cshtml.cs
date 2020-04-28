@@ -49,43 +49,43 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
         {
             [Required]
             [EmailAddress]
-            [Display(Name = "Email *")]
+            [Display(Name = "Email")]
             public string Email { get; set; }
 
             [Required]
             [StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
-            [Display(Name = "Password *")]
+            [Display(Name = "Password")]
             public string Password { get; set; }
 
             [DataType(DataType.Password)]
-            [Display(Name = "Confirm password *")]
+            [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
 
             [Required]
-            [Display(Name = "First Name *")]
+            [Display(Name = "First Name")]
             public string FirstName { get; set; }
 
             [Required]            
-            [Display(Name = "Last Name *")]
+            [Display(Name = "Last Name")]
             public string LastName { get; set; }
 
             [Required]            
-            [Display(Name = "Address *")]
+            [Display(Name = "Address")]
             public string Address { get; set; }
 
             [Required]
             [Range(9999, 99999, ErrorMessage = "The zipcode must be 5 numbers long")]
-            [Display(Name = "ZipCode *")]
+            [Display(Name = "ZipCode")]
             public int ZipCode { get; set; }
 
             [Required]            
-            [Display(Name = "City *")]
+            [Display(Name = "City")]
             public string City { get; set; }
 
             [Required]            
-            [Display(Name = "Telephone *")]
+            [Display(Name = "Telephone")]
             public string PhoneNumber { get; set; }
         }
 
