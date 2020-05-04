@@ -90,6 +90,8 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "Telephone")]
+            [Range(10000000, 99999999999, ErrorMessage = "The {0} must only contain numbers and be 9-13 digits long")]
+            [StringLength(13, ErrorMessage = "The {0} must only contain numbers and be 9-13 digits long", MinimumLength = 9)]
             public string PhoneNumber { get; set; }
         }
 
