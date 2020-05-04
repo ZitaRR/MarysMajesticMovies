@@ -74,6 +74,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "Address")]
+            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 1)]
             public string Address { get; set; }
 
             [Required]
@@ -83,6 +84,8 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "City")]
+            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß]+$", ErrorMessage = "Use letters only please")]
+            [StringLength(86, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 1)]
             public string City { get; set; }
 
             [Required]
@@ -132,7 +135,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
         public async Task<bool> ValidateEmail(string mail)
         {
-            string APIKey = "GetByVerimail";
+            string APIKey = "BAED4157487D4C4C9060250537E2B173";
             string APIURL = $"https://api.verimail.io/v3/verify?email={mail}&key={APIKey}";
 
             try
