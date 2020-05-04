@@ -78,11 +78,11 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
                 {
                     _logger.LogInformation("User logged in.");
                     return LocalRedirect(returnUrl);
-                }
-                if (result.IsLockedOut)
+                } 
+                else if(result.IsLockedOut)
                 {
-                    _logger.LogWarning("User account locked out.");
-                    return RedirectToPage("./Lockout");
+                    ModelState.AddModelError(string.Empty, "Account is locked.");
+                    return Page();
                 }
                 else
                 {
