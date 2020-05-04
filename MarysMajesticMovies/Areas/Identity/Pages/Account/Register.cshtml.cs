@@ -66,10 +66,14 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "First Name")]
+            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß]+$", ErrorMessage = "Use letters only please")]
+            [StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 1)]
             public string FirstName { get; set; }
 
             [Required]
             [Display(Name = "Last Name")]
+            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß]+$", ErrorMessage = "Use letters only please")]
+            [StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 1)]
             public string LastName { get; set; }
 
             [Required]
