@@ -142,7 +142,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
         public async Task<bool> ValidateEmail(string mail)
         {
-            string APIKey = "GetByVerimail";
+            string APIKey = "74AEA89433874810BC719774E811ECFD";
             string APIURL = $"https://api.verimail.io/v3/verify?email={mail}&key={APIKey}";
 
             try
@@ -151,11 +151,11 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
             
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    var myObject = await response.Content.ReadAsStringAsync();
+                    var responscontext = await response.Content.ReadAsStringAsync();
 
-                    if (myObject.Contains("result\": \"deliverable"))
+                    if (responscontext.Contains("result\": \"deliverable") || responscontext.Contains("result\": \"catch_all"))
                     {
-                        Console.WriteLine(myObject);
+                        Console.WriteLine(responscontext);
                         return true;
                     }
                     invalidEmailMessage = "Email is not valid, please try another one!";
