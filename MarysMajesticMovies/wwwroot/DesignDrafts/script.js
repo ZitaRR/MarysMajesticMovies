@@ -1,4 +1,4 @@
-var id = 25; // Total number of images
+var id = 25;
 var ranimage = new Array("Filmer/1.jpg","Filmer/2.jpg","Filmer/3.jpg","Filmer/4.jpg"
 ,"Filmer5/.jpg","Filmer/6.jpg","Filmer/7.jpg","Filmer/8.jpg","Filmer/9.jpg"
 ,"Filmer/10.jpg","Filmer/11.jpg","Filmer/12.jpg","Filmer/13.jpg","Filmer/14.jpg"
@@ -49,7 +49,7 @@ function randomImg(){
             let src = "DesignDrafts/Filmer/" + imgName;
             all.push([src, randomNumber])
             if (!collection[randomNumber]) {
-                collection[randomNumber] = 1; // this will be for count the appearances of the img
+                collection[randomNumber] = 1;
             } else {
                 collection[randomNumber] += 1;
             }
@@ -71,7 +71,7 @@ function randomImg2(){
             let src = "DesignDrafts/Filmer/" + imgName;
             all.push([src, randomNumber])
             if (!collection[randomNumber]) {
-                collection[randomNumber] = 1; // this will be for count the appearances of the img
+                collection[randomNumber] = 1;
             } else {
                 collection[randomNumber] += 1;
             }
@@ -93,7 +93,7 @@ function randomImg3(){
             let src = "DesignDrafts/Filmer/" + imgName;
             all.push([src, randomNumber])
             if (!collection[randomNumber]) {
-                collection[randomNumber] = 1; // this will be for count the appearances of the img
+                collection[randomNumber] = 1;
             } else {
                 collection[randomNumber] += 1;
             }
@@ -115,7 +115,7 @@ function randomImg4(){
             let src = "DesignDrafts/Filmer/" + imgName;
             all.push([src, randomNumber])
             if (!collection[randomNumber]) {
-                collection[randomNumber] = 1; // this will be for count the appearances of the img
+                collection[randomNumber] = 1; 
             } else {
                 collection[randomNumber] += 1;
             }
@@ -137,7 +137,7 @@ function randomImg5(){
             let src = "DesignDrafts/Filmer/" + imgName;
             all.push([src, randomNumber])
             if (!collection[randomNumber]) {
-                collection[randomNumber] = 1; // this will be for count the appearances of the img
+                collection[randomNumber] = 1; 
             } else {
                 collection[randomNumber] += 1;
             }
@@ -146,8 +146,9 @@ function randomImg5(){
             src = image[0]
             randomNumber = image[1]
             percent = collection[randomNumber] / 25
-            document.getElementById("latest").innerHTML += `<img class="movie" src=${src} />`
+            document.getElementById("latest").innerHTML += ` <span onclick="openMov()"><img class="movie" src=${src} /></span>`
         }
+
 }
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
@@ -159,12 +160,12 @@ function closeNav() {
     document.getElementById("mainpagebody").style.marginLeft = "0";
 }
 
-function openNavRight() {
-    document.getElementById("mySidebarRight").style.width = "250px";
-    document.getElementById("mainpagebody").style.marginRight = "250px";
+function openMov() {
+    document.getElementById("myNav").style.display = "block";
+    document.getElementById("mainpagebody").style.overflow = "hidden";
 }
 
-function closeNavRight() {
-    document.getElementById("mySidebarRight").style.width = "0";
-    document.getElementById("mainpagebody").style.marginRight = "0";
+function closeMov() {
+    document.getElementById("myNav").style.display = "none";
+    document.getElementById("mainpagebody").style.overflow = "auto";
 }
