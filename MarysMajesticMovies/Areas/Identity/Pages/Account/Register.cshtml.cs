@@ -78,7 +78,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "Address")]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 2)]
+            [StringLength(50, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 2)]
             [RegularExpression(@"^([a-zA-ZåäöüÅÄÖÜß0-9]+[,.-\/]?([a-zA-ZåäöüÅÄÖÜß0-9 ]*)+)+$", ErrorMessage = "Only numbers, letters, space and ,./- are allowed")]
             public string Address { get; set; }
 
