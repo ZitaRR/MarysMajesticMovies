@@ -66,20 +66,20 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "First Name")]
-            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß]+$", ErrorMessage = "Use letters only please")]
+            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß-]+$", ErrorMessage = "Use letters only please")]
             [StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 1)]
             public string FirstName { get; set; }
 
             [Required]
             [Display(Name = "Last Name")]
-            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß]+$", ErrorMessage = "Use letters only please")]
+            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß-]+$", ErrorMessage = "Use letters only please")]
             [StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 1)]
             public string LastName { get; set; }
 
             [Required]
             [Display(Name = "Address")]
-            [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 2)]
-            [RegularExpression(@"^([a-zA-ZåäöüÅÄÖÜß0-9]+[,.-\/]?([a-zA-ZåäöüÅÄÖÜß0-9 ]*)+)+$", ErrorMessage = "Only numbers, letters, space and ,./- are allowed")]
+            [StringLength(50, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 2)]
+            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß0-9 ,./-]+$", ErrorMessage = "Only numbers, letters, space and ,./- are allowed")]
             public string Address { get; set; }
 
             [Required]
@@ -89,7 +89,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
             [Required]
             [Display(Name = "City")]
-            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß]+$", ErrorMessage = "Use letters only please")]
+            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß-]+$", ErrorMessage = "Use letters only please")]
             [StringLength(86, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 1)]
             public string City { get; set; }
 
@@ -151,11 +151,11 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
             
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
-                    var myObject = await response.Content.ReadAsStringAsync();
+                    var responscontext = await response.Content.ReadAsStringAsync();
 
-                    if (myObject.Contains("result\": \"deliverable"))
+                    if (responscontext.Contains("result\": \"deliverable") || responscontext.Contains("result\": \"catch_all"))
                     {
-                        Console.WriteLine(myObject);
+                        Console.WriteLine(responscontext);
                         return true;
                     }
                     invalidEmailMessage = "Email is not valid, please try another one!";
