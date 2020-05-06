@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MarysMajesticMovies.Migrations
 {
-    public partial class AddedDbContextToDb : Migration
+    public partial class AddDbContextToDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -45,7 +45,8 @@ namespace MarysMajesticMovies.Migrations
                     LastName = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
                     ZipCode = table.Column<int>(nullable: true),
-                    City = table.Column<string>(nullable: true)
+                    City = table.Column<string>(nullable: true),
+                    IsAdmin = table.Column<bool>(nullable: true)
                 },
                 constraints: table =>
                 {
