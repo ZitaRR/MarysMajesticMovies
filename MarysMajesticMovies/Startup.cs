@@ -41,7 +41,7 @@ namespace MarysMajesticMovies
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             services.AddDefaultIdentity<User>(options => 
             { options.SignIn.RequireConfirmedAccount = true; 
-              options.Lockout = lockout; 
+              options.Lockout = lockout;
             })
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
