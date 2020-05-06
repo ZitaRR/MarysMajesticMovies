@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using MarysMajesticMovies.Models;
 
 namespace MarysMajesticMovies.Data
 {
@@ -14,5 +15,7 @@ namespace MarysMajesticMovies.Data
         }
 
         public DbSet<User> User { get; set; }
+
+        public DbSet<MarysMajesticMovies.Models.Movie> Movie { get; set; }
     }
 }
