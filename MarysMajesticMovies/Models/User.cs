@@ -19,6 +19,5 @@ namespace MarysMajesticMovies
         public int ZipCode { get; set; }
         [Required]
         public string City { get; set; }
-        public bool IsAdmin { get; set; }
     }
 }
