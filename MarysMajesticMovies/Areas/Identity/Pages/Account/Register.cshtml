@@ -8,41 +8,32 @@
 <div class="register">
     <h1>@ViewData["Title"]</h1>
     <form asp-route-returnUrl="@Model.ReturnUrl" method="post">
-        <div asp-validation-summary="All" style="color: #ff4747;"></div>
+        <div asp-validation-summary="All" style="color: #ff4747; list-style: none;"></div>
         <label>Name</label>
         <br />
         <input asp-for="Input.FirstName" type="text" placeholder="First name *" />
-        <span asp-validation-for="Input.FirstName" style="color: #ff4747;"></span>
         <br />
         <input asp-for="Input.LastName" type="text" placeholder="Last name *" />
-        <span asp-validation-for="Input.LastName" style="color: #ff4747;"></span>
         <br />
         <br />
         <label>Billing and Shipping Address</label>
         <br />
         <input asp-for="Input.Address" type="text" placeholder="Address *" />
-        <span asp-validation-for="Input.Address" style="color: #ff4747;"></span>
         <br />
         <input asp-for="Input.City" type="text" placeholder="City *" />
-        <span asp-validation-for="Input.City" style="color: #ff4747;"></span>
         <br />
         <input asp-for="Input.ZipCode" type="text" placeholder="Zip code *" />
-        <span asp-validation-for="Input.ZipCode" style="color: #ff4747;"></span>
         <br />
         <input asp-for="Input.PhoneNumber" type="text" placeholder="Phone *" />
-        <span asp-validation-for="Input.PhoneNumber" style="color: #ff4747;"></span>
         <br />
         <br />
         <label>Account Details</label>
         <br />
         <input asp-for="Input.Email" type="text" placeholder="Email *" />
-        <span asp-validation-for="Input.Email" style="color: #ff4747;"></span>
         <br />
         <input asp-for="Input.Password" type="password" placeholder="Password *" />
-        <span asp-validation-for="Input.Password" style="color: #ff4747;"></span>
         <br />
         <input asp-for="Input.ConfirmPassword" type="password" placeholder="Verify password *" />
-        <span asp-validation-for="Input.ConfirmPassword" style="color: #ff4747;"></span>
         <br />
         <p>All fields marked with * are required.</p>
         <br />
