@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MarysMajesticMovies.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200423230617_AddMovieToDb")]
-    partial class AddMovieToDb
+    [Migration("20200507213911_AddDbContextToDb")]
+    partial class AddDbContextToDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

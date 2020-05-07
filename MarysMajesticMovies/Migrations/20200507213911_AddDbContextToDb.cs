@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MarysMajesticMovies.Migrations
 {
-    public partial class AddedDbContextToDb : Migration
+    public partial class AddDbContextToDb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

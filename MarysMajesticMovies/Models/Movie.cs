@@ -36,5 +36,9 @@ namespace MarysMajesticMovies.Models
         public int Price { get; set; }
         [Required]
         public int InStock { get; set; }
+        [Required]
+        public DateTime AddedToStoreDate { get; set; }
+        public int NoOfOrders { get; set; }
+
     }
 }
