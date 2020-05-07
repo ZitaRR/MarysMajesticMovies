@@ -45,12 +45,36 @@ namespace MarysMajesticMovies.Migrations
                     LastName = table.Column<string>(nullable: true),
                     Address = table.Column<string>(nullable: true),
                     ZipCode = table.Column<int>(nullable: true),
-                    City = table.Column<string>(nullable: true),
-                    IsAdmin = table.Column<bool>(nullable: true)
+                    City = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Movie",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ImdbId = table.Column<string>(nullable: false),
+                    Title = table.Column<string>(nullable: false),
+                    Year = table.Column<int>(nullable: false),
+                    RunTime = table.Column<string>(nullable: false),
+                    Genre = table.Column<string>(nullable: false),
+                    Director = table.Column<string>(nullable: false),
+                    Actors = table.Column<string>(nullable: false),
+                    Plot = table.Column<string>(nullable: false),
+                    ImdbRating = table.Column<int>(nullable: false),
+                    PosterUrl = table.Column<string>(nullable: false),
+                    TrailerUrl = table.Column<string>(nullable: false),
+                    Price = table.Column<int>(nullable: false),
+                    InStock = table.Column<int>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Movie", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -215,6 +239,9 @@ namespace MarysMajesticMovies.Migrations
 
             migrationBuilder.DropTable(
                 name: "AspNetUserTokens");
+
+            migrationBuilder.DropTable(
+                name: "Movie");
 
             migrationBuilder.DropTable(
                 name: "AspNetRoles");

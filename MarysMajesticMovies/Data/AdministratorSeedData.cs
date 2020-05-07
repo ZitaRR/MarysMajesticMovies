@@ -15,10 +15,9 @@ namespace MarysMajesticMovies.Data
         {
             _userManager = userManager;
             _roleManager = roleManager;
-            EnsureSeedDataAsync();
         }
 
-        public async Task EnsureSeedDataAsync()
+        public async void EnsureSeedDataAsync()
         {
             if (await _userManager.FindByEmailAsync("admin@admin.com") == null)
             {
@@ -32,8 +31,7 @@ namespace MarysMajesticMovies.Data
                     Address = "Administreet",
                     ZipCode = 12345,
                     City = "Administan",
-                    PhoneNumber = "070000000",
-                    IsAdmin = true
+                    PhoneNumber = "070000000"
                 };
 
                 await _userManager.CreateAsync(administrator, "Passw0rd123!");

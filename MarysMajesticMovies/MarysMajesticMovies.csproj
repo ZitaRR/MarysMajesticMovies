@@ -24,6 +24,8 @@
     <Compile Remove="Migrations\20200423225624_AddedMovieToDb.Designer.cs" />
     <Compile Remove="Migrations\20200423230617_AddMovieToDb.cs" />
     <Compile Remove="Migrations\20200423230617_AddMovieToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200506214223_AddDbContextToDb.cs" />
+    <Compile Remove="Migrations\20200506214223_AddDbContextToDb.Designer.cs" />
   </ItemGroup>
 
 
