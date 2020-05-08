@@ -28,7 +28,7 @@ namespace MarysMajesticMovies.Controllers
             return View();
         }
 
-        public IActionResult AddMovies()
+        public IActionResult AddMovie()
         {
             return View();
         }
