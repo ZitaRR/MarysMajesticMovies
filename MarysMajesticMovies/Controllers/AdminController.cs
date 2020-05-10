@@ -7,28 +7,76 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MarysMajesticMovies.Data;
 using MarysMajesticMovies.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.ComponentModel.DataAnnotations;
 
 namespace MarysMajesticMovies.Controllers
 {
-    [Route("api/[moviescontroller]")]
+    [Authorize(Roles = "Administrator")]
+    [Route("api/[admincontroller]")]
     [ApiController]
-    public class MoviesController : ControllerBase
+    public class AdminController : ControllerBase
     {
         private readonly ApplicationDbContext _db;
 
-        public MoviesController(ApplicationDbContext db)
+        public AdminController(ApplicationDbContext db)
         {
             _db = db;
         }
 
-        // GET: api/Movies
+        [BindProperty]
+        public InputModel Input { get; set; }
+
+        public class InputModel
+        {
+            [Required]
+            [Display(Name = "Imdb id")]
+            public string ImdbId { get; set; }
+            [Required]
+            [Display(Name = "Movie titel")]
+            public string Title { get; set; }
+            [Required]
+            [Display(Name = "Release year")]
+            public int Year { get; set; }
+            [Required]
+            [Display(Name = "Movie length")]
+            public string RunTime { get; set; }
+            [Required]
+            public string Genre { get; set; }
+            [Required]
+            public string Director { get; set; }
+            [Required]
+            public string Actors { get; set; }
+            [Required]
+            public string Plot { get; set; }
+            [Required]
+            [Display(Name = "Imdb Rating")]
+            public int ImdbRating { get; set; }
+            [Required]
+            [Display(Name = "Poster url")]
+            public string PosterUrl { get; set; }
+            [Required]
+            [Display(Name = "Trailer url")]
+            public string TrailerUrl { get; set; }
+            [Required]
+            public int Price { get; set; }
+            [Required]
+            [Display(Name = "In stock")]
+            public int InStock { get; set; }
+
+            //[RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß-]+$", ErrorMessage = "Use letters only please")]
+            //[StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 1)]
+            //[Range(9999, 99999, ErrorMessage = "The zipcode must be 5 numbers long")]
+        }
+
+        // GET: api/Admin
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Movie>>> GetMovie()
         {
             return await _db.Movie.ToListAsync();
         }
 
-        // GET: api/Movies/5
+        // GET: api/Admin/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Movie>> GetMovie(int id)
         {
@@ -42,7 +90,7 @@ namespace MarysMajesticMovies.Controllers
             return movie;
         }
 
-        // PUT: api/Movies/5
+        // PUT: api/Admin/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
@@ -74,8 +122,8 @@ namespace MarysMajesticMovies.Controllers
             return NoContent();
         }
 
-        //POST: api/Movies
-        //To protect from overposting attacks, enable the specific properties you want to bind to, for
+        // POST: api/Admin
+        // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
         public async Task<ActionResult<Movie>> PostMovie(Movie movie)
@@ -86,7 +134,7 @@ namespace MarysMajesticMovies.Controllers
             return CreatedAtAction("GetMovie", new { id = movie.Id }, movie);
         }
 
-        //DELETE: api/Movies/5
+        // DELETE: api/Admin/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Movie>> DeleteMovie(int id)
         {
