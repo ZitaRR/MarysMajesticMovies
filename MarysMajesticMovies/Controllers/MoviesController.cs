@@ -10,7 +10,7 @@ using MarysMajesticMovies.Models;
 
 namespace MarysMajesticMovies.Controllers
 {
-    [Route("api/[moviescontroller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class MoviesController : ControllerBase
     {

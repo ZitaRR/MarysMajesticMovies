@@ -19,7 +19,7 @@ namespace MarysMajesticMovies.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MarysMajesticMovies.Models.Movie", b =>
+            modelBuilder.Entity("MarysMajesticMovies.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()

@@ -6,14 +6,13 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MarysMajesticMovies.Data;
-using MarysMajesticMovies.Models;
 using Microsoft.AspNetCore.Authorization;
 using System.ComponentModel.DataAnnotations;
 
 namespace MarysMajesticMovies.Controllers
 {
     [Authorize(Roles = "Administrator")]
-    [Route("api/[admincontroller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class AdminController : ControllerBase
     {
@@ -37,11 +36,14 @@ namespace MarysMajesticMovies.Controllers
             public string Title { get; set; }
             [Required]
             [Display(Name = "Release year")]
+            [Range(1850, 2025, ErrorMessage = "The year is between 1850-2025")]
             public int Year { get; set; }
             [Required]
             [Display(Name = "Movie length")]
+            [Range(5, 500, ErrorMessage = "The length is between 5-500 (minutes)")]
             public string RunTime { get; set; }
             [Required]
+            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß ]+$", ErrorMessage = "Use only letters and space please")]
             public string Genre { get; set; }
             [Required]
             public string Director { get; set; }
@@ -51,14 +53,18 @@ namespace MarysMajesticMovies.Controllers
             public string Plot { get; set; }
             [Required]
             [Display(Name = "Imdb Rating")]
+            [Range(0, 10, ErrorMessage = "The IMDb rate is between 0-10")]
             public int ImdbRating { get; set; }
             [Required]
             [Display(Name = "Poster url")]
+            [Url]
             public string PosterUrl { get; set; }
             [Required]
             [Display(Name = "Trailer url")]
+            [Url]
             public string TrailerUrl { get; set; }
             [Required]
+            //[Range(1, 1000, ErrorMessage = "The price can only be betweeen 1-1000 kr")]
             public int Price { get; set; }
             [Required]
             [Display(Name = "In stock")]
@@ -126,8 +132,26 @@ namespace MarysMajesticMovies.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Movie>> PostMovie(Movie movie)
+        public async Task<ActionResult<Movie>> PostMovie(InputModel input)
         {
+            var movie = new Movie
+            {
+                ImdbId = input.ImdbId,
+                Title = input.Title,
+                Year = input.Year,
+                RunTime = input.RunTime,
+                Genre = input.Genre,
+                Director = input.Director,
+                Actors = input.Actors,
+                Plot = input.Plot,
+                ImdbRating = input.ImdbRating,
+                PosterUrl = input.PosterUrl,
+                TrailerUrl = input.TrailerUrl,
+                Price = input.Price,
+                InStock = input.InStock,
+                AddedToStoreDate = DateTime.Now
+            };
+
             _db.Movie.Add(movie);
             await _db.SaveChangesAsync();
 

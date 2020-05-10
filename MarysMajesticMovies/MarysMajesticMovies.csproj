@@ -8,6 +8,10 @@
   <ItemGroup>
     <Compile Remove="Migrations\20200507220223_AddDbContextToDb.cs" />
     <Compile Remove="Migrations\20200507220223_AddDbContextToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200508091129_AddDbContextToDb.cs" />
+    <Compile Remove="Migrations\20200508091129_AddDbContextToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200510225959_AddDbContextToDb.cs" />
+    <Compile Remove="Migrations\20200510225959_AddDbContextToDb.Designer.cs" />
   </ItemGroup>
 
 

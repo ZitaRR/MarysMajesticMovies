@@ -10,7 +10,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MarysMajesticMovies.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200508091129_AddDbContextToDb")]
+    [Migration("20200510234414_AddDbContextToDb")]
     partial class AddDbContextToDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -21,7 +21,7 @@ namespace MarysMajesticMovies.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MarysMajesticMovies.Models.Movie", b =>
+            modelBuilder.Entity("MarysMajesticMovies.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
