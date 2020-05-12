@@ -169,3 +169,22 @@ function closeMov() {
     document.getElementById("myNav").style.display = "none";
     document.getElementById("mainpagebody").style.overflow = "auto";
 }
+
+function rightScrollFunction() {
+    var elmnt = document.getElementById("latest-scroll");
+    elmnt.scrollLeft += 500;
+    if (elmnt.scrollLeft == 0) {
+        document.getElementById("arrow-left").style.display = "block";
+    }
+}
+
+function leftScrollFunction() {
+    var elmnt = document.getElementById("latest-scroll");
+    if (elmnt.scrollLeft > 0) {
+        document.getElementById("arrow-left").style.display = "block";
+        elmnt.scrollLeft -= 500;
+    } else {
+        document.getElementById("arrow-left").style.display = "none";
+    }
+    
+}

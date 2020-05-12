@@ -39,9 +39,11 @@
                 <img src="~/DesignDrafts/logo.png" class="logo" />
             </div>
             <div id="latest-section">
+                <button id="arrow-left" class="movie-arrow-left" onclick="leftScrollFunction()"></button>
+                <button id="arrow-right "class="movie-arrow-right" onclick="rightScrollFunction()"></button>
                 <h1>Latest</h1>
-                <div class="scroll">
-                    <div class="movies">
+                <div class="scroll" >
+                    <div class="movies" id="latest-scroll">
                         <div id="latest"></div>
                     </div>
                 </div>
