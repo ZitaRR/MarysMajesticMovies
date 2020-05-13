@@ -163,11 +163,15 @@ function closeNav() {
 function openMov() {
     document.getElementById("myNav").style.display = "block";
     document.getElementById("mainpagebody").style.overflow = "hidden";
+    document.getElementById("arrow-left").style.display = "none";
+    document.getElementById("arrow-right").style.display = "none";
 }
 
 function closeMov() {
     document.getElementById("myNav").style.display = "none";
     document.getElementById("mainpagebody").style.overflow = "auto";
+    document.getElementById("arrow-left").style.display = "block";
+    document.getElementById("arrow-right").style.display = "block";
 }
 
 function rightScrollFunction() {
