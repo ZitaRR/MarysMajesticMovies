@@ -19,7 +19,7 @@
             <a class="menubutton" asp-action=".">CATEGORIES</a>
             @if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
             {
-            <a class="menubutton" asp-action="AddMovie">ADD MOVIE</a>
+            <a class="menubutton" asp-controller="Admin" asp-action="AddMovie" asp-area="">ADD MOVIE</a>
             }
         </div>
         <button class="userpanel"></button>

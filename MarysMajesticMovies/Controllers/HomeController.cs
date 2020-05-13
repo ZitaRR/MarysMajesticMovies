@@ -29,11 +29,7 @@ namespace MarysMajesticMovies.Controllers
             return View();
         }
 
-        [Authorize(Roles = "Administrator")]
-        public IActionResult AddMovie()
-        {
-            return View();
-        }
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

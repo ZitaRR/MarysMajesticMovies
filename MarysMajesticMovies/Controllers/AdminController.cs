@@ -8,15 +8,17 @@ using Microsoft.EntityFrameworkCore;
 using MarysMajesticMovies.Data;
 using Microsoft.AspNetCore.Authorization;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace MarysMajesticMovies.Controllers
 {
     [Authorize(Roles = "Administrator")]
-    [Route("api/[controller]")]
-    [ApiController]
-    public class AdminController : ControllerBase
+    //[Route("api/[controller]")]
+    //[ApiController]
+    public class AdminController : Controller
     {
         private readonly ApplicationDbContext _db;
+        public string statusMessage;
 
         public AdminController(ApplicationDbContext db)
         {
@@ -25,6 +27,11 @@ namespace MarysMajesticMovies.Controllers
 
         [BindProperty]
         public InputModel Input { get; set; }
+
+        public IActionResult AddMovie()
+        {
+            return View();
+        }
 
         public class InputModel
         {
@@ -43,7 +50,7 @@ namespace MarysMajesticMovies.Controllers
             [Range(5, 500, ErrorMessage = "The length is between 5-500 (minutes)")]
             public string RunTime { get; set; }
             [Required]
-            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß ]+$", ErrorMessage = "Use only letters and space please")]
+            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß :]+$", ErrorMessage = "Use only letters and space please")]
             public string Genre { get; set; }
             [Required]
             public string Director { get; set; }
@@ -53,15 +60,15 @@ namespace MarysMajesticMovies.Controllers
             public string Plot { get; set; }
             [Required]
             [Display(Name = "Imdb Rating")]
-            [Range(0, 10, ErrorMessage = "The IMDb rate is between 0-10")]
+            //[Range(0, 10, ErrorMessage = "The IMDb rate is between 0-10")]
             public int ImdbRating { get; set; }
             [Required]
             [Display(Name = "Poster url")]
-            [Url]
+            //[Url]
             public string PosterUrl { get; set; }
             [Required]
             [Display(Name = "Trailer url")]
-            [Url]
+            //[Url]
             public string TrailerUrl { get; set; }
             [Required]
             //[Range(1, 1000, ErrorMessage = "The price can only be betweeen 1-1000 kr")]
@@ -75,14 +82,14 @@ namespace MarysMajesticMovies.Controllers
             //[Range(9999, 99999, ErrorMessage = "The zipcode must be 5 numbers long")]
         }
 
-        // GET: api/Admin
+        // GET: Admin
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Movie>>> GetMovie()
         {
             return await _db.Movie.ToListAsync();
         }
 
-        // GET: api/Admin/5
+        // GET: Admin/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Movie>> GetMovie(int id)
         {
@@ -96,7 +103,7 @@ namespace MarysMajesticMovies.Controllers
             return movie;
         }
 
-        // PUT: api/Admin/5
+        // PUT: Admin/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPut("{id}")]
@@ -128,37 +135,61 @@ namespace MarysMajesticMovies.Controllers
             return NoContent();
         }
 
-        // POST: api/Admin
+        // POST: Admin
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task<ActionResult<Movie>> PostMovie(InputModel input)
+        public async Task PostMovie()
         {
+            statusMessage = "registering...";
+            //if (!ModelState.IsValid)
+            //{
+            //    return View();
+            //}
+
+            //if (_db.Movie.Any(m => m.ImdbId == Input.ImdbId))
+            //{
+            //    statusMessage = "Movie is already registered, please try another one";
+            //    ModelState.Clear();
+            //    return;
+            //}
+
             var movie = new Movie
             {
-                ImdbId = input.ImdbId,
-                Title = input.Title,
-                Year = input.Year,
-                RunTime = input.RunTime,
-                Genre = input.Genre,
-                Director = input.Director,
-                Actors = input.Actors,
-                Plot = input.Plot,
-                ImdbRating = input.ImdbRating,
-                PosterUrl = input.PosterUrl,
-                TrailerUrl = input.TrailerUrl,
-                Price = input.Price,
-                InStock = input.InStock,
+                ImdbId = Input.ImdbId,
+                Title = Input.Title,
+                Year = Input.Year,
+                RunTime = Input.RunTime,
+                Genre = Input.Genre,
+                Director = Input.Director,
+                Actors = Input.Actors,
+                Plot = Input.Plot,
+                ImdbRating = Input.ImdbRating,
+                PosterUrl = Input.PosterUrl,
+                TrailerUrl = Input.TrailerUrl,
+                Price = Input.Price,
+                InStock = Input.InStock,
                 AddedToStoreDate = DateTime.Now
             };
 
             _db.Movie.Add(movie);
-            await _db.SaveChangesAsync();
+            //var saveToDbResult = 
+                await _db.SaveChangesAsync();
 
-            return CreatedAtAction("GetMovie", new { id = movie.Id }, movie);
+            //if (saveToDbResult == 0)
+            //{
+            //    statusMessage = "Server error, please try again";
+            //    return;
+            //}
+
+            //statusMessage = "Movie is registered!";
+            //ModelState.Clear();
+            return;
+
+            //return CreatedAtAction("GetMovie", new { id = movie.Id }, movie);
         }
 
-        // DELETE: api/Admin/5
+        // DELETE: Admin/5
         [HttpDelete("{id}")]
         public async Task<ActionResult<Movie>> DeleteMovie(int id)
         {

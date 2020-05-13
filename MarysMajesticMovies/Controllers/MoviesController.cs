@@ -77,14 +77,14 @@ namespace MarysMajesticMovies.Controllers
         //POST: api/Movies
         //To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
-        [HttpPost]
-        public async Task<ActionResult<Movie>> PostMovie(Movie movie)
-        {
-            _db.Movie.Add(movie);
-            await _db.SaveChangesAsync();
+        //[HttpPost]
+        //public async Task<ActionResult<Movie>> PostMovie(Movie movie)
+        //{
+        //    _db.Movie.Add(movie);
+        //    await _db.SaveChangesAsync();
 
-            return CreatedAtAction("GetMovie", new { id = movie.Id }, movie);
-        }
+        //    return CreatedAtAction("GetMovie", new { id = movie.Id }, movie);
+        //}
 
         //DELETE: api/Movies/5
         [HttpDelete("{id}")]
