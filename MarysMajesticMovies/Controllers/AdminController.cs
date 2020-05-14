@@ -13,12 +13,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Internal;
 namespace MarysMajesticMovies.Controllers
 {
     [Authorize(Roles = "Administrator")]
-    //[Route("api/[controller]")]
-    //[ApiController]
     public class AdminController : Controller
     {
         private readonly ApplicationDbContext _db;
-        public string statusMessage;
 
         public AdminController(ApplicationDbContext db)
         {
@@ -30,6 +27,10 @@ namespace MarysMajesticMovies.Controllers
 
         public IActionResult AddMovie()
         {
+            if (ViewBag.Model == null)
+            {
+                ViewBag.Message = "";
+            }
             return View();
         }
 
@@ -37,6 +38,7 @@ namespace MarysMajesticMovies.Controllers
         {
             [Required]
             [Display(Name = "Imdb id")]
+            [RegularExpression(@"^(tt)[0-9]+", ErrorMessage = "Imdb id always starts with \"tt\"")]
             public string ImdbId { get; set; }
             [Required]
             [Display(Name = "Movie titel")]
@@ -60,26 +62,23 @@ namespace MarysMajesticMovies.Controllers
             public string Plot { get; set; }
             [Required]
             [Display(Name = "Imdb Rating")]
-            //[Range(0, 10, ErrorMessage = "The IMDb rate is between 0-10")]
+            [Range(0, 10, ErrorMessage = "The IMDb rate is between 0-10")]
             public int ImdbRating { get; set; }
             [Required]
             [Display(Name = "Poster url")]
-            //[Url]
+            [Url]
             public string PosterUrl { get; set; }
             [Required]
             [Display(Name = "Trailer url")]
-            //[Url]
+            [Url]
             public string TrailerUrl { get; set; }
             [Required]
-            //[Range(1, 1000, ErrorMessage = "The price can only be betweeen 1-1000 kr")]
+            [Range(1, 1000, ErrorMessage = "The price can only be betweeen 1-1000 kr")]
             public int Price { get; set; }
             [Required]
             [Display(Name = "In stock")]
+            [Range(0, 10000, ErrorMessage = "The IMDb rate is between 0-10000")]
             public int InStock { get; set; }
-
-            //[RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß-]+$", ErrorMessage = "Use letters only please")]
-            //[StringLength(20, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 1)]
-            //[Range(9999, 99999, ErrorMessage = "The zipcode must be 5 numbers long")]
         }
 
         // GET: Admin
@@ -139,20 +138,14 @@ namespace MarysMajesticMovies.Controllers
         // To protect from overposting attacks, enable the specific properties you want to bind to, for
         // more details, see https://go.microsoft.com/fwlink/?linkid=2123754.
         [HttpPost]
-        public async Task PostMovie()
+        public async Task<ActionResult> PostMovie()
         {
-            statusMessage = "registering...";
-            //if (!ModelState.IsValid)
-            //{
-            //    return View();
-            //}
-
-            //if (_db.Movie.Any(m => m.ImdbId == Input.ImdbId))
-            //{
-            //    statusMessage = "Movie is already registered, please try another one";
-            //    ModelState.Clear();
-            //    return;
-            //}
+            if (_db.Movie.Any(m => m.ImdbId == Input.ImdbId))
+            {
+                ModelState.Clear();
+                ViewBag.SaveMessage = "Movie is already registered, please try another one";
+                return View("AddMovie");
+            }
 
             var movie = new Movie
             {
@@ -173,20 +166,17 @@ namespace MarysMajesticMovies.Controllers
             };
 
             _db.Movie.Add(movie);
-            //var saveToDbResult = 
-                await _db.SaveChangesAsync();
+            int saveStatus = await _db.SaveChangesAsync();
 
-            //if (saveToDbResult == 0)
-            //{
-            //    statusMessage = "Server error, please try again";
-            //    return;
-            //}
+            if (!_db.Movie.Contains(movie))
+            {
+                ViewBag.SaveMessage = "Server Error, please try again!";
+                return View("AddMovie");
+            }
 
-            //statusMessage = "Movie is registered!";
-            //ModelState.Clear();
-            return;
-
-            //return CreatedAtAction("GetMovie", new { id = movie.Id }, movie);
+            ModelState.Clear();
+            ViewBag.SaveMessage = "Movie is registered!";
+            return View("AddMovie");
         }
 
         // DELETE: Admin/5
