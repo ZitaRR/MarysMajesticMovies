@@ -9,75 +9,81 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
+        <form asp-controller="Admin" asp-action="GetMovieInfo">
+            <label asp-for="SearchMovieInput.ImdbId" class="control-label"></label>
+            <input asp-for="SearchMovieInput.ImdbId" class="form-control" />
+            <span asp-validation-for="SearchMovieInput.ImdbId" class="text-danger"></span>
+            <br />
+            <input type="submit" value="Search movie" class="btn btn-primary" />
+        </form>
         <form asp-controller="Admin" asp-action="PostMovie">
             <div>@ViewBag.SaveMessage</div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Input.ImdbId" class="control-label"></label>
-                <input asp-for="Input.ImdbId" class="form-control" />
-                <span asp-validation-for="Input.ImdbId" class="text-danger"></span>
+                <label asp-for="AddMovieInput.ImdbId" class="control-label"></label>
+                <input asp-for="AddMovieInput.ImdbId" class="form-control" />
+                <span asp-validation-for="AddMovieInput.ImdbId" class="text-danger"></span>
                 <br />
-                <button class="btn btn-lg" onclick="">Search for movie info</button>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Title" class="control-label"></label>
-                <input asp-for="Input.Title" class="form-control" />
-                <span asp-validation-for="Input.Title" class="text-danger"></span>
+                <label asp-for="AddMovieInput.Title" class="control-label"></label>
+                <input asp-for="AddMovieInput.Title" class="form-control" />
+                <span asp-validation-for="AddMovieInput.Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Year" class="control-label"></label>
-                <input asp-for="Input.Year" class="form-control" />
-                <span asp-validation-for="Input.Year" class="text-danger"></span>
+                <label asp-for="AddMovieInput.Year" class="control-label"></label>
+                <input asp-for="AddMovieInput.Year" class="form-control" />
+                <span asp-validation-for="AddMovieInput.Year" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.RunTime" class="control-label"></label>
-                <input asp-for="Input.RunTime" class="form-control" />
-                <span asp-validation-for="Input.RunTime" class="text-danger"></span>
+                <label asp-for="AddMovieInput.RunTime" class="control-label"></label>
+                <input asp-for="AddMovieInput.RunTime" class="form-control" />
+                <span asp-validation-for="AddMovieInput.RunTime" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Genre" class="control-label"></label>
-                <input asp-for="Input.Genre" class="form-control" />
-                <span asp-validation-for="Input.Genre" class="text-danger"></span>
+                <label asp-for="AddMovieInput.Genre" class="control-label"></label>
+                <input asp-for="AddMovieInput.Genre" class="form-control" />
+                <span asp-validation-for="AddMovieInput.Genre" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Director" class="control-label"></label>
-                <input asp-for="Input.Director" class="form-control" />
-                <span asp-validation-for="Input.Director" class="text-danger"></span>
+                <label asp-for="AddMovieInput.Director" class="control-label"></label>
+                <input asp-for="AddMovieInput.Director" class="form-control" />
+                <span asp-validation-for="AddMovieInput.Director" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Actors" class="control-label"></label>
-                <input asp-for="Input.Actors" class="form-control" />
-                <span asp-validation-for="Input.Actors" class="text-danger"></span>
+                <label asp-for="AddMovieInput.Actors" class="control-label"></label>
+                <input asp-for="AddMovieInput.Actors" class="form-control" />
+                <span asp-validation-for="AddMovieInput.Actors" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Plot" class="control-label"></label>
-                <input asp-for="Input.Plot" class="form-control" />
-                <span asp-validation-for="Input.Plot" class="text-danger"></span>
+                <label asp-for="AddMovieInput.Plot" class="control-label"></label>
+                <input asp-for="AddMovieInput.Plot" class="form-control" />
+                <span asp-validation-for="AddMovieInput.Plot" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.ImdbRating" class="control-label"></label>
-                <input asp-for="Input.ImdbRating" class="form-control" />
-                <span asp-validation-for="Input.ImdbRating" class="text-danger"></span>
+                <label asp-for="AddMovieInput.ImdbRating" class="control-label"></label>
+                <input asp-for="AddMovieInput.ImdbRating" class="form-control" />
+                <span asp-validation-for="AddMovieInput.ImdbRating" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.PosterUrl" class="control-label"></label>
-                <input asp-for="Input.PosterUrl" class="form-control" />
-                <span asp-validation-for="Input.PosterUrl" class="text-danger"></span>
+                <label asp-for="AddMovieInput.PosterUrl" class="control-label"></label>
+                <input asp-for="AddMovieInput.PosterUrl" class="form-control" />
+                <span asp-validation-for="AddMovieInput.PosterUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.TrailerUrl" class="control-label"></label>
-                <input asp-for="Input.TrailerUrl" class="form-control" />
-                <span asp-validation-for="Input.TrailerUrl" class="text-danger"></span>
+                <label asp-for="AddMovieInput.TrailerUrl" class="control-label"></label>
+                <input asp-for="AddMovieInput.TrailerUrl" class="form-control" />
+                <span asp-validation-for="AddMovieInput.TrailerUrl" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.Price" class="control-label"></label>
-                <input asp-for="Input.Price" class="form-control" />
-                <span asp-validation-for="Input.Price" class="text-danger"></span>
+                <label asp-for="AddMovieInput.Price" class="control-label"></label>
+                <input asp-for="AddMovieInput.Price" class="form-control" />
+                <span asp-validation-for="AddMovieInput.Price" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Input.InStock" class="control-label"></label>
-                <input asp-for="Input.InStock" class="form-control" />
-                <span asp-validation-for="Input.InStock" class="text-danger"></span>
+                <label asp-for="AddMovieInput.InStock" class="control-label"></label>
+                <input asp-for="AddMovieInput.InStock" class="form-control" />
+                <span asp-validation-for="AddMovieInput.InStock" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Add Movie" class="btn btn-primary" />

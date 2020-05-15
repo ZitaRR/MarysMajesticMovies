@@ -9,6 +9,11 @@ using MarysMajesticMovies.Data;
 using Microsoft.AspNetCore.Authorization;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Net.Http;
+using System.Net;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.Web.Helpers;
 
 namespace MarysMajesticMovies.Controllers
 {
@@ -16,6 +21,8 @@ namespace MarysMajesticMovies.Controllers
     public class AdminController : Controller
     {
         private readonly ApplicationDbContext _db;
+        static HttpClient client = new HttpClient();
+
 
         public AdminController(ApplicationDbContext db)
         {
@@ -23,7 +30,9 @@ namespace MarysMajesticMovies.Controllers
         }
 
         [BindProperty]
-        public InputModel Input { get; set; }
+        public SearchMovieForm SearchMovieInput { get; set; }
+        [BindProperty]
+        public AddMovieForm AddMovieInput { get; set; }
 
         public IActionResult AddMovie()
         {
@@ -31,10 +40,22 @@ namespace MarysMajesticMovies.Controllers
             {
                 ViewBag.Message = "";
             }
+            if (ViewBag.Input != null)
+            {
+                AddMovieInput = ViewBag.Input;
+            }
             return View();
         }
 
-        public class InputModel
+        public class SearchMovieForm
+        {
+            [Required]
+            [Display(Name = "Imdb id")]
+            [RegularExpression(@"^(tt)[0-9]+", ErrorMessage = "Imdb id always starts with \"tt\"")]
+            public string ImdbId { get; set; }
+        }
+
+        public class AddMovieForm
         {
             [Required]
             [Display(Name = "Imdb id")]
@@ -45,14 +66,14 @@ namespace MarysMajesticMovies.Controllers
             public string Title { get; set; }
             [Required]
             [Display(Name = "Release year")]
-            [Range(1850, 2025, ErrorMessage = "The year is between 1850-2025")]
+            //[Range(1850, 2025, ErrorMessage = "The year is between 1850-2025")]
             public int Year { get; set; }
             [Required]
             [Display(Name = "Movie length")]
-            [Range(5, 500, ErrorMessage = "The length is between 5-500 (minutes)")]
+            //[Range(5, 500, ErrorMessage = "The length is between 5-500 (minutes)")]
             public string RunTime { get; set; }
             [Required]
-            [RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß :]+$", ErrorMessage = "Use only letters and space please")]
+            //[RegularExpression(@"^[a-zA-ZåäöüÅÄÖÜß :]+$", ErrorMessage = "Use only letters and space please")]
             public string Genre { get; set; }
             [Required]
             public string Director { get; set; }
@@ -62,22 +83,22 @@ namespace MarysMajesticMovies.Controllers
             public string Plot { get; set; }
             [Required]
             [Display(Name = "Imdb Rating")]
-            [Range(0, 10, ErrorMessage = "The IMDb rate is between 0-10")]
+            //[Range(0, 10, ErrorMessage = "The IMDb rate is between 0-10")]
             public int ImdbRating { get; set; }
             [Required]
             [Display(Name = "Poster url")]
-            [Url]
+            //[Url]
             public string PosterUrl { get; set; }
             [Required]
             [Display(Name = "Trailer url")]
-            [Url]
+            //[Url]
             public string TrailerUrl { get; set; }
             [Required]
-            [Range(1, 1000, ErrorMessage = "The price can only be betweeen 1-1000 kr")]
+            //[Range(1, 1000, ErrorMessage = "The price can only be betweeen 1-1000 kr")]
             public int Price { get; set; }
             [Required]
             [Display(Name = "In stock")]
-            [Range(0, 10000, ErrorMessage = "The IMDb rate is between 0-10000")]
+            //[Range(0, 10000, ErrorMessage = "The IMDb rate is between 0-10000")]
             public int InStock { get; set; }
         }
 
@@ -140,7 +161,7 @@ namespace MarysMajesticMovies.Controllers
         [HttpPost]
         public async Task<ActionResult> PostMovie()
         {
-            if (_db.Movie.Any(m => m.ImdbId == Input.ImdbId))
+            if (_db.Movie.Any(m => m.ImdbId == AddMovieInput.ImdbId))
             {
                 ModelState.Clear();
                 ViewBag.SaveMessage = "Movie is already registered, please try another one";
@@ -149,19 +170,19 @@ namespace MarysMajesticMovies.Controllers
 
             var movie = new Movie
             {
-                ImdbId = Input.ImdbId,
-                Title = Input.Title,
-                Year = Input.Year,
-                RunTime = Input.RunTime,
-                Genre = Input.Genre,
-                Director = Input.Director,
-                Actors = Input.Actors,
-                Plot = Input.Plot,
-                ImdbRating = Input.ImdbRating,
-                PosterUrl = Input.PosterUrl,
-                TrailerUrl = Input.TrailerUrl,
-                Price = Input.Price,
-                InStock = Input.InStock,
+                ImdbId = AddMovieInput.ImdbId,
+                Title = AddMovieInput.Title,
+                Year = AddMovieInput.Year,
+                RunTime = AddMovieInput.RunTime,
+                Genre = AddMovieInput.Genre,
+                Director = AddMovieInput.Director,
+                Actors = AddMovieInput.Actors,
+                Plot = AddMovieInput.Plot,
+                ImdbRating = AddMovieInput.ImdbRating,
+                PosterUrl = AddMovieInput.PosterUrl,
+                TrailerUrl = AddMovieInput.TrailerUrl,
+                Price = AddMovieInput.Price,
+                InStock = AddMovieInput.InStock,
                 AddedToStoreDate = DateTime.Now
             };
 
@@ -198,6 +219,53 @@ namespace MarysMajesticMovies.Controllers
         private bool MovieExists(int id)
         {
             return _db.Movie.Any(e => e.Id == id);
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> GetMovieInfo()
+        {
+            string APIKey = "";
+            string APIURL = $"http://www.omdbapi.com/?apikey={APIKey}&i={SearchMovieInput.ImdbId}&r=json";
+            
+            if (SearchMovieInput.ImdbId == null)
+            {
+                return View("AddMovie");
+            }
+            else
+            {
+                try
+                {
+                    
+                    HttpResponseMessage response = await client.GetAsync(APIURL);
+
+                    if (response.StatusCode == HttpStatusCode.OK)
+                    {
+                        var responsContent = await response.Content.ReadAsStringAsync();
+                        //var firstAndLastRemoved = responsContent.Skip(1).Take(responsContent.Count() - 2);
+                        //JToken token = JToken.Parse(responsContent);
+                        //JObject jsonContent = JObject.Parse((string) responsContent);
+                        dynamic result = JsonConvert.DeserializeObject(responsContent);
+                        Console.WriteLine(result);
+
+                        //var strang = jsonContent.Item["Title"];
+                        //var movieInfo = JsonConvert.DeserializeObject<Dictionary<string, string>>(jsonContent);
+                        //var movieInfo = new AddMovieForm
+                        //{
+                        //    ImdbId = arrayResponsContent.,
+                        //}
+                    } else
+                    {
+                        Console.WriteLine("Something's wrong");
+                    }
+                
+                }
+                catch (Exception)
+                {
+
+                }
+            }
+            //ViewBag.Input = AddMovieInput;
+            return View("AddMovie");
         }
     }
 }
