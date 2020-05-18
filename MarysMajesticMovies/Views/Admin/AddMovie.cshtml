@@ -3,98 +3,83 @@
 @{
     ViewData["Title"] = "AddMovie";
 }
-<h1>AddMovie</h1>
 
-<h4>Movie</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
-        <form asp-controller="Admin" asp-action="GetMovieInfo">
-            <label asp-for="SearchMovieInput.ImdbId" class="control-label"></label>
-            <input asp-for="SearchMovieInput.ImdbId" class="form-control" />
-            <span asp-validation-for="SearchMovieInput.ImdbId" class="text-danger"></span>
-            <br />
-            <input type="submit" value="Search movie" class="btn btn-primary" />
-        </form>
-        <form asp-controller="Admin" asp-action="PostMovie">
-            <div>@ViewBag.SaveMessage</div>
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.ImdbId" class="control-label"></label>
-                <input asp-for="AddMovieInput.ImdbId" class="form-control" />
-                <span asp-validation-for="AddMovieInput.ImdbId" class="text-danger"></span>
-                <br />
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.Title" class="control-label"></label>
-                <input asp-for="AddMovieInput.Title" class="form-control" />
-                <span asp-validation-for="AddMovieInput.Title" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.Year" class="control-label"></label>
-                <input asp-for="AddMovieInput.Year" class="form-control" />
-                <span asp-validation-for="AddMovieInput.Year" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.RunTime" class="control-label"></label>
-                <input asp-for="AddMovieInput.RunTime" class="form-control" />
-                <span asp-validation-for="AddMovieInput.RunTime" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.Genre" class="control-label"></label>
-                <input asp-for="AddMovieInput.Genre" class="form-control" />
-                <span asp-validation-for="AddMovieInput.Genre" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.Director" class="control-label"></label>
-                <input asp-for="AddMovieInput.Director" class="form-control" />
-                <span asp-validation-for="AddMovieInput.Director" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.Actors" class="control-label"></label>
-                <input asp-for="AddMovieInput.Actors" class="form-control" />
-                <span asp-validation-for="AddMovieInput.Actors" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.Plot" class="control-label"></label>
-                <input asp-for="AddMovieInput.Plot" class="form-control" />
-                <span asp-validation-for="AddMovieInput.Plot" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.ImdbRating" class="control-label"></label>
-                <input asp-for="AddMovieInput.ImdbRating" class="form-control" />
-                <span asp-validation-for="AddMovieInput.ImdbRating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.PosterUrl" class="control-label"></label>
-                <input asp-for="AddMovieInput.PosterUrl" class="form-control" />
-                <span asp-validation-for="AddMovieInput.PosterUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.TrailerUrl" class="control-label"></label>
-                <input asp-for="AddMovieInput.TrailerUrl" class="form-control" />
-                <span asp-validation-for="AddMovieInput.TrailerUrl" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.Price" class="control-label"></label>
-                <input asp-for="AddMovieInput.Price" class="form-control" />
-                <span asp-validation-for="AddMovieInput.Price" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="AddMovieInput.InStock" class="control-label"></label>
-                <input asp-for="AddMovieInput.InStock" class="form-control" />
-                <span asp-validation-for="AddMovieInput.InStock" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Add Movie" class="btn btn-primary" />
-            </div>
-        </form>
-    </div>
+<style>
+    .validation-summary-errors ul {
+        list-style: none;
+        margin-left: -40px;
+    }
+</style>
+
+<div class="register">
+    <h1>Search Movie Info</h1>
+    <form asp-controller="Admin" asp-action="GetMovieInfo">
+        <input asp-for="SearchMovieInput.ImdbId" type="text" class="form-control" placeholder="Imdb id for movie info" />
+        <span asp-validation-for="SearchMovieInput.ImdbId" class="text-danger"></span>
+        <br />
+        <input type="submit" value="Search movie" />
+    </form>
+    <br />
+    <br />
+    <h1>Add Movie</h1>
+    <form asp-controller="Admin" asp-action="PostMovie">
+        <div>@ViewBag.SaveMessage</div>
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <label>Movie</label>
+        <br />
+        <input asp-for="AddMovieInput.ImdbId" type="text" class="form-control" value="@ViewBag.ImdbId" placeholder="Imdb id*" />
+        <span asp-validation-for="AddMovieInput.ImdbId" class="text-danger"></span>
+        <br />
+        <input asp-for="AddMovieInput.Title" type="text" class="form-control" value="@ViewBag.MovieTitle" placeholder="Title*" />
+        <span asp-validation-for="AddMovieInput.Title" class="text-danger"></span>
+        <br />
+        <input asp-for="AddMovieInput.Year" type="text" class="form-control" value="@ViewBag.Year" placeholder="Year*" />
+        <span asp-validation-for="AddMovieInput.Year" class="text-danger"></span>
+        <br />
+        <input asp-for="AddMovieInput.RunTime" type="text" class="form-control" value="@ViewBag.RunTime" placeholder="Movie length*" />
+        <span asp-validation-for="AddMovieInput.RunTime" class="text-danger"></span>
+        <br />
+        <input asp-for="AddMovieInput.Genre" type="text" class="form-control" value="@ViewBag.Genre" placeholder="Genre*" />
+        <span asp-validation-for="AddMovieInput.Genre" class="text-danger"></span>
+        <br />
+        <input asp-for="AddMovieInput.Director" type="text" class="form-control" value="@ViewBag.Director" placeholder="Director*" />
+        <span asp-validation-for="AddMovieInput.Director" class="text-danger"></span>
+        <br />
+        <input asp-for="AddMovieInput.Actors" type="text" class="form-control" value="@ViewBag.Actors" placeholder="Actors*" />
+        <span asp-validation-for="AddMovieInput.Actors" class="text-danger"></span>
+        <br />
+        <input asp-for="AddMovieInput.Plot" type="text" class="form-control" value="@ViewBag.Plot" placeholder="Plot*" />
+        <span asp-validation-for="AddMovieInput.Plot" class="text-danger"></span>
+        <br />
+        <br />
+        <label>Media info</label>
+        <br />
+        <input asp-for="AddMovieInput.ImdbRating" type="text" class="form-control" value="@ViewBag.ImdbRating" placeholder="Imdb Rating*" />
+        <span asp-validation-for="AddMovieInput.ImdbRating" class="text-danger"></span>
+        <br />
+        <input asp-for="AddMovieInput.PosterUrl" type="text" class="form-control" value="@ViewBag.PosterUrl" placeholder="Poster Url*" />
+        <span asp-validation-for="AddMovieInput.PosterUrl" class="text-danger"></span>
+        <br />
+        <input asp-for="AddMovieInput.TrailerUrl" type="text" class="form-control" value="@ViewBag.TrailerUrl" placeholder="Trailer Url*" />
+        <span asp-validation-for="AddMovieInput.TrailerUrl" class="text-danger"></span>
+        <br />
+        <br />
+        <label>Store info</label>
+        <br />
+        <input asp-for="AddMovieInput.Price" type="text" class="form-control" value="@ViewBag.Price" placeholder="Price*" />
+        <span asp-validation-for="AddMovieInput.Price" class="text-danger"></span>
+        <br />
+        <input asp-for="AddMovieInput.InStock" type="text" class="form-control" value="@ViewBag.InStock" placeholder="In Stock*" />
+        <span asp-validation-for="AddMovieInput.InStock" class="text-danger"></span>
+        <br />
+        <p>All fields marked with * are required.</p>
+        <br />
+        <br />
+        <input type="submit" value="Add Movie" />
+        <br />
+    </form>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

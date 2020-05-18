@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MarysMajesticMovies.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200510234414_AddDbContextToDb")]
-    partial class AddDbContextToDb
+    [Migration("20200518131301_adddbcontexttodb")]
+    partial class adddbcontexttodb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -47,8 +47,8 @@ namespace MarysMajesticMovies.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ImdbRating")
-                        .HasColumnType("int");
+                    b.Property<double>("ImdbRating")
+                        .HasColumnType("float");
 
                     b.Property<int>("InStock")
                         .HasColumnType("int");
@@ -64,8 +64,8 @@ namespace MarysMajesticMovies.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<string>("RunTime")
                         .IsRequired()

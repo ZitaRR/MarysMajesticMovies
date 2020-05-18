@@ -27,17 +27,18 @@ namespace MarysMajesticMovies
         [Required]
         public string Plot { get; set; }
         [Required]
-        public int ImdbRating { get; set; }
+        public double ImdbRating { get; set; }
         [Required]
         public string PosterUrl { get; set; }
         [Required]
         public string TrailerUrl { get; set; }
         [Required]
-        public int Price { get; set; }
+        public double Price { get; set; }
         [Required]
         public int InStock { get; set; }
         [Required]
         public DateTime AddedToStoreDate { get; set; }
+
         public int NoOfOrders { get; set; }
 
     }
