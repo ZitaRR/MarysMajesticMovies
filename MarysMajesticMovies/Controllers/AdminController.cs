@@ -164,7 +164,7 @@ namespace MarysMajesticMovies.Controllers
             if (_db.Movie.Any(m => m.ImdbId == AddMovieInput.ImdbId))
             {
                 ModelState.Clear();
-                ViewBag.SaveMessage = "Movie is already registered, please try another one";
+                ViewBag.StatusMessage = "Movie is already registered, please try another one";
                 return View("AddMovie");
             }
 
@@ -191,12 +191,12 @@ namespace MarysMajesticMovies.Controllers
 
             if (!_db.Movie.Contains(movie))
             {
-                ViewBag.SaveMessage = "Server Error, please try again!";
+                ViewBag.StatusMessage = "Server Error, please try again!";
                 return View("AddMovie");
             }
 
             ModelState.Clear();
-            ViewBag.SaveMessage = "Movie is registered!";
+            ViewBag.StatusMessage = "Movie is registered!";
             return View("AddMovie");
         }
 
@@ -224,14 +224,14 @@ namespace MarysMajesticMovies.Controllers
         [HttpPost]
         public async Task<ActionResult> GetMovieInfo()
         {
-            string APIKey = "GetKeyFromOMDB";
+            string APIKey = "bbc7aa1d";
             string APIURL = $"http://www.omdbapi.com/?apikey={APIKey}&i={SearchMovieInput.ImdbId}&r=json";
 
             try
             {
                 HttpResponseMessage response = await client.GetAsync(APIURL);
 
-                if (response.IsSuccessStatusCode)
+                if (response.StatusCode == HttpStatusCode.OK)
                 {
                     var responsContent = await response.Content.ReadAsStringAsync();
                     var movieInfo = JsonConvert.DeserializeObject<Dictionary<string, object>>(responsContent);
@@ -249,12 +249,13 @@ namespace MarysMajesticMovies.Controllers
                 }
                 else
                 {
-                    Console.WriteLine("Something's wrong");
+                    ViewBag.StatusMessage = "Server error, please check imdb id!";
+
                 }
             }
             catch (Exception)
             {
-
+                ViewBag.StatusMessage = "Server error, please check imdb id!";
             }
 
             return View("AddMovie");
