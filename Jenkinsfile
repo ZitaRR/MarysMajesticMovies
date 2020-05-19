@@ -25,7 +25,7 @@ pipeline {
       }
        stage('Run') {
             steps {
-                bat 'START /B dotnet C:/Users/rajani/.jenkins/workspace/testProject/MarysMajesticMovies/bin/Debug/netcoreapp3.1/MarysMajesticMovies.dll'
+                bat 'START /B dotnet C:/Users/rajani/.jenkins/workspace/MM_Movies/MarysMajesticMovies/bin/Debug/netcoreapp3.1/MarysMajesticMovies.dll'
             }
         }
         stage('UI tests') {
