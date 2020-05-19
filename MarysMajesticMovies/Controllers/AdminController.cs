@@ -52,7 +52,7 @@ namespace MarysMajesticMovies.Controllers
         {
             [Required]
             [Display(Name = "Imdb id for movie info")]
-            [RegularExpression(@"^(tt)[0-9]+", ErrorMessage = "Imdb id always starts with \"tt\"")]
+            [RegularExpression(@"^(tt)[0-9]+", ErrorMessage = "Imdb id format is \"tt123...\"")]
             public string ImdbId { get; set; }
         }
 
@@ -60,30 +60,35 @@ namespace MarysMajesticMovies.Controllers
         {
             [Required]
             [Display(Name = "Imdb id")]
-            [RegularExpression(@"^(tt)[0-9]+", ErrorMessage = "Imdb id always starts with \"tt\"")]
+            [RegularExpression(@"^(tt)[0-9]+", ErrorMessage = "Imdb id format is \"tt123...\"")]
             public string ImdbId { get; set; }
             [Required]
+            [RegularExpression(@"^[^\s].*", ErrorMessage = "Title can not start with a blank space")]
             [Display(Name = "Movie titel")]
             public string Title { get; set; }
             [Required]
             [Display(Name = "Release year")]
-            [Range(1850, 2025, ErrorMessage = "The year is between 1850-2025")]
+            [Range(1850, 2025, ErrorMessage = "Release year is a number between 1850-2025")]
             public int Year { get; set; }
             [Required]
             [Display(Name = "Movie length")]
-            [Range(5, 500, ErrorMessage = "The length is between 5-500 (minutes)")]
+            [Range(5, 500, ErrorMessage = "Movie length is a number between 5-500 (minutes)")]
             public string RunTime { get; set; }
             [Required]
+            [RegularExpression(@"^[^\s].*", ErrorMessage = "Genre can not start with a blank space")]
             public string Genre { get; set; }
             [Required]
+            [RegularExpression(@"^[^\s].*", ErrorMessage = "Director can not start with a blank space")]
             public string Director { get; set; }
             [Required]
+            [RegularExpression(@"^[^\s].*", ErrorMessage = "Actors can not start with a blank space")]
             public string Actors { get; set; }
             [Required]
+            [RegularExpression(@"^[^\s].*", ErrorMessage = "Plot can not start with a blank space")]
             public string Plot { get; set; }
             [Required]
             [Display(Name = "Imdb Rating")]
-            [Range(0, 10, ErrorMessage = "The IMDb rate is between 0-10")]
+            [Range(0, 10, ErrorMessage = "IMDb Rate is a number between 0-10")]
             public double ImdbRating { get; set; }
             [Required]
             [Display(Name = "Poster url")]
@@ -94,11 +99,12 @@ namespace MarysMajesticMovies.Controllers
             [Url]
             public string TrailerUrl { get; set; }
             [Required]
-            [Range(1, 1000, ErrorMessage = "The price can only be betweeen 1-1000 kr")]
+            [Range(1, 1000, ErrorMessage = "Price is a number betweeen 1-1000")]
             public double Price { get; set; }
             [Required]
             [Display(Name = "In stock")]
-            [Range(0, 10000, ErrorMessage = "The IMDb rate is between 0-10000")]
+            [Range(0, 10000, ErrorMessage = "In stock is a number between 0-10000")]
+            [RegularExpression(@"^[0-9]*", ErrorMessage = "In stock is a number between 0-10000")]
             public int InStock { get; set; }
         }
 
@@ -170,17 +176,17 @@ namespace MarysMajesticMovies.Controllers
 
             var movie = new Movie
             {
-                ImdbId = AddMovieInput.ImdbId,
-                Title = AddMovieInput.Title,
+                ImdbId = AddMovieInput.ImdbId.Trim(),
+                Title = AddMovieInput.Title.Trim(),
                 Year = AddMovieInput.Year,
-                RunTime = AddMovieInput.RunTime,
-                Genre = AddMovieInput.Genre,
-                Director = AddMovieInput.Director,
-                Actors = AddMovieInput.Actors,
-                Plot = AddMovieInput.Plot,
+                RunTime = AddMovieInput.RunTime.Trim(),
+                Genre = AddMovieInput.Genre.Trim(),
+                Director = AddMovieInput.Director.Trim(),
+                Actors = AddMovieInput.Actors.Trim(),
+                Plot = AddMovieInput.Plot.Trim(),
                 ImdbRating = AddMovieInput.ImdbRating,
-                PosterUrl = AddMovieInput.PosterUrl,
-                TrailerUrl = AddMovieInput.TrailerUrl,
+                PosterUrl = AddMovieInput.PosterUrl.Trim(),
+                TrailerUrl = AddMovieInput.TrailerUrl.Trim(),
                 Price = AddMovieInput.Price,
                 InStock = AddMovieInput.InStock,
                 AddedToStoreDate = DateTime.Now

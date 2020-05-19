@@ -13,9 +13,12 @@
 
 <div class="register">
     <div style="color: #ff4747">@ViewBag.StatusMessage</div>
-    <h1>Search Movie Info</h1>
+    <h1>Search Movie</h1>
     <form asp-controller="Admin" asp-action="GetMovieInfo">
-        <input asp-for="SearchMovieInput.ImdbId" type="text" placeholder="Imdb id for movie info" />
+        <br />
+        <label>Search by imdb id</label>
+        <br />
+        <input asp-for="SearchMovieInput.ImdbId" type="text" placeholder="Imdb id *" />
         <span asp-validation-for="SearchMovieInput.ImdbId" style="color: #ff4747"></span>
         <br />
         <br />
@@ -38,7 +41,7 @@
         <input asp-for="AddMovieInput.Year" type="text" value="@ViewBag.Year" placeholder="Year *" />
         <span asp-validation-for="AddMovieInput.Year" style="color: #ff4747"></span>
         <br />
-        <input asp-for="AddMovieInput.RunTime" type="text" value="@ViewBag.RunTime" placeholder="Movie length *" />
+        <input asp-for="AddMovieInput.RunTime" type="text" value="@ViewBag.RunTime" placeholder="Movie length (minutes) *" />
         <span asp-validation-for="AddMovieInput.RunTime" style="color: #ff4747"></span>
         <br />
         <input asp-for="AddMovieInput.Genre" type="text" value="@ViewBag.Genre" placeholder="Genre *" />
