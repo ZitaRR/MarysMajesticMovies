@@ -140,7 +140,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
         public async Task<bool> ValidateEmail(string mail)
         {
-            string APIKey = "GetByVerimail";
+            string APIKey = "0DB0B1B6AC894883A720BEB7CA505B12";
             string APIURL = $"https://api.verimail.io/v3/verify?email={mail}&key={APIKey}";
 
             try
