@@ -6,39 +6,33 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20200417121027_SetUpDatabase.cs" />
-    <Compile Remove="Migrations\20200417121027_SetUpDatabase.Designer.cs" />
-    <Compile Remove="Migrations\20200417121228_SetUpDatabase.cs" />
-    <Compile Remove="Migrations\20200417121228_SetUpDatabase.Designer.cs" />
-    <Compile Remove="Migrations\20200420081902_AddedUserToDb.cs" />
-    <Compile Remove="Migrations\20200420081902_AddedUserToDb.Designer.cs" />
-    <Compile Remove="Migrations\20200420091526_AddDbContextToDb.cs" />
-    <Compile Remove="Migrations\20200420091526_AddDbContextToDb.Designer.cs" />
-    <Compile Remove="Migrations\20200420120037_AddDbContextToDb.cs" />
-    <Compile Remove="Migrations\20200420120037_AddDbContextToDb.Designer.cs" />
-    <Compile Remove="Migrations\20200420142801_AddedDbContextToDb.cs" />
-    <Compile Remove="Migrations\20200420142801_AddedDbContextToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200507220223_AddDbContextToDb.cs" />
+    <Compile Remove="Migrations\20200507220223_AddDbContextToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200508091129_AddDbContextToDb.cs" />
+    <Compile Remove="Migrations\20200508091129_AddDbContextToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200510225959_AddDbContextToDb.cs" />
+    <Compile Remove="Migrations\20200510225959_AddDbContextToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200510234414_AddDbContextToDb.cs" />
+    <Compile Remove="Migrations\20200510234414_AddDbContextToDb.Designer.cs" />
   </ItemGroup>
 
 
   <ItemGroup>
-    <PackageReference Include="JavaScriptEngineSwitcher.Extensions.MsDependencyInjection" Version="3.3.0" />
-    <PackageReference Include="JavaScriptEngineSwitcher.V8" Version="3.5.1" />
-    <PackageReference Include="JavaScriptEngineSwitcher.V8.Native.win-x64" Version="3.5.1" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.7" />
-    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.3" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.3" />
-    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.3" />
-    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.3">
+    <PackageReference Include="Microsoft.AspNet.WebPages" Version="3.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation" Version="3.1.4" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.2" />
-    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils" Version="3.1.2" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.3" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Utils" Version="3.1.3" />
     <PackageReference Include="React.AspNet" Version="5.2.4" />
   </ItemGroup>
 

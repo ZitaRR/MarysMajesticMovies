@@ -1,21 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.EntityFrameworkCore;
 using MarysMajesticMovies.Data;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Http;
-using React.AspNet;
-using JavaScriptEngineSwitcher.Extensions.MsDependencyInjection;
-using JavaScriptEngineSwitcher.V8;
 
 namespace MarysMajesticMovies
 {
@@ -43,19 +35,17 @@ namespace MarysMajesticMovies
             { options.SignIn.RequireConfirmedAccount = true; 
               options.Lockout = lockout;
             })
+                .AddRoles<IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+            services.AddTransient<AdministratorSeedData>();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-            services.AddReact();
-            services.AddJsEngineSwitcher(options => options.DefaultEngineName = V8JsEngine.EngineName).AddV8();
             services.AddControllersWithViews();
             services.AddRazorPages().AddRazorRuntimeCompilation();
         }
            
-            
-
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env, AdministratorSeedData adminSeeder)
         {
             if (env.IsDevelopment())
             {
@@ -69,24 +59,7 @@ namespace MarysMajesticMovies
                 app.UseHsts();
             }
 
-            app.UseReact(config =>
-            {
-                // If you want to use server-side rendering of React components,
-                // add all the necessary JavaScript files here. This includes
-                // your components as well as all of their dependencies.
-                // See http://reactjs.net/ for more information. Example:
-                //config
-                //  .AddScript("~/js/First.jsx")
-                //  .AddScript("~/js/Second.jsx");
-
-                // If you use an external build too (for example, Babel, Webpack,
-                // Browserify or Gulp), you can improve performance by disabling
-                // ReactJS.NET's version of Babel and loading the pre-transpiled
-                // scripts. Example:
-                //config
-                //  .SetLoadBabel(false)
-                //  .AddScriptWithoutTransform("~/js/bundle.server.js");
-            });
+            adminSeeder.EnsureSeedDataAsync();
 
             app.UseHttpsRedirection();
             app.UseStaticFiles();

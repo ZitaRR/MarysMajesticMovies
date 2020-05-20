@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MarysMajesticMovies.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace MarysMajesticMovies.Controllers
 {
@@ -27,6 +28,8 @@ namespace MarysMajesticMovies.Controllers
         {
             return View();
         }
+
+        
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
