@@ -23,14 +23,14 @@ namespace MarysMajesticMovies.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Movie>>> GetMovie()
         {
-            return await _db.Movie.ToListAsync();
+            return await _db.Movies.ToListAsync();
         }
 
         // GET: Movies/
         [HttpGet("{type, NoOfMovies}")]
         public async Task<IEnumerable<Movie>> GetMovieList(string type, int NoOfMovies = 25)
         {
-            var allMovies = await _db.Movie.ToListAsync();
+            var allMovies = await _db.Movies.ToListAsync();
             try
             {
                 if (type == "Action" || type == "Adventure" || type == "Comedy" || type == "Crime" || type == "Drama" || type == "Horror" || type == "Romance" || type == "Scifi")
@@ -65,7 +65,7 @@ namespace MarysMajesticMovies.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<Movie>> GetMovie(int id)
         {
-            var movie = await _db.Movie.FindAsync(id);
+            var movie = await _db.Movies.FindAsync(id);
 
             if (movie == null)
             {
@@ -77,7 +77,7 @@ namespace MarysMajesticMovies.Controllers
 
         private bool MovieExists(int id)
         {
-            return _db.Movie.Any(e => e.Id == id);
+            return _db.Movies.Any(e => e.Id == id);
         }
     }
 }
