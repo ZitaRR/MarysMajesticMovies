@@ -19,7 +19,7 @@ namespace MarysMajesticMovies.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("MarysMajesticMovies.Models.Movie", b =>
+            modelBuilder.Entity("MarysMajesticMovies.Movie", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -45,8 +45,8 @@ namespace MarysMajesticMovies.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("ImdbRating")
-                        .HasColumnType("int");
+                    b.Property<double>("ImdbRating")
+                        .HasColumnType("float");
 
                     b.Property<int>("InStock")
                         .HasColumnType("int");
@@ -62,8 +62,8 @@ namespace MarysMajesticMovies.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("Price")
-                        .HasColumnType("int");
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
 
                     b.Property<string>("RunTime")
                         .IsRequired()

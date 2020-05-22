@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MarysMajesticMovies.Migrations
 {
-    public partial class AddDbContextToDb : Migration
+    public partial class adddbcontexttodb : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -66,10 +66,10 @@ namespace MarysMajesticMovies.Migrations
                     Director = table.Column<string>(nullable: false),
                     Actors = table.Column<string>(nullable: false),
                     Plot = table.Column<string>(nullable: false),
-                    ImdbRating = table.Column<int>(nullable: false),
+                    ImdbRating = table.Column<double>(nullable: false),
                     PosterUrl = table.Column<string>(nullable: false),
                     TrailerUrl = table.Column<string>(nullable: false),
-                    Price = table.Column<int>(nullable: false),
+                    Price = table.Column<double>(nullable: false),
                     InStock = table.Column<int>(nullable: false),
                     AddedToStoreDate = table.Column<DateTime>(nullable: false),
                     NoOfOrders = table.Column<int>(nullable: false)

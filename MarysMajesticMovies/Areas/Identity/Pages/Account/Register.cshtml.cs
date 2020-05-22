@@ -43,8 +43,6 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
         public string ReturnUrl { get; set; }
 
-        public IList<AuthenticationScheme> ExternalLogins { get; set; }
-
         public class InputModel
         {
             [Required]
@@ -102,7 +100,7 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
 
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
-            returnUrl = returnUrl ?? Url.Content("~/");
+            returnUrl ??= Url.Content("~/");
             isEmailValid = true;
 
             if (ModelState.IsValid)
