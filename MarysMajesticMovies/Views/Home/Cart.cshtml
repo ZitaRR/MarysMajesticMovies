@@ -1,27 +1,11 @@
 ﻿
 
-<h1>CART</h1>
-<div class="cart-items">
-    <div class="cart-row">
-        <div class="cart-item">
-            <span class="cart-item-title">Title1</span>
-            <span class="cart-item-price">50 kr</span>
-        </div>
-        <div class="cart-qty">
-            <input class="cart-item-qty" type="number" value="1" />
-        </div>
-        <span class="cart-item-sum-price"></span>
-        <button class="btn btn-delete">Delete</button>
+<body class="container" onload="CartOnLoad()">
+    <h1>CART</h1>
+    <div class="cart-items">
     </div>
-    <div class="cart-row">
-        <div class="cart-item">
-            <span class="cart-item-title">Title2</span>
-            <span class="cart-item-price">200 kr</span>
-        </div>
-        <div class="cart-qty">
-            <input class="cart-item-qty" type="number" value="1" />
-        </div>
-        <span class="cart-item-sum-price"></span>
-        <button class="btn btn-delete">Delete</button>
-    </div>
-</div>
+    <br />
+    <div>Total price: <span class="cart-total-price"></span></div>
+    <br />
+    <a class="btn btn-to-checkout" asp-action=".">Purchase</a>
+</body>
