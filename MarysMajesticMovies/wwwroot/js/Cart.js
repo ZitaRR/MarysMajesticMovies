@@ -1,6 +1,6 @@
 ﻿//var cart = [];
 
-if (document.readyState == 'loading') {
+if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', SiteLoaded);
 }
 else {
@@ -21,19 +21,15 @@ function AddCartItem(imdbid, title, price, qty) {
 }
 
 function CartOnLoad() {
-    localStorage.clear(); //Debug clear cart storage
-    if (localStorage.length == 0) {
-        localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234567", title: "Title1", qty: 3, price: 50 }));
-        localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234568", title: "Title2", qty: 4, price: 100 }));
+    //localStorage.clear(); //Debug clear cart storage
+    if (localStorage.length === 0) {
+        localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234561", title: "Title1", qty: 1, price: 10 }));
+        localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234563", title: "Title3", qty: 3, price: 30 }));
+        localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234565", title: "Title5", qty: 5, price: 50 }));
+        localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234567", title: "Title7", qty: 7, price: 70 }));
     }   //Debug data
-    var cartItems = document.getElementsByClassName('cart-items')[0];
 
-    if (localStorage.length == 0) {
-        var emptyCart = document.createElement('div');
-        emptyCart.innerHTML = 'No movies in cart!'; // Cart item when empty
-        cartItems.append(emptyCart);
-        return;
-    }
+    var cartItems = document.getElementsByClassName('cart-items')[0];
 
     for (var i = 0; i < localStorage.length; i++) {
         var localStorageItem = JSON.parse(localStorage.getItem('cartitem' + i));
@@ -47,11 +43,15 @@ function CartOnLoad() {
                 <span class="cart-item-title">${localStorageItem.title}</span>
                 <span class="cart-item-price">${localStorageItem.price} kr</span>
             </div>
-            <div class="cart-qty">
+            <div class="cart-qty" style="max-width: 100px">
+                <label>Qty: </label>
                 <input class="cart-item-qty" type="number" value="${localStorageItem.qty}" />
             </div>
             <span class="cart-item-sum-price">${localStorageItem.price * localStorageItem.qty} kr </span>
-            <button class="btn btn-delete">Delete</button>`; // Cart item design
+            <button class="btn btn-delete">Delete</button>
+            <br />
+            <br />
+            <br />`; // Cart item design
         cartItem.innerHTML = cartItemContent;
         cartItems.append(cartItem);
     }
@@ -69,26 +69,30 @@ function CartOnLoad() {
         var input = changeQtyInputs[i];
         input.addEventListener('change', QtyChanged);
     }
+
+    document.getElementsByClassName('btn-to-clear-cart')[0].addEventListener('click', ClearCart);;
+
 }
 
 function UpdateCart() {
-    var allCartItems = document.getElementsByClassName('cart-item');
     var totalPrice = 0;
 
-    if (localStorage.length == 0) {
+    if (localStorage.length === 0) {
         var cartItems = document.getElementsByClassName('cart-items')[0];
+        cartItems.innerHTML = '';
         var emptyCart = document.createElement('div');
         emptyCart.innerHTML = 'No movies in cart!'; // Cart item when empty
         cartItems.append(emptyCart);
     }
     else {
+        var allCartItems = document.getElementsByClassName('cart-item');
+
         for (var i = 0; i < allCartItems.length; i++) {
             var localStoreItem = JSON.parse(localStorage.getItem('cartitem' + i));
             var cartItemSumPrice = (localStoreItem.price * localStoreItem.qty);
-            totalPrice += cartItemSumPrice;
-
             var cartItem = allCartItems[i];
             cartItem.getElementsByClassName('cart-item-sum-price')[0].innerHTML = cartItemSumPrice + ' kr';
+            totalPrice += cartItemSumPrice;
         }
     }
 
@@ -106,7 +110,7 @@ function DeleteCartItem(event) {
 
 function QtyChanged(event) {
     var input = event.target;
-    if (isNaN(input.value) || input.value <= 0) {
+    if (!Number.isInteger(parseFloat(input.value)) || input.value <= 0) {
         input.value = 1;
     }
 
@@ -115,5 +119,10 @@ function QtyChanged(event) {
     localStorageItem.qty = input.value;
     localStorage.setItem(cartItemId, JSON.stringify(localStorageItem));
 
+    UpdateCart();
+}
+
+function ClearCart() {
+    localStorage.clear();
     UpdateCart();
 }
