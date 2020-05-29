@@ -112,14 +112,14 @@ namespace MarysMajesticMovies.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Movie>>> GetMovie()
         {
-            return await _db.Movie.ToListAsync();
+            return await _db.Movies.ToListAsync();
         }
 
         // GET: Admin/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Movie>> GetMovie(int id)
         {
-            var movie = await _db.Movie.FindAsync(id);
+            var movie = await _db.Movies.FindAsync(id);
 
             if (movie == null)
             {
@@ -167,7 +167,7 @@ namespace MarysMajesticMovies.Controllers
         [HttpPost]
         public async Task<ActionResult> PostMovie()
         {
-            if (_db.Movie.Any(m => m.ImdbId == AddMovieInput.ImdbId))
+            if (_db.Movies.Any(m => m.ImdbId == AddMovieInput.ImdbId))
             {
                 ModelState.Clear();
                 ViewBag.StatusMessage = "Movie is already registered, please try another one";
@@ -192,10 +192,10 @@ namespace MarysMajesticMovies.Controllers
                 AddedToStoreDate = DateTime.Now
             };
 
-            _db.Movie.Add(movie);
+            _db.Movies.Add(movie);
             int saveStatus = await _db.SaveChangesAsync();
 
-            if (!_db.Movie.Contains(movie))
+            if (!_db.Movies.Contains(movie))
             {
                 ViewBag.StatusMessage = "Server Error, please try again!";
                 return View("AddMovie");
@@ -210,13 +210,13 @@ namespace MarysMajesticMovies.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Movie>> DeleteMovie(int id)
         {
-            var movie = await _db.Movie.FindAsync(id);
+            var movie = await _db.Movies.FindAsync(id);
             if (movie == null)
             {
                 return NotFound();
             }
 
-            _db.Movie.Remove(movie);
+            _db.Movies.Remove(movie);
             await _db.SaveChangesAsync();
 
             return movie;
@@ -224,7 +224,7 @@ namespace MarysMajesticMovies.Controllers
 
         private bool MovieExists(int id)
         {
-            return _db.Movie.Any(e => e.Id == id);
+            return _db.Movies.Any(e => e.Id == id);
         }
 
         [HttpPost]
