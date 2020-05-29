@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MarysMajesticMovies.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200524125749_SeedMovieTable")]
-    partial class SeedMovieTable
+    [Migration("20200529122019_AddedDbContextToDb")]
+    partial class AddedDbContextToDb
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -84,14 +84,14 @@ namespace MarysMajesticMovies.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Movie");
+                    b.ToTable("Movies");
 
                     b.HasData(
                         new
                         {
                             Id = 1,
                             Actors = "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 629, DateTimeKind.Local).AddTicks(6042),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 525, DateTimeKind.Local).AddTicks(8454),
                             Director = "Christopher Nolan",
                             Genre = "Action, Adventure, Sci-Fi",
                             ImdbId = "tt1375666",
@@ -110,7 +110,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 2,
                             Actors = "Helena Bergström, Rikard Wolff, Sven Wollter",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9099),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6119),
                             Director = "Colin Nutley",
                             Genre = "Comedy, Drama",
                             ImdbId = "tt0105916",
@@ -129,7 +129,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 3,
                             Actors = "Sam Neill, Laura Dern, Jeff Goldblum",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9136),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6164),
                             Director = "Steven Spielberg",
                             Genre = "Action, Aventure, Sci-Fi",
                             ImdbId = "tt0107290",
@@ -148,7 +148,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 4,
                             Actors = "Elijah Wood, Ian McKellen, Orlando Bloom",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9142),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6171),
                             Director = "Peter Jackson",
                             Genre = "Action, Aventure, Drama",
                             ImdbId = "tt0120737",
@@ -167,7 +167,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 5,
                             Actors = "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9147),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6175),
                             Director = "Lana Wachowski, Lilly Wachowski",
                             Genre = "Action, Sci-Fi",
                             ImdbId = "tt0133093",
@@ -186,7 +186,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 6,
                             Actors = "Hugo Weaving, Natalie Portman, Rupert Graves",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9151),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6229),
                             Director = "James McTeigue",
                             Genre = "Action, Drama, Sci-Fi",
                             ImdbId = "tt0434409",
@@ -205,7 +205,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 7,
                             Actors = "Tatsuya Fujiwara, Aki Maeda, Tarô Yamamoto",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9198),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6234),
                             Director = "Kinji Fukusaku",
                             Genre = "Adventure, Drama, Sci-Fi",
                             ImdbId = "tt0266308",
@@ -224,7 +224,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 8,
                             Actors = "Robin Williams, Robert Sean Leonard, Ethan Hawke",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9203),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6238),
                             Director = "Peter Weir",
                             Genre = "Comedy, Drama",
                             ImdbId = "tt0097165",
@@ -243,7 +243,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 9,
                             Actors = "Liam Neeson, Ralph Fiennes, Ben Kingsley",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9208),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6243),
                             Director = "Steven Spielberg",
                             Genre = "Biography, Drama, History",
                             ImdbId = "tt0108052",
@@ -262,7 +262,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 10,
                             Actors = "David Sandberg, Jorma Taccone, Steven Chew",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9212),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6247),
                             Director = "David Sandberg",
                             Genre = "Short, Action, Comedy",
                             ImdbId = "tt3472226",
@@ -281,7 +281,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 11,
                             Actors = "Jean Reno, Gary Oldman, Natalie Portman",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9219),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6252),
                             Director = "Luc Besson",
                             Genre = "Action, Crime, Drama",
                             ImdbId = "tt0110413",
@@ -300,7 +300,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 12,
                             Actors = "Elijah Wood, Ian McKellen, Viggo Mortensen",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9224),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6256),
                             Director = "Peter Jackson",
                             Genre = "Adventure, Drama, Fantasy",
                             ImdbId = "tt0167261",
@@ -319,7 +319,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 13,
                             Actors = "Elijah Wood, Viggo Mortensen, Ian McKellen",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9228),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6260),
                             Director = "Peter Jackson",
                             Genre = "Adventure, Drama, Fantasy",
                             ImdbId = "tt0167260",
@@ -338,7 +338,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 14,
                             Actors = "Arnold Schwarzenegger, Linda Hamilton, Michael Biehn",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9233),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6264),
                             Director = "James Cameron",
                             Genre = "Action, Sci-Fi",
                             ImdbId = "tt0088247",
@@ -357,7 +357,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 15,
                             Actors = "Scarlett Johansson, Morgan Freeman, Min-Sik Choi",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9237),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6269),
                             Director = "Luc Besson",
                             Genre = "Action, Sci-Fi, Thriller",
                             ImdbId = "tt2872732",
@@ -376,7 +376,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 16,
                             Actors = "Brad Pitt, Edward Norton, Helena Bonham Carter",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9242),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6273),
                             Director = "David Fincher",
                             Genre = "Drama",
                             ImdbId = "tt0137523",
@@ -395,7 +395,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 17,
                             Actors = "Russel Crowe, Joaquin Phoenix, Connie Nielsen",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9246),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6276),
                             Director = "Ridley Scott",
                             Genre = "Action, Drama, Adventure",
                             ImdbId = "tt0172495",
@@ -414,7 +414,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 18,
                             Actors = "Elisabeth Moss, Oliver Jackson-Cohen, Harriet Dyer",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9251),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6280),
                             Director = "Leigh Whannell",
                             Genre = "Horror, Mystery, Sci-Fi",
                             ImdbId = "tt1051906",
@@ -433,7 +433,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 19,
                             Actors = "Ward Horton, Annabelle Wallis, Alfre Woodard",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9255),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6285),
                             Director = "John R. Leonetti",
                             Genre = "Horror, Mystery, Thriller",
                             ImdbId = "tt3322940",
@@ -452,7 +452,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 20,
                             Actors = "Patrick Wilson, Vera Farmiga, Ron Livingston",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9259),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6289),
                             Director = "James Wan",
                             Genre = "Horror, Mystery, Thriller",
                             ImdbId = "tt1457767",
@@ -471,7 +471,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 21,
                             Actors = "Kang-ho Son, Sun-Kyun Lee, Yeo-Yeong Jo",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9264),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6292),
                             Director = "Bong Joon Ho",
                             Genre = "Comedy, Drama, Thriller",
                             ImdbId = "tt6751668",
@@ -490,7 +490,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 22,
                             Actors = "Jesse Eisenberg, Mark Ruffalo, Woody Harrelson",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9268),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6296),
                             Director = "Louis Leterrier",
                             Genre = "Crime, Mystery, Thriller",
                             ImdbId = "tt1670345",
@@ -509,7 +509,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 23,
                             Actors = "Robert Downey Jr., Chris Evans, Scarlett Johansson",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9272),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6300),
                             Director = "Joss Whedon",
                             Genre = "Action, Adventure, Sci-Fi",
                             ImdbId = "tt0848228",
@@ -528,7 +528,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 24,
                             Actors = "Chris Hemsworth, Tom Hiddleston, Cate Blanchett",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9277),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6304),
                             Director = "Taika Waititi",
                             Genre = "Action, Adventure, Comedy",
                             ImdbId = "tt3501632",
@@ -547,7 +547,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 25,
                             Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9282),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6309),
                             Director = "Chris Columbus",
                             Genre = "Adventure, Family, Fantasy",
                             ImdbId = "tt0241527",
@@ -566,7 +566,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 26,
                             Actors = "Hitoshi Takagi, Noriko Hidaka, Chika Sakamoto",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9286),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6312),
                             Director = "Hayao Miyazaki",
                             Genre = "Animation, Family, Fantasy",
                             ImdbId = "tt0096283",
@@ -585,7 +585,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 27,
                             Actors = "Chieko Baishô, Takuya Kimura, Tatsuya Gashûin",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9290),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6316),
                             Director = "Hayao Miyazaki",
                             Genre = "Animation, Adventure, Family",
                             ImdbId = "tt0347149",
@@ -604,7 +604,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 28,
                             Actors = "Rumi Hiiragi, Miyu Irino, Mari Natsuki",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9294),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6320),
                             Director = "Hayao Miyazaki",
                             Genre = "Animation, Adventure, Family",
                             ImdbId = "tt0245429",
@@ -623,7 +623,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 29,
                             Actors = "Björn A. Ling, Kjell Bergqvist, Tuva Novotny",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9299),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6324),
                             Director = "Ulf Malmros",
                             Genre = "Comedy, Drama, Romance",
                             ImdbId = "tt1359421",
@@ -642,7 +642,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 30,
                             Actors = "Tuva Novotny, Jonas Rimeika, Björn A. Ling",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9303),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6328),
                             Director = "Ulf Malmros",
                             Genre = "Comedy, Crime, Mystery",
                             ImdbId = "tt0323998",
@@ -661,7 +661,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 31,
                             Actors = "Tom Hardy, Charlize Theron, Nicholas Hoult",
-                            AddedToStoreDate = new DateTime(2020, 5, 24, 14, 57, 48, 631, DateTimeKind.Local).AddTicks(9307),
+                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6332),
                             Director = "George Miller",
                             Genre = "Action, Adventure, Sci-Fi",
                             ImdbId = "tt1392190",
@@ -676,6 +676,69 @@ namespace MarysMajesticMovies.Migrations
                             TrailerUrl = "https://www.youtube.com/watch?v=hEJnMQG9ev8",
                             Year = 2015
                         });
+                });
+
+            modelBuilder.Entity("MarysMajesticMovies.Order", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<DateTime>("OrderDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<DateTime>("ShippingDate")
+                        .HasColumnType("datetime2");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("UserId1")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<double>("Weight")
+                        .HasColumnType("float");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId1");
+
+                    b.ToTable("Orders");
+                });
+
+            modelBuilder.Entity("MarysMajesticMovies.OrderRow", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("MovieId")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("OrderId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderLine")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Price")
+                        .HasColumnType("float");
+
+                    b.Property<double>("PricePerQty")
+                        .HasColumnType("float");
+
+                    b.Property<int>("Qty")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MovieId");
+
+                    b.HasIndex("OrderId");
+
+                    b.ToTable("OrderRows");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -908,6 +971,26 @@ namespace MarysMajesticMovies.Migrations
                         .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("User");
+                });
+
+            modelBuilder.Entity("MarysMajesticMovies.Order", b =>
+                {
+                    b.HasOne("MarysMajesticMovies.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId1");
+                });
+
+            modelBuilder.Entity("MarysMajesticMovies.OrderRow", b =>
+                {
+                    b.HasOne("MarysMajesticMovies.Movie", "Movie")
+                        .WithMany()
+                        .HasForeignKey("MovieId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MarysMajesticMovies.Order", "Order")
+                        .WithMany("OrderRows")
+                        .HasForeignKey("OrderId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

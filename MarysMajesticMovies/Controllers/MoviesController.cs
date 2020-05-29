@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MarysMajesticMovies.Data;
 using MarysMajesticMovies.Models;
+using System.Web.Helpers;
 
 namespace MarysMajesticMovies.Controllers
 {
@@ -28,37 +29,37 @@ namespace MarysMajesticMovies.Controllers
 
         // GET: Movies/
         [HttpGet("{type, NoOfMovies}")]
-        public async Task<IEnumerable<Movie>> GetMovieList(string type, int NoOfMovies = 25)
+        public async Task<ActionResult> GetMovieList(string type, int NoOfMovies = 25)
         {
             var allMovies = await _db.Movies.ToListAsync();
             try
             {
                 if (type == "Action" || type == "Adventure" || type == "Comedy" || type == "Crime" || type == "Drama" || type == "Horror" || type == "Romance" || type == "Scifi")
                 {
-                    return allMovies.Where(m => m.Genre.Contains(type)).OrderBy(m => m.Title).Take(NoOfMovies);
+                    return Json(allMovies.Where(m => m.Genre.Contains(type)).OrderBy(m => m.Title).Take(NoOfMovies));
                 }
                 else if (type == "TopRated")
                 {
-                    return allMovies.OrderByDescending(m => m.ImdbRating).Take(NoOfMovies);
+                    return Json(allMovies.OrderByDescending(m => m.ImdbRating).Take(NoOfMovies));
                 }
                 else if (type == "MostBought")
                 {
-                    return allMovies.OrderByDescending(m => m.NoOfOrders).Take(NoOfMovies);
+                    return Json(allMovies.OrderByDescending(m => m.NoOfOrders).Take(NoOfMovies));
                 }
                 else if (type == "LastAdded")
                 {
-                    return allMovies.OrderByDescending(m => m.AddedToStoreDate).Take(NoOfMovies);
+                    return Json(allMovies.OrderByDescending(m => m.AddedToStoreDate).Take(NoOfMovies));
                 }
                 else if (type == "NewestMovies")
                 {
-                    return allMovies.OrderByDescending(m => m.Year).Take(NoOfMovies);
+                    return Json(allMovies.OrderByDescending(m => m.Year).Take(NoOfMovies));
                 }
             }
             catch (Exception)
             {                
             }
 
-            return Enumerable.Empty<Movie>();
+            return Json(Enumerable.Empty<Movie>());
         }
 
         // GET: Movies/5
