@@ -40,7 +40,7 @@ function getRandomImage() {
 
 }
 
-function randomImg(){
+function randomImg() {
     let all = []
     let collection = {}
     for (let i = 1; i < 55; i++) {

@@ -5,6 +5,7 @@ scroll-behavior: smooth;
 margin-top: 20px;
 margin-left: 0;
 margin-right: 0;
+
 display: flex;
 flex-direction: column;
 animation: fadeInAnimation ease 3s;
@@ -757,7 +758,6 @@ src: url(Roboto-Light.ttf);
 font-family: "Roboto-Medium";
 src: url(Roboto-Medium.ttf);
 }
-
 
 @media screen and (max-width: 992px) and (min-width: 500px) {
 
