@@ -13,7 +13,7 @@ animation-fill-mode: forwards;
 }
 
 .border{
-    border: 2px solid red;
+border: 2px solid red;
 }
 
 ::-webkit-scrollbar {
@@ -506,97 +506,97 @@ transition: 0.4s;
 }
 
 .trailer {
-    width: 400px;
-    height: 233px;
+width: 400px;
+height: 233px;
 }
 
 .overlay {
-    margin-top: 80px;
-    display: none;
-    height: 100%;
-    width: 100%;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0, 0.93);
-    overflow-x: hidden;
-    font-family: "Roboto-Medium";
-    margin-bottom: 300px;
+margin-top: 80px;
+display: none;
+height: 100%;
+width: 100%;
+position: fixed;
+z-index: 1;
+left: 0;
+top: 0;
+background-color: rgb(0,0,0);
+background-color: rgba(0,0,0, 0.93);
+overflow-x: hidden;
+font-family: "Roboto-Medium";
+margin-bottom: 300px;
 }
 
 
 .overlay-content {
-    display: flex;
-    position: relative;
-    top: 10%;
-    margin: auto auto 300px;
-    width: 46%;
+display: flex;
+position: relative;
+top: 10%;
+margin: auto auto 300px;
+width: 46%;
 }
 
 .overlay-content-left {
-    width: 400px; 
-    margin-left: 15px;
-    order: 2;
+width: 400px; 
+margin-left: 15px;
+order: 2;
 }
 
 
 .thumbnail-price {
-    display: flex;
-    flex-direction: column;
-    order: 1;
-    margin-left: 50px;
-    width: 254px;
+display: flex;
+flex-direction: column;
+order: 1;
+margin-left: 50px;
+width: 254px;
 }
 
 .overlay-price-button, .overlay-price-button:focus {
-    text-align: center;
-    background-color: #252525;
-    border-radius: 5px;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    padding: 15px;
-    order: 3;
-    color: palegreen;
-    font-size: 1em;
-    border: none;   
-    cursor: pointer;
+text-align: center;
+background-color: #252525;
+border-radius: 5px;
+-webkit-border-radius: 5px;
+-moz-border-radius: 5px;
+padding: 15px;
+order: 3;
+color: palegreen;
+font-size: 1em;
+border: none;   
+cursor: pointer;
 }
 
 .overlay-price-button:hover {
-    background-color: palegreen;
-    color: #252525;    
-    transition-duration: 0.4s;   
-    content: none;
+background-color: palegreen;
+color: #252525;    
+transition-duration: 0.4s;   
+content: none;
 }
 
 .overlay-price-button:active {
-    background-color: lightseagreen;
-    color: #252525;
-    transition-duration: 0s;   
+background-color: lightseagreen;
+color: #252525;
+transition-duration: 0s;   
 }
 
 
 .overlay a {
-  float: left;
-  padding: 8px;
-  text-decoration: none;
-  font-size: 36px;
-  color: #818181;
-  display: block; 
-  transition: 0.3s;
+float: left;
+padding: 8px;
+text-decoration: none;
+font-size: 36px;
+color: #818181;
+display: block; 
+transition: 0.3s;
 }
 
 .overlay a:hover, .overlay a:focus {
-  color: #f1f1f1;
+color: #f1f1f1;
 }
 
 .overlay .closebtn {
-  position: absolute;
-  top: 20px;
-  right: 45px;
-  font-size: 60px;
+position: absolute;
+top: 20px;
+right: 45px;
+font-size: 60px;
 }
 
 .banner {
