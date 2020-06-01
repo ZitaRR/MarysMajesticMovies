@@ -5,7 +5,6 @@ scroll-behavior: smooth;
 margin-top: 20px;
 margin-left: 0;
 margin-right: 0;
-
 display: flex;
 flex-direction: column;
 animation: fadeInAnimation ease 3s;
@@ -759,7 +758,31 @@ font-family: "Roboto-Medium";
 src: url(Roboto-Medium.ttf);
 }
 
+
 @media screen and (max-width: 992px) and (min-width: 500px) {
+
+#mainpagebody {
+transition: margin-left 0.2s;
+padding: 20px;
+}
+
+@media screen and (max-height: 450px) {
+.sidebar {
+padding-top: 15px;
+}
+
+.sidebar a {
+font-size: 18px;
+}
+}
+
+header {
+height: 7.5em;
+}
+footer {
+height: 7.5em;
+display: none;
+}
 
     #mainpagebody {
         transition: margin-left 0.2s;
@@ -789,9 +812,6 @@ src: url(Roboto-Medium.ttf);
 
     .overlay-content-right {
         width: 10%;
-    }
-
-    .overlay-price-background {
     }
 
     .trailer {
@@ -910,4 +930,68 @@ src: url(Roboto-Medium.ttf);
             margin: auto;
         }
 
+.logo-small {
+margin-left: auto;
+margin-right: 350px;
+margin-top: 14px;
+width: 84px;
+height: 84px;
+}
+
+.menubutton {
+font-size: 1.4em;
+
+}
+.footertitle {
+font-size: 1.7em;
+}
+.footeruser {
+font-size: 1.7em;
+margin-right: 15px;
+}
+.userpanel {
+padding: 1.7em;
+margin-top: 2em;
+}
+.userpanel:hover {
+padding: 1.7em;
+margin-top: 2em;
+}
+.menu {
+display: none;
+margin-top: 0.5em;
+padding: 0.8em;
+flex: 1;
+}
+.mobile-menu {
+display: block;
+}
+.modal-content {
+width: 100%;
+}
+section {
+margin-top: 10em;
+height: 100vh;
+overflow-x: hidden;
+}
+
+.register {
+width: 100%;
+}
+
+.register {
+font-size: 2em;
+}
+
+input.search[type=text] {
+font-size: 2em;
+background-position: 26px 15px;
+padding: 5px 75px 5px 5px;
+margin: auto;
+}
+
+input.search[type=text]:focus {
+padding: 5px 30px 5px 5px;
+margin: auto;
+}
 }

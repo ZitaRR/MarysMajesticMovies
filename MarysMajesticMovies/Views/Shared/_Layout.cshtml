@@ -85,10 +85,11 @@
             <button class="menubutton">CATEGORIES</button>
             @if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
             {
-            <button class="menubutton" asp-controller="Admin" asp-action="AddMovie" asp-area="">ADD MOVIE</button>
+                <a class="menubutton" asp-controller="Admin" asp-action="AddMovie" asp-area="">ADD MOVIE</a>
             }
         </div>
-        <button class="cart-button" asp-action="Cart"></button>
+
+        <button class="userpanel" onclick="openNavRight()"></button>
     </header>
     <div class="container">
         <main role="main" style="padding: 7.5em 1em">
