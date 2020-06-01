@@ -1,4 +1,7 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Identity
+@inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+<!DOCTYPE html>
 <html>
 <head>
     <title>Mary's Majestic Movies</title>
@@ -138,6 +141,10 @@
             <button class="menubutton" type="button" value="POPULAR">POPULAR</button>
             <button class="menubutton" type="button" value="MOVIE DEALS">MOVIE DEALS</button>
             <button class="menubutton">CATEGORIES</button>
+            @if (SignInManager.IsSignedIn(User) && User.IsInRole("Administrator"))
+            {
+                <a class="menubutton" asp-controller="Admin" asp-action="AddMovie" asp-area="">ADD MOVIE</a>
+            }
         </div>
 
         <button class="userpanel" onclick="openNavRight()"></button>
@@ -157,6 +164,7 @@
         <div class="footeruser">
             <p><a>Log in</a> or <a>create an account</a></p>
         </div>
+        <partial name="_LoginPartial" />
     </footer>
 </body>
 </html>
