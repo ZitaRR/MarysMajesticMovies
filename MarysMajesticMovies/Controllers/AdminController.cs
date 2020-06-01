@@ -24,7 +24,6 @@ namespace MarysMajesticMovies.Controllers
         private readonly ApplicationDbContext _db;
         static HttpClient client = new HttpClient();
 
-
         public AdminController(ApplicationDbContext db)
         {
             _db = db;
