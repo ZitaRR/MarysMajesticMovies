@@ -129,25 +129,25 @@ function randomImg4(){
 }
 
 function randomImg5(){
-        let all = []
-        let collection = {}
-        for (let i = 1; i < 55; i++) {
-            var randomNumber = Math.floor(Math.random() * 25) + 1;
-            var imgName = randomNumber + ".jpg";
-            let src = "DesignDrafts/Filmer/" + imgName;
-            all.push([src, randomNumber])
-            if (!collection[randomNumber]) {
-                collection[randomNumber] = 1; 
-            } else {
-                collection[randomNumber] += 1;
-            }
+    let all = []
+    let collection = {}
+    for (let i = 1; i < 55; i++) {
+        var randomNumber = Math.floor(Math.random() * 25) + 1;
+        var imgName = randomNumber + ".jpg";
+        let src = "DesignDrafts/Filmer/" + imgName;
+        all.push([src, randomNumber])
+        if (!collection[randomNumber]) {
+            collection[randomNumber] = 1; 
+        } else {
+            collection[randomNumber] += 1;
         }
-        for (image of all) {
-            src = image[0]
-            randomNumber = image[1]
-            percent = collection[randomNumber] / 25
-            document.getElementById("latest").innerHTML += ` <span onclick="openMov()"><img class="movie" src=${src} /></span>`
-        }
+    }
+    for (image of all) {
+        src = image[0]
+        randomNumber = image[1]
+        percent = collection[randomNumber] / 25
+        document.getElementById("latest").innerHTML += ` <span onclick="openMov()"><img class="movie" src=${src} /></span>`
+    }
 }
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
