@@ -29,7 +29,7 @@ namespace MarysMajesticMovies.Controllers
             homePageLists.Latest = GetMovieList("Latest", 10);
             homePageLists.Popular = GetMovieList("Popular", 10);
             homePageLists.Action = GetMovieList("Action", 10);
-            homePageLists.Drama = GetMovieList("Drama", 10);
+            homePageLists.Oldies = GetMovieList("Oldies", 10);
 
             return View(homePageLists);
         }

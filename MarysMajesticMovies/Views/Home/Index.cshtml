@@ -17,7 +17,7 @@
                         <div id="latest">
                             @foreach (var item in Model.Latest)
                             {
-                            <a asp-action="Detail" asp-route-id="@item.Id"><img src="@item.PosterUrl" class="movie"></a>
+                                <a asp-action="Detail" asp-route-id="@item.Id"><img src="@item.PosterUrl" class="movie"></a>
                             }
                         </div>
                     </div>
@@ -32,42 +32,56 @@
                         <div id="popular">
                             @foreach (var item in Model.Popular)
                             {
-                                <img src="@item.PosterUrl" class="movie"/>
+                                <a asp-action="Detail" asp-route-id="@item.Id"><img src="@item.PosterUrl" class="movie"></a>
                             }
                         </div>
                     </div>
                 </div>
             </div>
-            @*<div id="moviedeals-section">
-            <h1>Movie Deals</h1>
-            <div class="scroll">
-                <div class="movies">
-                    <div id="movieDeals">
-
+            <div id="blockbuster-section">
+                <button id="BBAL" class="movie-arrow-left" onclick="bbScrollL()"></button>
+                <button id="BBAR" class="movie-arrow-right" onclick="bbScrollR()"></button>
+                <h1>Blockbusters</h1>
+                <div class="scroll">
+                    <div class="movies" id="bb-scroll">
+                        <div id="blockbusters">
+                            @foreach (var item in Model.Blockbuster)
+                            {
+                                <a asp-action="Detail" asp-route-id="@item.Id"><img src="@item.PosterUrl" class="movie"></a>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>*@
-            @*<h1>Just for You</h1>
-        <div class="scroll">
-            <div class="movies">
-                <div id="justForYou"></div>
+            <div id="action-section">
+                <button id="AAL" class="movie-arrow-left" onclick="aaScrollL()"></button>
+                <button id="AAR" class="movie-arrow-right" onclick="aaScrollR()"></button>
+                <h1>Action</h1>
+                <div class="scroll">
+                    <div class="movies" id="aa-scroll">
+                        <div id="action">
+                            @foreach (var item in Model.Action)
+                            {
+                                <a asp-action="Detail" asp-route-id="@item.Id"><img src="@item.PosterUrl" class="movie"></a>
+                            }
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>*@
-        <div id="blockbuster-section">
-            <button id="BBAL" class="movie-arrow-left" onclick="bbScrollL()"></button>
-            <button id="BBAR" class="movie-arrow-right" onclick="bbScrollR()"></button>
-            <h1>Blockbusters</h1>
-            <div class="scroll">
-                <div class="movies" id="bb-scroll">
-                    <div id="blockbusters">
-                        @foreach (var item in Model.Blockbuster)
-                        {
-                            <img src="@item.PosterUrl" class="movie">
-                        }
+            <div id="oldies-section">
+                <button id="OLL" class="movie-arrow-left" onclick="olScrollL()"></button>
+                <button id="OLR" class="movie-arrow-right" onclick="olScrollR()"></button>
+                <h1>Oldies</h1>
+                <div class="scroll">
+                    <div class="movies" id="ol-scroll">
+                        <div id="oldies">
+                            @foreach (var item in Model.Oldies)
+                            {
+                                <a asp-action="Detail" asp-route-id="@item.Id"><img src="@item.PosterUrl" class="movie"></a>
+                            }
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        </div>
-</body>
+    </body>
