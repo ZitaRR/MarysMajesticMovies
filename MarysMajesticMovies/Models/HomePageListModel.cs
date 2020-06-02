@@ -15,4 +15,4 @@ namespace MarysMajesticMovies.Models
 
     }
 }
-}
+

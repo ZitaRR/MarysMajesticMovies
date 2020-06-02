@@ -115,8 +115,9 @@ namespace MarysMajesticMovies.Controllers
                     return allMovies.OrderByDescending(m => m.AddedToStoreDate).Take(NoOfMovies).ToList();
                 }
             }
-            catch (Exception)
+            catch (Exception error)
             {
+                Console.WriteLine(error);
             }
 
             return new List<Movie>();
