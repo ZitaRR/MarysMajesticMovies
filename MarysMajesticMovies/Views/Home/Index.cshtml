@@ -40,8 +40,8 @@
                 <img src="~/DesignDrafts/logo.png" class="logo" />
             </div>
             <div id="latest-section">
-                <button id="arrow-left" class="movie-arrow-left" onclick="leftScrollFunction()"></button>
-                <button id="arrow-right" class="movie-arrow-right" onclick="rightScrollFunction()"></button>
+                <button id="LAL" class="movie-arrow-left" onclick="latestScrollL()"></button>
+                <button id="LAR" class="movie-arrow-right" onclick="latestScrollR()"></button>
                 <h1>Latest</h1>
                 <div class="scroll">
                     <div class="movies" id="latest-scroll">
@@ -55,11 +55,11 @@
                 </div>
             </div>
             <div id="popular-section">
-                @*<button id="arrow-left" class="movie-arrow-left" onclick="leftScrollFunction()"></button>
-                <button id="arrow-right" class="movie-arrow-right" onclick="rightScrollFunction()"></button>*@
+                <button id="PAL" class="movie-arrow-left" onclick="popularScrollL()"></button>
+                <button id="PAR" class="movie-arrow-right" onclick="popularScrollR()"></button>
                 <h1>Popular</h1>
                 <div class="scroll">
-                    <div class="movies" id="latest-scroll">
+                    <div class="movies" id="popular-scroll">
                         <div id="popular">
                             @foreach (var item in Model.Popular)
                             {
@@ -85,20 +85,20 @@
                 <div id="justForYou"></div>
             </div>
         </div>*@
-            <div id="blockbuster-section">
-                @*<button id="arrow-left" class="movie-arrow-left" onclick="leftScrollFunction()"></button>
-                <button id="arrow-right" class="movie-arrow-right" onclick="rightScrollFunction()"></button>*@
-                <h1>Blockbusters</h1>
-                <div class="scroll">
-                    <div class="movies" id="latest-scroll">
-                        <div id="blockbusters">
-                            @foreach (var item in Model.Blockbuster)
-                            {
-                                <img src="@item.PosterUrl" width="254" />
-                            }
-                        </div>
+        <div id="blockbuster-section">
+            <button id="BBAL" class="movie-arrow-left" onclick="bbScrollL()"></button>
+            <button id="BBAR" class="movie-arrow-right" onclick="bbScrollR()"></button>
+            <h1>Blockbusters</h1>
+            <div class="scroll">
+                <div class="movies" id="bb-scroll">
+                    <div id="blockbusters">
+                        @foreach (var item in Model.Blockbuster)
+                        {
+                            <img src="@item.PosterUrl" width="254" />
+                        }
                     </div>
                 </div>
             </div>
+        </div>
         </div>
 </body>

@@ -173,21 +173,60 @@ function closeMov() {
     document.getElementById("arrow-right").style.display = "block";
 }
 
-function rightScrollFunction() {
+function latestScrollR() {
     var elmnt = document.getElementById("latest-scroll");
     elmnt.scrollLeft += 500;
     if (elmnt.scrollLeft == 0) {
-        document.getElementById("arrow-left").style.display = "block";
+        document.getElementById("LAL").style.display = "block";
     }
 }
 
-function leftScrollFunction() {
+function latestScrollL() {
     var elmnt = document.getElementById("latest-scroll");
     if (elmnt.scrollLeft > 0) {
-        document.getElementById("arrow-left").style.display = "block";
+        document.getElementById("LAL").style.display = "block";
         elmnt.scrollLeft -= 500;
     } else {
-        document.getElementById("arrow-left").style.display = "none";
+        document.getElementById("LAL").style.display = "none";
     }
     
 }
+
+function popularScrollR() {
+    var elmnt = document.getElementById("popular-scroll");
+    elmnt.scrollLeft += 500;
+    if (elmnt.scrollLeft == 0) {
+        document.getElementById("PAL").style.display = "block";
+    }
+}
+
+function popularScrollL() {
+    var elmnt = document.getElementById("popular-scroll");
+    if (elmnt.scrollLeft > 0) {
+        document.getElementById("PAL").style.display = "block";
+        elmnt.scrollLeft -= 500;
+    } else {
+        document.getElementById("PAL").style.display = "none";
+    }
+
+}
+
+function bbScrollR() {
+    var elmnt = document.getElementById("bb-scroll");
+    elmnt.scrollLeft += 500;
+    if (elmnt.scrollLeft == 0) {
+        document.getElementById("BBAL").style.display = "block";
+    }
+}
+
+function bbScrollL() {
+    var elmnt = document.getElementById("bb-scroll");
+    if (elmnt.scrollLeft > 0) {
+        document.getElementById("BBAL").style.display = "block";
+        elmnt.scrollLeft -= 500;
+    } else {
+        document.getElementById("BBAL").style.display = "none";
+    }
+
+}
+
