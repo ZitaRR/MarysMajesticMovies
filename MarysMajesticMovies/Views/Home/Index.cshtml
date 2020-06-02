@@ -4,37 +4,6 @@
 }
 
     <body>
-        <div id="myNav" class="overlay">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeMov()">&times;</a>
-            <div class="overlay-content">
-                <div class="thumbnail-price">
-                    <div class="overlay-thumbnail">
-                        <img class="movie" width="254px" src="DesignDrafts/Filmer/4.jpg" />
-                    </div>
-                    <button class="overlay-price-button">50 SEK</button>
-                </div>
-                <div class="overlay-content-left">
-                    <p2>Tills frank skiljer oss åt</p2>
-                    <iframe class="trailer" src="https://www.youtube.com/embed/kCzdX3ewrjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    <p>Rating: <p1>5,2 / 10</p1></p>
-                    <p>Genre: <p1>Comedy</p1></p>
-                    <p>Release year: <p1>2019</p1></p>
-                    <p>
-                        Plot: <p1>
-                            Vera's 40th birthday is approaching and she's tired of being single.
-                            <br />
-                            She's desperately in love with her colleague Frank, but her tired life-coach wants her to lower her standards,
-                            lock-on a more resonable guy and get on with her life.
-                        </p1>
-                    </p>
-                    <p>Director: <p1>Leif Lindblom</p1></p>
-                    <p>Writer: <p1>Peter Magnusson</p1></p>
-                    <p>Cast: <p1>Liv Mjönes, Peter Magnusson, Erik Johansson..</p1></p>
-                    <p>Length: <p1>1h 43m</p1></p>
-                    <p>Quantity: <p1>34 / 40</p1></p>
-                </div>
-            </div>
-        </div>
         <div class="content">
             <div class="banner">
                 <img src="~/DesignDrafts/logo.png" class="logo" />
@@ -48,7 +17,7 @@
                         <div id="latest">
                             @foreach (var item in Model.Latest)
                             {
-                                <img src="@item.PosterUrl" class="movie">
+                            <a asp-action="Detail" asp-route-id="@item.Id"><img src="@item.PosterUrl" class="movie"></a>
                             }
                         </div>
                     </div>

@@ -122,5 +122,18 @@ namespace MarysMajesticMovies.Controllers
 
             return new List<Movie>();
         }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Detail(int? id)
+        {
+            var movie = await _db.Movies.FindAsync(id);
+
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            return View(movie);
+        }
     }
 }
