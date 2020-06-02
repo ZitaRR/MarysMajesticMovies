@@ -48,7 +48,7 @@
                         <div id="latest">
                             @foreach (var item in Model.Latest)
                             {
-                                <img src="@item.PosterUrl" width="254" />
+                                <img src="@item.PosterUrl" class="movie">
                             }
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                         <div id="popular">
                             @foreach (var item in Model.Popular)
                             {
-                                <img src="@item.PosterUrl" width="254" />
+                                <img src="@item.PosterUrl" class="movie"/>
                             }
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                     <div id="blockbusters">
                         @foreach (var item in Model.Blockbuster)
                         {
-                            <img src="@item.PosterUrl" width="254" />
+                            <img src="@item.PosterUrl" class="movie">
                         }
                     </div>
                 </div>

@@ -455,12 +455,16 @@ overflow-y: clip;
 -webkit-overflow-scrolling: touch;
 position: relative;
 white-space: nowrap;
+padding-top: 10px;
+padding-bottom: 10px;
 }
 
 .movie {
 margin-right: 10px;
 transition: transform .2s;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.1), 0 0 5px 0 rgba(0,0,0,0.1);
+width: 254px;
+height: 100%;
 }
 
 .movie:hover {
