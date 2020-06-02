@@ -89,7 +89,7 @@ namespace MarysMajesticMovies.Controllers
             [Required]
             [Display(Name = "Imdb Rating")]
             [Range(0, 10, ErrorMessage = "IMDb Rate is a number between 0-10")]
-            public double ImdbRating { get; set; }
+            public string ImdbRating { get; set; }
             [Required]
             [Display(Name = "Poster url")]
             [Url]
@@ -184,7 +184,7 @@ namespace MarysMajesticMovies.Controllers
                 Director = AddMovieInput.Director.Trim(),
                 Actors = AddMovieInput.Actors.Trim(),
                 Plot = AddMovieInput.Plot.Trim(),
-                ImdbRating = AddMovieInput.ImdbRating,
+                ImdbRating = Convert.ToDouble(AddMovieInput.ImdbRating.Replace(".",",")),
                 PosterUrl = AddMovieInput.PosterUrl.Trim(),
                 TrailerUrl = AddMovieInput.TrailerUrl.Trim(),
                 Price = AddMovieInput.Price,
@@ -261,7 +261,7 @@ namespace MarysMajesticMovies.Controllers
             }
             catch (Exception)
             {
-                ViewBag.StatusMessage = "Server error, please check imdb id!";
+                ViewBag.StatusMessage = "Server error, please contact support!";
             }
 
             return View("AddMovie");
