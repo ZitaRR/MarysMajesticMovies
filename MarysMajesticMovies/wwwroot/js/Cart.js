@@ -19,7 +19,8 @@ function AddCartItem() {
     var imdbid = movieItem.id;
     var title = movieItem.innerHTML;
     var price = document.getElementsByClassName('btn-add-cart-item')[0].innerHTML.replace(' SEK', '');
-    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid, title, price, qty: 1 }));
+    var posterurl = document.getElementsByClassName('movie')[0].getAttribute('src');
+    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid, title, price, qty: 1, posterurl }));
 }
 
 function CartOnLoad() {
@@ -30,6 +31,7 @@ function CartOnLoad() {
     //    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234565", title: "Title5", qty: 5, price: 50 }));
     //    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234567", title: "Title7", qty: 7, price: 70 }));
     //}   //Debug seed cart data
+    localStorage.posterurl;
 
     var cartItems = document.getElementsByClassName('cart-items')[0];
 
@@ -40,12 +42,12 @@ function CartOnLoad() {
         cartItem.classList.add('cart-item');
         cartItem.id = localStorage.key(i);
 
-        var cartItemContent = `
+        cartItem.innerHTML = `
         <div class="cart-item-box">
             <div class="cart-item-info">               
                 <div class="cart-item-ind-title"><span class="cart-item-title">${localStorageItem.title}</span></div>
                 <div class="cart-item-ind-price"><span class="cart-item-price">${localStorageItem.price} kr</span></div>  
-                <img src="/DesignDrafts/Filmer/17.jpg" width="125px"/>
+                <img src=${localStorageItem.posterurl} width="125px"/>
             </div>
             <div class="qty-price">
                 <div class="cart-qty" style="max-width: 100px">
@@ -58,7 +60,7 @@ function CartOnLoad() {
             </div>
             </div>
         </div>`;
-        cartItem.innerHTML = cartItemContent;
+        //cartItem.innerHTML = cartItemContent;
         cartItems.append(cartItem);
     }
 
@@ -108,8 +110,8 @@ function UpdateCart() {
 function DeleteCartItem(event) {
     var buttonClicked = event.target;
 
-    localStorage.removeItem(buttonClicked.parentElement.id);
-    buttonClicked.parentElement.remove();
+    localStorage.removeItem(buttonClicked.parentElement.parentElement.parentElement.parentElement.id);
+    buttonClicked.parentElement.parentElement.parentElement.parentElement.remove();
 
     UpdateCart();
 }
@@ -120,7 +122,7 @@ function QtyChanged(event) {
         input.value = 1;
     }
 
-    var cartItemId = input.parentElement.parentElement.id;
+    var cartItemId = input.parentElement.parentElement.parentElement.parentElement.id;
     var localStorageItem = JSON.parse(localStorage.getItem(cartItemId));
     localStorageItem.qty = input.value;
     localStorage.setItem(cartItemId, JSON.stringify(localStorageItem));
