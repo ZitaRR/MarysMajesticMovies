@@ -41,19 +41,23 @@ function CartOnLoad() {
         cartItem.id = localStorage.key(i);
 
         var cartItemContent = `
-            <div class="cart-item-info">
-                <span class="cart-item-title">${localStorageItem.title}</span>
-                <span class="cart-item-price">${localStorageItem.price} kr</span>
+        <div class="cart-item-box">
+            <div class="cart-item-info">               
+                <div class="cart-item-ind-title"><span class="cart-item-title">${localStorageItem.title}</span></div>
+                <div class="cart-item-ind-price"><span class="cart-item-price">${localStorageItem.price} kr</span></div>  
+                <img src="/DesignDrafts/Filmer/17.jpg" width="125px"/>
             </div>
-            <div class="cart-qty" style="max-width: 100px">
-                <label>Qty: </label>
-                <input class="cart-item-qty" type="number" value="${localStorageItem.qty}" />
+            <div class="qty-price">
+                <div class="cart-qty" style="max-width: 100px">
+                    <label>Qty: </label>
+                    <input class="cart-item-qty" type="number" value="${localStorageItem.qty}" />
+                </div>
+                <div class="cart-pricing">
+                <span class="cart-item-sum-price">${localStorageItem.price * localStorageItem.qty} kr </span>
+                <button class="btn btn-delete">Delete</button>
             </div>
-            <span class="cart-item-sum-price">${localStorageItem.price * localStorageItem.qty} kr </span>
-            <button class="btn btn-delete">Delete</button>
-            <br />
-            <br />
-            <br />`; // Cart item design
+            </div>
+        </div>`;
         cartItem.innerHTML = cartItemContent;
         cartItems.append(cartItem);
     }
