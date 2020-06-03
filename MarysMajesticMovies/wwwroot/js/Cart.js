@@ -1,33 +1,35 @@
-﻿//var cart = [];
+﻿//if (document.readyState === 'loading') {
+//    document.addEventListener('DOMContentLoaded', SiteLoaded);
+//}
+//else {
+//    SiteLoaded();
+//}
 
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', SiteLoaded);
+//function SiteLoaded() {
+//}
+
+function DetailedPageOnLoad() {
+    console.log('test1')
+    var button = document.getElementsByClassName('btn-add-cart-item')[0];
+    button.addEventListener('click', AddCartItem);
 }
-else {
-    SiteLoaded();
-}
 
-function SiteLoaded() {
-    var addCartItemButtons = document.getElementsByClassName('btn-add');
-    for (var i = 0; i < addCartItemButtons.length; i++) {
-        var button = addCartItemButtons[i];
-        button.addEventListener('click', AddCartItem);
-    }
-}
-
-function AddCartItem(imdbid, title, price, qty) {
-
-    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: imdbid, title: title, price: price, qty: qty }));
+function AddCartItem() {
+    var movieItem = document.getElementsByClassName('movie-titel')[0];
+    var imdbid = movieItem.id;
+    var title = movieItem.innerHTML;
+    var price = document.getElementsByClassName('btn-add-cart-item')[0].innerHTML.replace(' SEK', '');
+    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid, title, price, qty: 1 }));
 }
 
 function CartOnLoad() {
     //localStorage.clear(); //Debug clear cart storage
-    if (localStorage.length === 0) {
-        localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234561", title: "Title1", qty: 1, price: 10 }));
-        localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234563", title: "Title3", qty: 3, price: 30 }));
-        localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234565", title: "Title5", qty: 5, price: 50 }));
-        localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234567", title: "Title7", qty: 7, price: 70 }));
-    }   //Debug seed cart data
+    //if (localStorage.length === 0) {
+    //    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234561", title: "Title1", qty: 1, price: 10 }));
+    //    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234563", title: "Title3", qty: 3, price: 30 }));
+    //    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234565", title: "Title5", qty: 5, price: 50 }));
+    //    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234567", title: "Title7", qty: 7, price: 70 }));
+    //}   //Debug seed cart data
 
     var cartItems = document.getElementsByClassName('cart-items')[0];
 
