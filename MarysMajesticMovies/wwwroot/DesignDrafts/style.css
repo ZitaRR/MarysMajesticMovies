@@ -169,6 +169,23 @@ padding-bottom: 10px;
 
 }
 
+.cart-icon {
+    font-size: 5em;
+}
+
+.amount-in-cart {
+    color: white;
+    padding: 0 5px 0 5px;
+    background-color: red;
+    border: 2px white solid;
+    border-radius: 15px;
+    position: absolute;
+    font-size: 1em;
+    font-family: "Roboto-Regular";
+    float: right;
+    right: 6em;
+    top: 3.6em;
+}
 
 .register {
 border-radius: 10px;
@@ -448,11 +465,8 @@ border: 0;
 background-image: url(cart-hover.png);
 background-repeat: no-repeat;
 margin-top: 0.9em;
-margin-right: 3em;
 height: 56px;
-width: 56px;
 float: right;
-
 }
 
 
@@ -963,12 +977,25 @@ display: none;
     .cart-button {
         padding: 1.7em;
         margin-top: 2.4em;
+        margin-right: 0;
+
     }
 
-        .cart-button:hover {
-            padding: 1.7em;
-            margin-top: 2.4em;
-        }
+    .cart-button:hover {
+        padding: 1.7em;
+        margin-top: 2.4em;
+    }
+
+    .amount-in-cart {
+        padding: 0 7px 0 7px;
+        border-radius: 20px;
+        position: absolute;
+        font-size: 1.4em;
+        font-family: "Roboto-Regular";
+        float: right;
+        right: 4.4em;
+        top: 3.4em;
+    }
 
     .menu {
         display: none;
