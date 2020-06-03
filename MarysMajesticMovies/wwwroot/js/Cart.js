@@ -27,16 +27,16 @@ function CartOnLoad() {
         localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234563", title: "Title3", qty: 3, price: 30 }));
         localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234565", title: "Title5", qty: 5, price: 50 }));
         localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234567", title: "Title7", qty: 7, price: 70 }));
-    }   //Debug data
+    }   //Debug seed cart data
 
     var cartItems = document.getElementsByClassName('cart-items')[0];
 
     for (var i = 0; i < localStorage.length; i++) {
-        var localStorageItem = JSON.parse(localStorage.getItem('cartitem' + i));
+        var localStorageItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
 
         var cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
-        cartItem.id = 'cartitem' + i;
+        cartItem.id = localStorage.key(i);
 
         var cartItemContent = `
             <div class="cart-item-info">
@@ -88,8 +88,8 @@ function UpdateCart() {
         var allCartItems = document.getElementsByClassName('cart-item');
 
         for (var i = 0; i < allCartItems.length; i++) {
-            var localStoreItem = JSON.parse(localStorage.getItem('cartitem' + i));
-            var cartItemSumPrice = (localStoreItem.price * localStoreItem.qty);
+            var localStorageCartItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
+            var cartItemSumPrice = (localStorageCartItem.price * localStorageCartItem.qty);
             var cartItem = allCartItems[i];
             cartItem.getElementsByClassName('cart-item-sum-price')[0].innerHTML = cartItemSumPrice + ' kr';
             totalPrice += cartItemSumPrice;
