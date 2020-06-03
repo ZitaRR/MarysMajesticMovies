@@ -103,6 +103,17 @@ iframe{
 overflow:hidden;
 }
 
+.cart {
+border-radius: 10px;
+font-family: "Roboto-Regular";
+font-size: 1em;
+width: 50%;
+margin: auto auto 150px auto;
+padding-top: 15px;
+padding-bottom: 15px;
+text-align: center;
+}
+
 
 .register {
 border-radius: 10px;
