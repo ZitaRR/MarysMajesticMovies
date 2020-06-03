@@ -115,18 +115,18 @@ namespace MarysMajesticMovies.Controllers
         }
 
         // GET: Admin/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Movie>> GetMovie(int id)
-        {
-            var movie = await _db.Movies.FindAsync(id);
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<Movie>> GetMovie(int id)
+        //{
+        //    var movie = await _db.Movies.FindAsync(id);
 
-            if (movie == null)
-            {
-                return NotFound();
-            }
+        //    if (movie == null)
+        //    {
+        //        return NotFound();
+        //    }
 
-            return movie;
-        }
+        //    return movie;
+        //}
 
         // PUT: Admin/5
         // To protect from overposting attacks, enable the specific properties you want to bind to, for

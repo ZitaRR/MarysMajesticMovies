@@ -1,0 +1,31 @@
+﻿@model MarysMajesticMovies.Movie
+
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<div id="myNav">
+    <div class="overlay-content">
+        <div class="thumbnail-price">
+            <div class="overlay-thumbnail">
+                <img class="movie" width="254px" src="@Html.DisplayFor(model => model.PosterUrl)" />
+            </div>
+            <button class="overlay-price-button">@Html.DisplayFor(model => model.Price) SEK</button>
+        </div>
+        <div class="overlay-content-left">
+            <p2>@Html.DisplayFor(model => model.Title)</p2>
+            <iframe class="trailer" src="@Html.DisplayFor(model => model.TrailerUrl)" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <p>Rating: <p1>@Html.DisplayFor(model => model.ImdbRating)</p1></p>
+            <p>Genre: <p1>@Html.DisplayFor(model => model.Genre)</p1></p>
+            <p>Release year: <p1>@Html.DisplayFor(model => model.Year)</p1></p>
+            <p>Plot: <p1>@Html.DisplayFor(model => model.Plot)</p1></p>
+            <p>Director: <p1>@Html.DisplayFor(model => model.Director)</p1></p>
+            <p>Cast: <p1>@Html.DisplayFor(model => model.Actors)</p1></p>
+            <p>Length: <p1>@Html.DisplayFor(model => model.RunTime)</p1></p>
+        </div>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
