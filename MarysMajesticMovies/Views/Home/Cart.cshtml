@@ -1,14 +1,13 @@
 ﻿
 
     <body class="container" onload="CartOnLoad()">
+        <div class="banner5"></div>
         <div class="cart">
             <h1>CART</h1>
             <div class="cart-items">
             </div>
-            <div>Total price: <span class="cart-total-price"></span></div>
-            <br />
-            <a class="btn btn-to-checkout" asp-action=".">Purchase</a>
-            <br />
             <button class="btn btn-to-clear-cart">Clear Cart</button>
+            <a class="overlay-price-button" asp-action=".">Purchase</a>
+            <div class="total-price">Total price: <span class="cart-total-price"></span></div>
         </div>
     </body>

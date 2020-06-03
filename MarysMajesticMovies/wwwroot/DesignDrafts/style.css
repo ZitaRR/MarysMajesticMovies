@@ -104,14 +104,69 @@ overflow:hidden;
 }
 
 .cart {
+display: flex;
+flex-direction: column;
 border-radius: 10px;
 font-family: "Roboto-Regular";
 font-size: 1em;
 width: 50%;
-margin: auto auto 150px auto;
+margin: 10px auto 150px auto;
 padding-top: 15px;
 padding-bottom: 15px;
 text-align: center;
+}
+
+
+.cart h1 {
+text-align: center;
+
+}
+
+.cart-item-box {
+background-color: #252525;
+border: none;
+border-radius: 10px;
+margin-bottom: 15px;
+text-align: left;
+display: flex;
+flex-direction: row;
+}
+
+.cart-item-info {
+padding: 10px;
+text-align: left;
+flex: 1;
+top: 0;
+}
+
+.cart-item-ind-title {
+}
+
+.cart-item-ind-price {
+}
+
+.cart-qty {
+flex: 2;
+padding: 15px;
+}
+
+.cart-pricing {
+text-align: right;
+padding: 10px;
+}
+
+.qty-price {
+display: flex;
+flex-direction: column;
+}
+
+.total-price {
+padding-top: 10px;
+padding-bottom: 10px;
+}
+
+.btn btn-to-clear-cart {
+
 }
 
 
@@ -614,6 +669,7 @@ font-size: 60px;
 
 .banner {
 background-image: url(banner.jpg);
+background-repeat: no-repeat;
 height: 350px;
 border: 1px solid black;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.1), 0 0 5px 0 rgba(0,0,0,0.1);
@@ -621,6 +677,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.1), 0 0 5px 0 rgba(0,0,0,0.1);
 
 .banner2 {
 background-image: url(banner2.jpg);
+background-repeat: no-repeat;
 height: 350px;
 border: 1px solid black;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.1), 0 0 5px 0 rgba(0,0,0,0.1);
@@ -628,6 +685,7 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.1), 0 0 5px 0 rgba(0,0,0,0.1);
 
 .banner3 {
 background-image: url(banner3.jpg);
+background-repeat: no-repeat;
 height: 350px;
 border: 1px solid black;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.1), 0 0 5px 0 rgba(0,0,0,0.1);
@@ -635,10 +693,20 @@ box-shadow: 0 12px 16px 0 rgba(0,0,0,0.1), 0 0 5px 0 rgba(0,0,0,0.1);
 
 .banner4 {
 background-image: url(banner4.jpg);
+background-repeat: no-repeat;
 height: 350px;
 border: 1px solid black;
 box-shadow: 0 12px 16px 0 rgba(0,0,0,0.1), 0 0 5px 0 rgba(0,0,0,0.1);
 }
+
+.banner5 {
+background-image: url(banner5.jpg);
+background-repeat: no-repeat;
+height: 350px;
+border: 1px solid black;
+box-shadow: 0 12px 16px 0 rgba(0,0,0,0.1), 0 0 5px 0 rgba(0,0,0,0.1);
+}
+
 
 .logo-small {
 margin-left: 25px;
