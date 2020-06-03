@@ -1,47 +1,104 @@
-﻿@{
+﻿@model MarysMajesticMovies.Models.HomePageListModel;
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<body onload="randomImg(), randomImg2(), randomImg3(), randomImg4(), randomImg5()">
-    <div class="content">
-        <div class="banner">
-            <img src="~/DesignDrafts/logo.png" class="logo" />
-        </div>
-        <div id="latest-section">
-            <h1>Latest</h1>
-            <div class="scroll">
-                <div class="movies">
-                    <div id="latest"></div>
+    <body>
+        <div id="myNav" class="overlay">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeMov()">&times;</a>
+            <div class="overlay-content">
+                <div class="thumbnail-price">
+                    <div class="overlay-thumbnail">
+                        <img class="movie" width="254px" src="DesignDrafts/Filmer/4.jpg" />
+                    </div>
+                    <button class="overlay-price-button">50 SEK</button>
+                </div>
+                <div class="overlay-content-left">
+                    <p2>Tills frank skiljer oss åt</p2>
+                    <iframe class="trailer" src="https://www.youtube.com/embed/kCzdX3ewrjY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <p>Rating: <p1>5,2 / 10</p1></p>
+                    <p>Genre: <p1>Comedy</p1></p>
+                    <p>Release year: <p1>2019</p1></p>
+                    <p>
+                        Plot: <p1>
+                            Vera's 40th birthday is approaching and she's tired of being single.
+                            <br />
+                            She's desperately in love with her colleague Frank, but her tired life-coach wants her to lower her standards,
+                            lock-on a more resonable guy and get on with her life.
+                        </p1>
+                    </p>
+                    <p>Director: <p1>Leif Lindblom</p1></p>
+                    <p>Writer: <p1>Peter Magnusson</p1></p>
+                    <p>Cast: <p1>Liv Mjönes, Peter Magnusson, Erik Johansson..</p1></p>
+                    <p>Length: <p1>1h 43m</p1></p>
+                    <p>Quantity: <p1>34 / 40</p1></p>
                 </div>
             </div>
         </div>
-        <div id="popular-section">
-            <h1>Popular</h1>
-            <div class="scroll">
-                <div class="movies">
-                    <div id="popular"></div>
+        <div class="content">
+            <div class="banner">
+                <img src="~/DesignDrafts/logo.png" class="logo" />
+            </div>
+            <div id="latest-section">
+                <button id="LAL" class="movie-arrow-left" onclick="latestScrollL()"></button>
+                <button id="LAR" class="movie-arrow-right" onclick="latestScrollR()"></button>
+                <h1>Latest</h1>
+                <div class="scroll">
+                    <div class="movies" id="latest-scroll">
+                        <div id="latest">
+                            @foreach (var item in Model.Latest)
+                            {
+                                <img src="@item.PosterUrl" class="movie">
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <div id="moviedeals-section">
+            <div id="popular-section">
+                <button id="PAL" class="movie-arrow-left" onclick="popularScrollL()"></button>
+                <button id="PAR" class="movie-arrow-right" onclick="popularScrollR()"></button>
+                <h1>Popular</h1>
+                <div class="scroll">
+                    <div class="movies" id="popular-scroll">
+                        <div id="popular">
+                            @foreach (var item in Model.Popular)
+                            {
+                                <img src="@item.PosterUrl" class="movie"/>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @*<div id="moviedeals-section">
             <h1>Movie Deals</h1>
             <div class="scroll">
                 <div class="movies">
-                    <div id="movieDeals"></div>
+                    <div id="movieDeals">
+
+                    </div>
                 </div>
             </div>
-        </div>
-        <h1>Just for You</h1>
+        </div>*@
+            @*<h1>Just for You</h1>
         <div class="scroll">
             <div class="movies">
                 <div id="justForYou"></div>
             </div>
-        </div>
-        <h1>Blockbusters</h1>
-        <div class="scroll">
-            <div class="movies">
-                <div id="blockbusters"></div>
+        </div>*@
+        <div id="blockbuster-section">
+            <button id="BBAL" class="movie-arrow-left" onclick="bbScrollL()"></button>
+            <button id="BBAR" class="movie-arrow-right" onclick="bbScrollR()"></button>
+            <h1>Blockbusters</h1>
+            <div class="scroll">
+                <div class="movies" id="bb-scroll">
+                    <div id="blockbusters">
+                        @foreach (var item in Model.Blockbuster)
+                        {
+                            <img src="@item.PosterUrl" class="movie">
+                        }
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
+        </div>
 </body>

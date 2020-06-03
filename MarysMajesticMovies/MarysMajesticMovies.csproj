@@ -14,6 +14,12 @@
     <Compile Remove="Migrations\20200510225959_AddDbContextToDb.Designer.cs" />
     <Compile Remove="Migrations\20200510234414_AddDbContextToDb.cs" />
     <Compile Remove="Migrations\20200510234414_AddDbContextToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200518131301_adddbcontexttodb.cs" />
+    <Compile Remove="Migrations\20200518131301_adddbcontexttodb.Designer.cs" />
+    <Compile Remove="Migrations\20200522083920_AddDbContextToDb.cs" />
+    <Compile Remove="Migrations\20200522083920_AddDbContextToDb.Designer.cs" />
+    <Compile Remove="Migrations\20200524125749_SeedMovieTable.cs" />
+    <Compile Remove="Migrations\20200524125749_SeedMovieTable.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

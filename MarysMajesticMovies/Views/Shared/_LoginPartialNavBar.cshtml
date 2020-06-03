@@ -4,7 +4,7 @@
 
 @if (SignInManager.IsSignedIn(User))
         {
-        <p>You're logged in as @UserManager.GetUserAsync(User).Result.FirstName!</p>
+        <p>@UserManager.GetUserAsync(User).Result.FirstName!</p>
             <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
                 <button type="submit" class="menubutton">Logout</button>
             </form>

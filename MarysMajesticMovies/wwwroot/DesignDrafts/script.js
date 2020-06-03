@@ -1,4 +1,4 @@
-var id = 25; // Total number of images
+var id = 25;
 var ranimage = new Array("Filmer/1.jpg","Filmer/2.jpg","Filmer/3.jpg","Filmer/4.jpg"
 ,"Filmer5/.jpg","Filmer/6.jpg","Filmer/7.jpg","Filmer/8.jpg","Filmer/9.jpg"
 ,"Filmer/10.jpg","Filmer/11.jpg","Filmer/12.jpg","Filmer/13.jpg","Filmer/14.jpg"
@@ -40,114 +40,114 @@ function getRandomImage() {
 
 }
 
-function randomImg(){
-        let all = []
-        let collection = {}
-        for (let i = 1; i < 55; i++) {
-            var randomNumber = Math.floor(Math.random() * 25) + 1;
-            var imgName = randomNumber + ".jpg";
-            let src = "DesignDrafts/Filmer/" + imgName;
-            all.push([src, randomNumber])
-            if (!collection[randomNumber]) {
-                collection[randomNumber] = 1; // this will be for count the appearances of the img
-            } else {
-                collection[randomNumber] += 1;
-            }
+function randomImg() {
+    let all = []
+    let collection = {}
+    for (let i = 1; i < 55; i++) {
+        var randomNumber = Math.floor(Math.random() * 25) + 1;
+        var imgName = randomNumber + ".jpg";
+        let src = "DesignDrafts/Filmer/" + imgName;
+        all.push([src, randomNumber])
+        if (!collection[randomNumber]) {
+            collection[randomNumber] = 1;
+        } else {
+            collection[randomNumber] += 1;
         }
-        for (image of all) {
-            src = image[0]
-            randomNumber = image[1]
-            percent = collection[randomNumber] / 25
-            document.getElementById("popular").innerHTML += `<img class="movie" src=${src} />`
-        }
+    }
+    for (image of all) {
+        src = image[0]
+        randomNumber = image[1]
+        percent = collection[randomNumber] / 25
+        document.getElementById("popular").innerHTML += `<img class="movie" src=${src} />`
+    }
 }
 
 function randomImg2(){
-        let all = []
-        let collection = {}
-        for (let i = 1; i < 55; i++) {
-            var randomNumber = Math.floor(Math.random() * 25) + 1;
-            var imgName = randomNumber + ".jpg";
-            let src = "DesignDrafts/Filmer/" + imgName;
-            all.push([src, randomNumber])
-            if (!collection[randomNumber]) {
-                collection[randomNumber] = 1; // this will be for count the appearances of the img
-            } else {
-                collection[randomNumber] += 1;
-            }
+    let all = []
+    let collection = {}
+    for (let i = 1; i < 55; i++) {
+        var randomNumber = Math.floor(Math.random() * 25) + 1;
+        var imgName = randomNumber + ".jpg";
+        let src = "DesignDrafts/Filmer/" + imgName;
+        all.push([src, randomNumber])
+        if (!collection[randomNumber]) {
+            collection[randomNumber] = 1;
+        } else {
+            collection[randomNumber] += 1;
         }
-        for (image of all) {
-            src = image[0]
-            randomNumber = image[1]
-            percent = collection[randomNumber] / 25
-            document.getElementById("blockbusters").innerHTML += `<img class="movie" src=${src} />`
-        }
+    }
+    for (image of all) {
+        src = image[0]
+        randomNumber = image[1]
+        percent = collection[randomNumber] / 25
+        document.getElementById("blockbusters").innerHTML += `<img class="movie" src=${src} />`
+    }
 }
 
 function randomImg3(){
-        let all = []
-        let collection = {}
-        for (let i = 1; i < 55; i++) {
-            var randomNumber = Math.floor(Math.random() * 25) + 1;
-            var imgName = randomNumber + ".jpg";
-            let src = "DesignDrafts/Filmer/" + imgName;
-            all.push([src, randomNumber])
-            if (!collection[randomNumber]) {
-                collection[randomNumber] = 1; // this will be for count the appearances of the img
-            } else {
-                collection[randomNumber] += 1;
-            }
+    let all = []
+    let collection = {}
+    for (let i = 1; i < 55; i++) {
+        var randomNumber = Math.floor(Math.random() * 25) + 1;
+        var imgName = randomNumber + ".jpg";
+        let src = "DesignDrafts/Filmer/" + imgName;
+        all.push([src, randomNumber])
+        if (!collection[randomNumber]) {
+            collection[randomNumber] = 1;
+        } else {
+            collection[randomNumber] += 1;
         }
-        for (image of all) {
-            src = image[0]
-            randomNumber = image[1]
-            percent = collection[randomNumber] / 25
-            document.getElementById("justForYou").innerHTML += `<img class="movie" src=${src} />`
-        }
+    }
+    for (image of all) {
+        src = image[0]
+        randomNumber = image[1]
+        percent = collection[randomNumber] / 25
+        document.getElementById("justForYou").innerHTML += `<img class="movie" src=${src} />`
+    }
 }
 
 function randomImg4(){
-        let all = []
-        let collection = {}
-        for (let i = 1; i < 55; i++) {
-            var randomNumber = Math.floor(Math.random() * 25) + 1;
-            var imgName = randomNumber + ".jpg";
-            let src = "DesignDrafts/Filmer/" + imgName;
-            all.push([src, randomNumber])
-            if (!collection[randomNumber]) {
-                collection[randomNumber] = 1; // this will be for count the appearances of the img
-            } else {
-                collection[randomNumber] += 1;
-            }
+    let all = []
+    let collection = {}
+    for (let i = 1; i < 55; i++) {
+        var randomNumber = Math.floor(Math.random() * 25) + 1;
+        var imgName = randomNumber + ".jpg";
+        let src = "DesignDrafts/Filmer/" + imgName;
+        all.push([src, randomNumber])
+        if (!collection[randomNumber]) {
+            collection[randomNumber] = 1; 
+        } else {
+            collection[randomNumber] += 1;
         }
-        for (image of all) {
-            src = image[0]
-            randomNumber = image[1]
-            percent = collection[randomNumber] / 25
-            document.getElementById("movieDeals").innerHTML += `<img class="movie" src=${src} />`
-        }
+    }
+    for (image of all) {
+        src = image[0]
+        randomNumber = image[1]
+        percent = collection[randomNumber] / 25
+        document.getElementById("movieDeals").innerHTML += `<img class="movie" src=${src} />`
+    }
 }
 
 function randomImg5(){
-        let all = []
-        let collection = {}
-        for (let i = 1; i < 55; i++) {
-            var randomNumber = Math.floor(Math.random() * 25) + 1;
-            var imgName = randomNumber + ".jpg";
-            let src = "DesignDrafts/Filmer/" + imgName;
-            all.push([src, randomNumber])
-            if (!collection[randomNumber]) {
-                collection[randomNumber] = 1; // this will be for count the appearances of the img
-            } else {
-                collection[randomNumber] += 1;
-            }
+    let all = []
+    let collection = {}
+    for (let i = 1; i < 55; i++) {
+        var randomNumber = Math.floor(Math.random() * 25) + 1;
+        var imgName = randomNumber + ".jpg";
+        let src = "DesignDrafts/Filmer/" + imgName;
+        all.push([src, randomNumber])
+        if (!collection[randomNumber]) {
+            collection[randomNumber] = 1; 
+        } else {
+            collection[randomNumber] += 1;
         }
-        for (image of all) {
-            src = image[0]
-            randomNumber = image[1]
-            percent = collection[randomNumber] / 25
-            document.getElementById("latest").innerHTML += `<img class="movie" src=${src} />`
-        }
+    }
+    for (image of all) {
+        src = image[0]
+        randomNumber = image[1]
+        percent = collection[randomNumber] / 25
+        document.getElementById("latest").innerHTML += ` <span onclick="openMov()"><img class="movie" src=${src} /></span>`
+    }
 }
 function openNav() {
     document.getElementById("mySidebar").style.width = "250px";
@@ -159,12 +159,74 @@ function closeNav() {
     document.getElementById("mainpagebody").style.marginLeft = "0";
 }
 
-function openNavRight() {
-    document.getElementById("mySidebarRight").style.width = "250px";
-    document.getElementById("mainpagebody").style.marginRight = "250px";
+function openMov() {
+    document.getElementById("myNav").style.display = "block";
+    document.getElementById("mainpagebody").style.overflow = "hidden";
+    document.getElementById("arrow-left").style.display = "none";
+    document.getElementById("arrow-right").style.display = "none";
 }
 
-function closeNavRight() {
-    document.getElementById("mySidebarRight").style.width = "0";
-    document.getElementById("mainpagebody").style.marginRight = "0";
+function closeMov() {
+    document.getElementById("myNav").style.display = "none";
+    document.getElementById("mainpagebody").style.overflow = "auto";
+    document.getElementById("arrow-left").style.display = "block";
+    document.getElementById("arrow-right").style.display = "block";
 }
+
+function latestScrollR() {
+    var elmnt = document.getElementById("latest-scroll");
+    elmnt.scrollLeft += 500;
+    if (elmnt.scrollLeft == 0) {
+        document.getElementById("LAL").style.display = "block";
+    }
+}
+
+function latestScrollL() {
+    var elmnt = document.getElementById("latest-scroll");
+    if (elmnt.scrollLeft > 0) {
+        document.getElementById("LAL").style.display = "block";
+        elmnt.scrollLeft -= 500;
+    } else {
+        document.getElementById("LAL").style.display = "none";
+    }
+    
+}
+
+function popularScrollR() {
+    var elmnt = document.getElementById("popular-scroll");
+    elmnt.scrollLeft += 500;
+    if (elmnt.scrollLeft == 0) {
+        document.getElementById("PAL").style.display = "block";
+    }
+}
+
+function popularScrollL() {
+    var elmnt = document.getElementById("popular-scroll");
+    if (elmnt.scrollLeft > 0) {
+        document.getElementById("PAL").style.display = "block";
+        elmnt.scrollLeft -= 500;
+    } else {
+        document.getElementById("PAL").style.display = "none";
+    }
+
+}
+
+function bbScrollR() {
+    var elmnt = document.getElementById("bb-scroll");
+    elmnt.scrollLeft += 500;
+    if (elmnt.scrollLeft == 0) {
+        document.getElementById("BBAL").style.display = "block";
+    }
+}
+
+function bbScrollL() {
+    var elmnt = document.getElementById("bb-scroll");
+    if (elmnt.scrollLeft > 0) {
+        document.getElementById("BBAL").style.display = "block";
+        elmnt.scrollLeft -= 500;
+    } else {
+        document.getElementById("BBAL").style.display = "none";
+    }
+
+}
+
