@@ -95,7 +95,7 @@ namespace MarysMajesticMovies.Controllers
             public string PosterUrl { get; set; }
             [Required]
             [Display(Name = "Trailer url")]
-            [Url]
+            [RegularExpression(@"^(https://www.youtube.com/watch\?v=)[\S]+", ErrorMessage = "Trailer URL format is \"https://www.youtube.com/watch?v=...\"")]
             public string TrailerUrl { get; set; }
             [Required]
             [Range(1, 1000, ErrorMessage = "Price is a number betweeen 1-1000")]
@@ -185,7 +185,7 @@ namespace MarysMajesticMovies.Controllers
                 Plot = AddMovieInput.Plot.Trim(),
                 ImdbRating = Convert.ToDouble(AddMovieInput.ImdbRating.Replace(".",",")),
                 PosterUrl = AddMovieInput.PosterUrl.Trim(),
-                TrailerUrl = AddMovieInput.TrailerUrl.Trim(),
+                TrailerUrl = AddMovieInput.TrailerUrl.Trim().Replace("watch?v=", "embed/"),
                 Price = AddMovieInput.Price,
                 InStock = AddMovieInput.InStock,
                 AddedToStoreDate = DateTime.Now
@@ -229,7 +229,7 @@ namespace MarysMajesticMovies.Controllers
         [HttpPost]
         public async Task<ActionResult> GetMovieInfo()
         {
-            string APIKey = "GetFromOmdb";
+            string APIKey = "bbc7aa1d";
             string APIURL = $"http://www.omdbapi.com/?apikey={APIKey}&i={SearchMovieInput.ImdbId}&r=json";
 
             try

@@ -31,38 +31,40 @@ function AddCartItem() {
 }
 
 function CartOnLoad() {
+    var totalPrice = 0;
     var cartItems = document.getElementsByClassName('cart-items')[0];
 
     for (var i = 0; i < localStorage.length; i++) {
         var localStorageItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
-
         var cartItem = document.createElement('div');
         cartItem.classList.add('cart-item');
         cartItem.id = localStorage.key(i);
+        var cartItemSumPrice = (localStorageItem.price * localStorageItem.qty);
 
-        cartItem.innerHTML = `
-        <div class="cart-item-box">
-            <div class="cart-item-info">               
-                <div class="cart-item-ind-title"><span class="cart-item-title">${localStorageItem.title}</span></div>
-                <div class="cart-item-ind-price"><span class="cart-item-price">${localStorageItem.price} kr</span></div>  
-                <img src=${localStorageItem.posterurl} width="125px"/>
-            </div>
-            <div class="qty-price">
-                <div class="cart-qty" style="max-width: 100px">
-                    <label>Qty: </label>
-                    <input class="cart-item-qty" type="number" value="${localStorageItem.qty}" />
+        cartItem.innerHTML =
+            `<div class="cart-item-box">
+                <div class="cart-item-info">               
+                    <div class="cart-item-ind-title"><span class="cart-item-title">${localStorageItem.title}</span></div>
+                    <div class="cart-item-ind-price"><span class="cart-item-price">${localStorageItem.price} kr</span></div>  
+                    <img src=${localStorageItem.posterurl} width="125px"/>
                 </div>
-                <div class="cart-pricing">
-                <span class="cart-item-sum-price">${localStorageItem.price * localStorageItem.qty} kr </span>
-                <button class="btn btn-delete">Delete</button>
-            </div>
-            </div>
-        </div>`;
-        //cartItem.innerHTML = cartItemContent;
+                <div class="qty-price">
+                    <div class="cart-qty" style="max-width: 100px">
+                        <label>Qty: </label>
+                        <input class="cart-item-qty" type="number" value="${localStorageItem.qty}" />
+                    </div>
+                    <div class="cart-pricing">
+                        <span class="cart-item-sum-price">${cartItemSumPrice} kr </span>
+                        <button class="btn btn-delete">Delete</button>
+                    </div>
+                </div>
+            </div>`;
+
         cartItems.append(cartItem);
+        totalPrice += cartItemSumPrice;
     }
 
-    UpdateCart();
+    document.getElementsByClassName('cart-total-price')[0].innerHTML = totalPrice + ' kr';
 
     var deleteCartItemButtons = document.getElementsByClassName('btn-delete');
     for (var i = 0; i < deleteCartItemButtons.length; i++) {
