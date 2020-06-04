@@ -1,38 +1,35 @@
-﻿//if (document.readyState === 'loading') {
-//    document.addEventListener('DOMContentLoaded', SiteLoaded);
-//}
-//else {
-//    SiteLoaded();
-//}
+﻿window.addEventListener("load", () => {
+    UpdateCartButton();
+});
 
-//function SiteLoaded() {
-//}
+function UpdateCartButton() {
+    document.getElementsByClassName('amount-in-cart')[0].innerHTML = localStorage.length;
+}
 
 function DetailedPageOnLoad() {
-    console.log('test1')
     var button = document.getElementsByClassName('btn-add-cart-item')[0];
     button.addEventListener('click', AddCartItem);
 }
 
 function AddCartItem() {
     var movieItem = document.getElementsByClassName('movie-titel')[0];
+    for (var i = 0; i < localStorage.length; i++) {
+        if (movieItem.id === localStorage.key(i)) {
+            var localStorageItem = JSON.parse(localStorage.getItem(movieItem.id));
+            localStorageItem.qty++;
+            localStorage.setItem(localStorage.key(i), JSON.stringify(localStorageItem));
+            return;
+        }
+    }
     var imdbid = movieItem.id;
     var title = movieItem.innerHTML;
     var price = document.getElementsByClassName('btn-add-cart-item')[0].innerHTML.replace(' SEK', '');
     var posterurl = document.getElementsByClassName('movie')[0].getAttribute('src');
-    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid, title, price, qty: 1, posterurl }));
+    localStorage.setItem(imdbid, JSON.stringify({ title, price, qty: 1, posterurl }));
+    document.getElementsByClassName('amount-in-cart')[0].innerHTML = localStorage.length;
 }
 
 function CartOnLoad() {
-    //localStorage.clear(); //Debug clear cart storage
-    //if (localStorage.length === 0) {
-    //    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234561", title: "Title1", qty: 1, price: 10 }));
-    //    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234563", title: "Title3", qty: 3, price: 30 }));
-    //    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234565", title: "Title5", qty: 5, price: 50 }));
-    //    localStorage.setItem('cartitem' + localStorage.length, JSON.stringify({ imdbid: "tt1234567", title: "Title7", qty: 7, price: 70 }));
-    //}   //Debug seed cart data
-    localStorage.posterurl;
-
     var cartItems = document.getElementsByClassName('cart-items')[0];
 
     for (var i = 0; i < localStorage.length; i++) {
@@ -78,8 +75,7 @@ function CartOnLoad() {
         input.addEventListener('change', QtyChanged);
     }
 
-    document.getElementsByClassName('btn-to-clear-cart')[0].addEventListener('click', ClearCart);;
-
+    document.getElementsByClassName('btn-to-clear-cart')[0].addEventListener('click', ClearCart);
 }
 
 function UpdateCart() {
@@ -96,8 +92,8 @@ function UpdateCart() {
         var allCartItems = document.getElementsByClassName('cart-item');
 
         for (var i = 0; i < allCartItems.length; i++) {
-            var localStorageCartItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
-            var cartItemSumPrice = (localStorageCartItem.price * localStorageCartItem.qty);
+            var localStorageItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
+            var cartItemSumPrice = (localStorageItem.price * localStorageItem.qty);
             var cartItem = allCartItems[i];
             cartItem.getElementsByClassName('cart-item-sum-price')[0].innerHTML = cartItemSumPrice + ' kr';
             totalPrice += cartItemSumPrice;
@@ -109,11 +105,12 @@ function UpdateCart() {
 
 function DeleteCartItem(event) {
     var buttonClicked = event.target;
-
-    localStorage.removeItem(buttonClicked.parentElement.parentElement.parentElement.parentElement.id);
-    buttonClicked.parentElement.parentElement.parentElement.parentElement.remove();
+    var cartItem = buttonClicked.parentElement.parentElement.parentElement.parentElement;
+    localStorage.removeItem(cartItem.id);
+    cartItem.remove();
 
     UpdateCart();
+    document.getElementsByClassName('amount-in-cart')[0].innerHTML = localStorage.length;
 }
 
 function QtyChanged(event) {
@@ -122,10 +119,10 @@ function QtyChanged(event) {
         input.value = 1;
     }
 
-    var cartItemId = input.parentElement.parentElement.parentElement.parentElement.id;
-    var localStorageItem = JSON.parse(localStorage.getItem(cartItemId));
+    var cartItem = input.parentElement.parentElement.parentElement.parentElement;
+    var localStorageItem = JSON.parse(localStorage.getItem(cartItem.id));
     localStorageItem.qty = input.value;
-    localStorage.setItem(cartItemId, JSON.stringify(localStorageItem));
+    localStorage.setItem(localStorageItem.imdbid, JSON.stringify(localStorageItem));
 
     UpdateCart();
 }
@@ -133,4 +130,6 @@ function QtyChanged(event) {
 function ClearCart() {
     localStorage.clear();
     UpdateCart();
+    document.getElementsByClassName('amount-in-cart')[0].innerHTML = localStorage.length;
 }
+
