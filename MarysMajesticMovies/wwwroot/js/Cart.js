@@ -1,4 +1,5 @@
 ﻿window.addEventListener("load", () => {
+    //localStorage.clear();
     UpdateCartButton();
 });
 
@@ -25,7 +26,7 @@ function AddCartItem() {
     var title = movieItem.innerHTML;
     var price = document.getElementsByClassName('btn-add-cart-item')[0].innerHTML.replace(' SEK', '');
     var posterurl = document.getElementsByClassName('movie')[0].getAttribute('src');
-    localStorage.setItem(imdbid, JSON.stringify({ title, price, qty: 1, posterurl }));
+    localStorage.setItem(imdbid, JSON.stringify({imdbid, title, price, qty: 1, posterurl }));
     document.getElementsByClassName('amount-in-cart')[0].innerHTML = localStorage.length;
 }
 
@@ -89,12 +90,10 @@ function UpdateCart() {
         cartItems.append(emptyCart);
     }
     else {
-        var allCartItems = document.getElementsByClassName('cart-item');
-
-        for (var i = 0; i < allCartItems.length; i++) {
+        for (var i = 0; i < localStorage.length; i++) {
             var localStorageItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
             var cartItemSumPrice = (localStorageItem.price * localStorageItem.qty);
-            var cartItem = allCartItems[i];
+            var cartItem = document.getElementById(localStorageItem.imdbid);
             cartItem.getElementsByClassName('cart-item-sum-price')[0].innerHTML = cartItemSumPrice + ' kr';
             totalPrice += cartItemSumPrice;
         }
