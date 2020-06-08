@@ -43,13 +43,13 @@ function CartOnLoad() {
 
         cartItem.innerHTML =
             `<div class="cart-item-box">
-                <div class="cart-item-info">               
+                <img src=${localStorageItem.posterurl} width="125px" class="cart-poster"/>
+                <div class="cart-item-info">                                                   
                     <div class="cart-item-ind-title"><span class="cart-item-title">${localStorageItem.title}</span></div>
                     <div class="cart-item-ind-price"><span class="cart-item-price">${localStorageItem.price} kr</span></div>  
-                    <img src=${localStorageItem.posterurl} width="125px"/>
                 </div>
                 <div class="qty-price">
-                    <div class="cart-qty" style="max-width: 100px">
+                    <div class="cart-qty">
                         <label>Qty: </label>
                         <input class="cart-item-qty" type="number" value="${localStorageItem.qty}" />
                     </div>
@@ -58,7 +58,7 @@ function CartOnLoad() {
                         <button class="btn btn-delete">Delete</button>
                     </div>
                 </div>
-            </div>`;
+            `;
 
         cartItems.append(cartItem);
         totalPrice += cartItemSumPrice;
