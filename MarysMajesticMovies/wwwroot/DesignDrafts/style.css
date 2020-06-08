@@ -116,6 +116,19 @@ padding-bottom: 15px;
 text-align: center;
 }
 
+.cart-checkout {
+display: flex;
+flex-direction: column;
+border-radius: 10px;
+font-family: "Roboto-Regular";
+font-size: 1em;
+width: 90%;
+margin: 10px auto 0px auto;
+padding-top: 15px;
+padding-bottom: 15px;
+text-align: center;
+}
+
 
 .cart h1 {
 text-align: center;
