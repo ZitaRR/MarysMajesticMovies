@@ -48,6 +48,7 @@ background-size: cover;
 
 header {
 display: flex;
+flex-direction: row;
 position: fixed;
 left: 0;
 top: 0;
@@ -166,7 +167,7 @@ flex-direction: column;
 border-radius: 10px;
 font-family: "Roboto-Regular";
 font-size: 1em;
-width: 30%;
+width: 50%;
 margin: 10px auto 150px auto;
 padding-top: 15px;
 padding-bottom: 15px;
@@ -369,6 +370,7 @@ overflow: hidden;
 }
 
 .mobile-menu {
+flex-grow: 1;
 display: none;
 padding: 0.8em;
 margin-top: 1em;
@@ -500,7 +502,7 @@ font-family: "Roboto-Medium";
 margin-top: 1px;
 margin-left: 10px;
 padding: 0.8em;
-flex: 1;
+
 }
 
 .menubutton {
@@ -526,6 +528,11 @@ font-family: "Roboto-Regular";
 background-color: white;
 color: #123747;
 font-family: "Roboto-Regular";
+}
+
+.cart-panel {
+flex: 3;
+flex-grow: 1;
 }
 
 .cart-button {
@@ -830,9 +837,9 @@ margin: 0 auto;
 margin-left: 25px;
 margin-right: auto;
 margin-top: 7px;
-width: 100%;
 width: 64px;
 height: 64px;
+flex-grow: 2;
 }
 
 .logo {
@@ -973,6 +980,8 @@ padding: 20px;
 padding-top: 15px;
 }
 
+
+
 .sidebar a {
 font-size: 18px;
 }
@@ -1061,11 +1070,12 @@ display: none;
     }
 
     .logo-small {
-        margin-left: auto;
-        margin-right: 350px;
-        margin-top: 14px;
-        width: 84px;
-        height: 84px;
+        margin-left: 0;
+        margin-right: 30px;
+        margin-top: 0x;
+        width: 100px;
+        height: 100px;
+        flex: 2;
     }
 
     .menubutton {
@@ -1086,15 +1096,13 @@ display: none;
     }
 
     .cart-button {
+        margin-top: 2em;
         padding: 1.7em;
-        margin-top: 2.4em;
         margin-right: 0;
-
     }
 
     .cart-button:hover {
         padding: 1.7em;
-        margin-top: 2.4em;
     }
 
     .amount-in-cart {
@@ -1149,14 +1157,6 @@ display: none;
             margin: auto;
         }
 
-.logo-small {
-margin-left: auto;
-margin-right: 350px;
-margin-top: 14px;
-width: 84px;
-height: 84px;
-}
-
 .menubutton {
 font-size: 1.4em;
 
@@ -1183,7 +1183,7 @@ padding: 0.8em;
 flex: 1;
 }
 .mobile-menu {
-display: block;
+
 }
 .modal-content {
 width: 100%;
