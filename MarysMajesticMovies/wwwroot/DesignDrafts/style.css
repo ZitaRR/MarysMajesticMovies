@@ -87,6 +87,7 @@ font-family: "Roboto-Regular";
 
 p1 {
 font-family: "Roboto-Light";
+font-size: 1em;
 }
 
 p2 {
@@ -512,6 +513,8 @@ transition: 0.4s;
 .trailer {
 width: 400px;
 height: 233px;
+margin-top: 10px;
+border: 1px solid white;
 }
 
 .overlay {
@@ -530,6 +533,16 @@ font-family: "Roboto-Medium";
 margin-bottom: 300px;
 }
 
+.close-detailed {
+flex: 2;
+margin: 0;
+}
+
+.title-and-close {
+display: flex;
+flex-direction: row;
+vertical-align: top;
+}
 
 .overlay-content {
 display: flex;
@@ -545,6 +558,20 @@ margin-left: 15px;
 order: 2;
 }
 
+.overlay-content-left p{
+font-family: "Roboto-Medium";
+}
+
+.overlay-content-left p2 {
+font-family: "Roboto-Medium";
+padding-top: 15px;
+}
+
+.overlay-content-left p1 {
+font-family: "Roboto-Light";
+}
+
+
 
 .thumbnail-price {
 display: flex;
@@ -552,6 +579,7 @@ flex-direction: column;
 order: 1;
 margin-left: 50px;
 width: 254px;
+padding-top: 20px;
 }
 
 .overlay-price-button, .overlay-price-button:focus {
@@ -696,8 +724,7 @@ to {top:0; opacity:1}
 .close {
 color: white;
 float: right;
-font-size: 40px;
-font-weight: bold;
+font-size: 3em;
 }
 
 .close:hover,
@@ -837,6 +864,31 @@ display: none;
             top: 15px;
             right: 35px;
         }
+
+    .close {
+        font-size: 4.5em;
+    }
+
+    .overlay-content-left p {
+        font-family: "Roboto-Medium";
+        font-size: 2em;
+    }
+
+    .overlay-content-left p2 {
+        font-family: "Roboto-Medium";
+        padding-top: 15px;
+        font-size: 3em;
+    }
+
+    .overlay-content-left p1 {
+        font-family: "Roboto-Light";
+    }
+
+    .overlay-price-button, .overlay-price-button:focus, overlay-price-button:hover {
+        font-size: 1.7em;
+        
+    }
+
 
     @media screen and (max-height: 450px) {
         .sidebar {
