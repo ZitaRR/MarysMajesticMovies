@@ -720,10 +720,8 @@ border: 0;
 
 .cart-button:hover {
 background-image: url(cart-hover.png);
-background-repeat: no-repeat;
 margin-top: 0.9em;
-height: 56px;
-float: right;
+margin-right: 3em;
 }
 
 .userText{
@@ -1061,7 +1059,15 @@ margin: 0 auto;
 }
 
 
-.logo-small {
+.logo-small {   
+margin-left: 25px;
+margin-right: auto;
+margin-top: 7px;
+width: 64px;
+height: 64px;
+flex-grow: 2;
+}
+.logo-small:hover {
 margin-left: 25px;
 margin-right: auto;
 margin-top: 7px;
@@ -1354,7 +1360,9 @@ display: none;
     }
 
     .cart-button:hover {
+        margin-top: 2em;
         padding: 1.7em;
+        margin-right: 0;
     }
 
     .amount-in-cart {
