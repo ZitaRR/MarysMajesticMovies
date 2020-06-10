@@ -459,11 +459,24 @@ padding-top: 10px;
 padding-bottom: 10px;
 }
 
+.category {
+margin-top: 20px;
+padding: 15px;
+}
+
+.movieCategory {
+padding: 5px;
+margin-right: 10px;
+transition: transform .2s;
+width: 254px;
+height: 406px;
+}
+
 .movie {
 margin-right: 10px;
 transition: transform .2s;
 width: 254px;
-height: 100%;
+height: 406px;
 }
 
 .movie:hover {

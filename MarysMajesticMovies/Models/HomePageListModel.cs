@@ -11,7 +11,7 @@ namespace MarysMajesticMovies.Models
         public List<Movie> Latest { set; get; }
         public List<Movie> Popular { set; get; }
         public List<Movie> Action { set; get; }
-        public List<Movie> Drama { set; get; }
+        public List<Movie> Oldies { set; get; }
 
     }
 }

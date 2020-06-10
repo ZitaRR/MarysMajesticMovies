@@ -29,15 +29,14 @@ namespace MarysMajesticMovies.Controllers
             homePageLists.Latest = await GetMovieList("Latest", 10);
             homePageLists.Popular = await GetMovieList("Popular", 10);
             homePageLists.Action = await GetMovieList("Action", 10);
-            //homePageLists.Oldies = await GetMovieList("Oldies", 10);
+            homePageLists.Oldies = await GetMovieList("Oldies", 10);
 
             return View(homePageLists);
         }
 
         public IActionResult Category(string category)
         {
-            var movies = GetMovieList(category, 25).Result;
-            return View(movies);
+            return View(GetMovieList(category, 25).Result);
         }
 
         public IActionResult Genre()
@@ -129,6 +128,19 @@ namespace MarysMajesticMovies.Controllers
             }
 
             return new List<Movie>();
+        }
+
+        [HttpGet("{id}")]
+        public async Task<IActionResult> Detail(int? id)
+        {
+            var movie = await _db.Movies.FindAsync(id);
+
+            if (movie == null)
+            {
+                return NotFound();
+            }
+
+            return View(movie);
         }
     }
 }
