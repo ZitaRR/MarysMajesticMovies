@@ -309,7 +309,6 @@ color: white;
 border: none;
 }
 
-
 .sidebar {
 height: 100%; 
 width: 0; 
@@ -341,6 +340,35 @@ border-right-width: thin;
 }
 
 .sidebar a:hover {
+color: #252525;
+background-color: white;
+text-decoration: none;
+font-family: "Roboto-Medium";
+}
+
+.form-inline {
+width: 100%;
+}
+
+.sidebarButton {
+width: 100%;
+border: none;
+background-color: #252525; 
+font-family: "Roboto-Light";
+padding: 8px 0 8px 32px;
+text-decoration: none;
+font-size: 1.5em;
+color: white;
+display: block;
+transition: 0.3s;
+overflow: hidden;
+white-space: nowrap;
+margin-bottom: 5px;
+text-align: left;
+}
+
+.sidebarButton:hover {
+border: none;
 color: #252525;
 background-color: white;
 text-decoration: none;
@@ -469,6 +497,13 @@ height: 56px;
 float: right;
 }
 
+.userText{
+font-family: "Roboto-Regular";
+font-size: 1.4em;
+padding-top: 25px;
+margin-bottom: 5px;
+text-align: center;
+}
 
 .footertitle {
 font-size: 1em;

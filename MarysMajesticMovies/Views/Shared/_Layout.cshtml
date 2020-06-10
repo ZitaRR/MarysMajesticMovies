@@ -48,10 +48,15 @@
         </a>
         @if (SignInManager.IsSignedIn(User))
         {
-            <p>@UserManager.GetUserAsync(User).Result.FirstName!</p>
-            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-                <button type="submit" class="menubutton">Logout</button>
-            </form>
+        <p class="userText">@UserManager.GetUserAsync(User).Result.FirstName</p>
+        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+           <button type="submit" class="sidebarButton">
+               Log out
+           </button>
+           <br />
+           <br />
+           <br />
+        </form>
         }
         else
         {
