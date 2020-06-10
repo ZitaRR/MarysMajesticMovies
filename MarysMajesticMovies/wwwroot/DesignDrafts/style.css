@@ -546,10 +546,8 @@ vertical-align: top;
 
 .overlay-content {
 display: flex;
-position: relative;
-top: 10%;
-margin: auto auto 300px;
-width: 46%;
+width: 750px;
+margin: auto;
 }
 
 .overlay-content-left {
