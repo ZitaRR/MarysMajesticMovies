@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Movie>
+@{
+    ViewData["Title"] = "Category";
+}
+
+<div class="content">
+    <div class="banner4">
+        <img src="~/DesignDrafts/banner4.jpg"/>
+    </div>
+    <h1></h1>
+    <div class="category">
+        <div style="padding: 7.2em 0em">
+            @foreach (var item in Model)
+            {
+            <a asp-action="Detail" asp-route-id="@item.Id"><img src="@item.PosterUrl" class="movieCategory"></a>
+            }
+        </div>
+    </div>
+</div>
+

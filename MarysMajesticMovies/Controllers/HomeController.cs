@@ -22,16 +22,21 @@ namespace MarysMajesticMovies.Controllers
             _db = db;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
             var homePageLists = new HomePageListModel();
-            homePageLists.Blockbuster = GetMovieList("Blockbuster", 10);
-            homePageLists.Latest = GetMovieList("Latest", 10);
-            homePageLists.Popular = GetMovieList("Popular", 10);
-            homePageLists.Action = GetMovieList("Action", 10);
-            homePageLists.Oldies = GetMovieList("Oldies", 10);
+            homePageLists.Blockbuster = await GetMovieList("Blockbuster", 10);
+            homePageLists.Latest = await GetMovieList("Latest", 10);
+            homePageLists.Popular = await GetMovieList("Popular", 10);
+            homePageLists.Action = await GetMovieList("Action", 10);
+            homePageLists.Oldies = await GetMovieList("Oldies", 10);
 
             return View(homePageLists);
+        }
+
+        public IActionResult Category(string category)
+        {
+            return View(GetMovieList(category, 25).Result);
         }
 
         public IActionResult Genre()
@@ -73,11 +78,12 @@ namespace MarysMajesticMovies.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-        public List<Movie> GetMovieList()
+
+        public async Task<List<Movie>> GetMovieList()
         {
             try
             {
-                return _db.Movies.ToList();
+                return await _db.Movies.ToListAsync();
             }
             catch (Exception)
             {
@@ -85,9 +91,10 @@ namespace MarysMajesticMovies.Controllers
 
             return new List<Movie>();
         }
-        public  List<Movie> GetMovieList(string type, int NoOfMovies)
+
+        public async Task<List<Movie>> GetMovieList(string type, int NoOfMovies)
         {
-            var allMovies = _db.Movies;
+            var allMovies = await _db.Movies.ToListAsync();
             try
             {
                 if (type == "Action" || type == "Adventure" || type == "Comedy" || type == "Crime" || type == "Drama" || type == "Horror" || type == "Romance" || type == "Scifi")
