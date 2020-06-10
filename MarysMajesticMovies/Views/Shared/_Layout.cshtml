@@ -1,5 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
 @inject SignInManager<User> SignInManager
+@inject UserManager<User> UserManager
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,6 +46,15 @@
             </div>
             Block busters
         </a>
+        @if (SignInManager.IsSignedIn(User))
+        {
+            <p>@UserManager.GetUserAsync(User).Result.FirstName!</p>
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="menubutton">Logout</button>
+            </form>
+        }
+        else
+        {
         <a asp-area="Identity" asp-page="/Account/Login" style="margin-top:2em">
             <div class="sidebar-icon">
                 <svg class="bi bi-box-arrow-in-right" width="0.8em" height="0.8em" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +74,7 @@
             </div>
             Register
         </a>
-
+        }
     </div>
     <header>
         <div class="mobile-menu">
