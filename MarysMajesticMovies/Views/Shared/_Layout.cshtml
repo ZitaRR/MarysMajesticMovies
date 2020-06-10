@@ -49,6 +49,11 @@
         @if (SignInManager.IsSignedIn(User))
         {
             <p class="userText">@UserManager.GetUserAsync(User).Result.FirstName</p>
+            <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
+                <button type="submit" class="sidebarButton">
+                    Log out
+                </button>
+            </form>
             @if (User.IsInRole("Administrator"))
             {
                 <a class="sidebarButton" asp-controller="Admin" asp-action="AddMovie" asp-area="">                   
@@ -78,14 +83,6 @@
                 Register
             </a>
         }
-        <form class="form-inline" asp-area="Identity" asp-page="/Account/Logout" asp-route-returnUrl="@Url.Action("Index", "Home", new { area = "" })">
-            <button type="submit" class="sidebarButton">
-                Log out
-            </button>
-            <br />
-            <br />
-            <br />
-        </form>
     </div>
     <header>
         <div class="mobile-menu">
