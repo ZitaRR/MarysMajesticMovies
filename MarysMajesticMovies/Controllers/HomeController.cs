@@ -29,9 +29,15 @@ namespace MarysMajesticMovies.Controllers
             homePageLists.Latest = await GetMovieList("Latest", 10);
             homePageLists.Popular = await GetMovieList("Popular", 10);
             homePageLists.Action = await GetMovieList("Action", 10);
-            homePageLists.Oldies = await GetMovieList("Oldies", 10);
+            //homePageLists.Oldies = await GetMovieList("Oldies", 10);
 
             return View(homePageLists);
+        }
+
+        public IActionResult Category(string category)
+        {
+            var movies = GetMovieList(category, 25).Result;
+            return View(movies);
         }
 
         public IActionResult Genre()

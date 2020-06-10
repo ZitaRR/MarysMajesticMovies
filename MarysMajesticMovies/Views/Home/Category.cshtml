@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Movie>
+@{
+    ViewData["Title"] = "Category";
+}
+
+<div class="content">
+    <div class="banner4">
+        <img src="~/DesignDrafts/banner4.jpg"/>
+    </div>
+    <div style="padding: 7.2em 0em">
+        @foreach (var item in Model)
+        {
+            <img src="@item.PosterUrl" class="movie" width="100" height="50" />
+        }
+    </div>
+</div>
+
