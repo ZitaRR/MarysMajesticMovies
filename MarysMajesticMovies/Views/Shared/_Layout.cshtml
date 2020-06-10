@@ -61,7 +61,7 @@
                     <path fill-rule="evenodd" d="M13.5 14.5A1.5 1.5 0 0015 13V3a1.5 1.5 0 00-1.5-1.5h-8A1.5 1.5 0 004 3v1.5a.5.5 0 001 0V3a.5.5 0 01.5-.5h8a.5.5 0 01.5.5v10a.5.5 0 01-.5.5h-8A.5.5 0 015 13v-1.5a.5.5 0 00-1 0V13a1.5 1.5 0 001.5 1.5h8z" clip-rule="evenodd" />
                 </svg>
             </div>
-            <partial name="_LoginPartialNavBar"/>
+            Login / Register
         </a>
         <a href="#">
             <div class="sidebar-icon">
@@ -77,7 +77,7 @@
         <div class="mobile-menu">
             <button class="mobile-menu-button" type="button" value="DROPDOWN" onclick="openNav()"></button>
         </div>
-        <a href="../Home/Index"><img src="~/DesignDrafts/logosmall.png" class="logo-small" /></a>
+        <a asp-controller="Home" asp-action="."><img src="~/DesignDrafts/logosmall.png" class="logo-small" /></a>
         <div class="menu">
             <button class="menubutton" type="button" value="LATEST">LATEST</button>
             <button class="menubutton" type="button" value="POPULAR">POPULAR</button>
@@ -89,8 +89,9 @@
             }
         </div>
 
-        <a class="cart-button" asp-action="Cart"></a><div class="amount-in-cart">0</div>
-
+        <div class="cart-panel">
+            <a class="cart-button" asp-controller="Home" asp-action="Cart"></a><div class="amount-in-cart">0</div>
+        </div>
     </header>
     <div class="container">
         <main role="main" style="padding: 7.5em 1em">
