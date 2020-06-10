@@ -5,42 +5,76 @@
 }
 
     <body onload="CartOnLoad()">
-        <div class="register">
-            <div class="cart-checkout">
-                <h1>CART</h1>
-                <div class="cart-items">
+        <div class="container">
+            <div class="cart">
+                <div class="cart-checkout">
+                    <h1>CART</h1>
+                    <div class="cart-items">
+                    </div>
+                    <div class="total-price">Total price: <span class="cart-total-price"></span></div>
                 </div>
-                <div class="total-price">Total price: <span class="cart-total-price"></span></div>
+                <h1>Checkout</h1>
+                <form>
+                    <label>First name</label>
+                    <input type="text" placeholder="" />
+                    <label>Last name</label>
+                    <input type="text" placeholder="" />
+                    <br />
+                    <br />
+                    <p>Billing / Shipping adress</p>
+                    <input type="text" placeholder="" />
+                    <label>City</label>
+                    <input type="text" placeholder="" />
+                    <label>Zip Code</label>
+                    <input type="text" placeholder="" />
+                    <label>City</label>
+                    <input type="text" placeholder="" />
+                    <br />
+                    <br />
+                    <label>Payment options</label>
+                    <br />
+                    <br />
+                    <div class="cardCheckbox">
+                        <label>Credit Card</label>
+                        <input type="checkbox" checked="checked" placeholder="" />
+                        <label>PayPal</label>
+                        <input type="checkbox" placeholder="" disabled="disabled" />
+                        <label>Coupon</label>
+                        <input type="checkbox" placeholder="" disabled="disabled" />
+                    </div>
+                    <br />
+                    <br />
+                    <label>Type</label>
+                    <br />
+                    <br />
+                    <select name="cards" class="creditCards">
+                        <option>MasterCard</option>
+                        <option>VISA</option>
+                        <option>AmericanExpress</option>
+                    </select>
+                    <br />
+                    <br />
+                    <label>Card Number</label>
+                    <input type="text" placeholder="" />
+                    <label>Name</label>
+                    <input type="text" placeholder="" />
+                    <div class="validationCvc">
+                        <label>Valid until</label>
+                        <input type="date" placeholder="" />
+                        <label>CVC</label>
+                        <input type="text" placeholder="" />
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+                </form>
+                <a class="overlay-price-button">Purchase</a>
             </div>
-            <h1>Checkout</h1>
-            <form>
-                <p>Name</p>
-                <br />
-                <br />
-                <label>First name</label>
-                <input type="text" placeholder="" />
-                <label>Last name</label>
-                <input type="text" placeholder="" />
-                <br />
-                <br />
-                <p>Billing / Shipment adress</p>
-                <label>Adress</label>
-                <input type="text" placeholder="" />
-                <label>City</label>
-                <input type="text" placeholder="" />
-                <label>Zip Code</label>
-                <input type="text" placeholder="" />
-                <label>City</label>
-                <input type="text" placeholder="" />
-                <br />
-                <br />
-            </form>
-
         </div>
 
 
 
-        <h1>Index</h1>
+    <!--    <h1>Index</h1>
 
         <p>
             <a asp-action="Create">Create New</a>
@@ -87,5 +121,6 @@
                     </tr>
                 }
             </tbody>
-        </table>
+        </table> 
+        -->
     </body>
