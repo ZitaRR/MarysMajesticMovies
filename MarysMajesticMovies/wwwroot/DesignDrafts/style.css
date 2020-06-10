@@ -12,6 +12,8 @@ animation-iteration-count: 1;
 animation-fill-mode: forwards;
 }
 
+
+
 .border{
 border: 2px solid red;
 }
@@ -169,6 +171,42 @@ transition: transform .2s;
 transform: scale(1.02);
 }
 
+.shippingCheckbox {
+display: flex;
+flex-direction: row;
+width: 300px;
+height: 100px;
+margin: auto;
+font-size: 0.9em;
+vertical-align: middle;
+}
+
+.cardCheckbox {
+display: flex;
+flex-direction: row;
+width: 300px;
+margin: auto;
+font-size: 0.9em;
+vertical-align: middle;
+}
+
+.validationCvc {
+display: flex;
+flex-direction: row;
+width: 98%;
+text-align: center;
+margin: auto;
+}
+
+.creditCards {
+background-color: #707070;
+font-family: "Roboto-Regular";
+font-size: 1em;
+color: white;
+width: 200px;
+border-radius: 5px;
+}
+
 .cart {
 display: flex;
 flex-direction: column;
@@ -177,6 +215,79 @@ font-family: "Roboto-Regular";
 font-size: 1em;
 width: 50%;
 margin: 10px auto 150px auto;
+padding-top: 15px;
+padding-bottom: 15px;
+text-align: center;
+}
+
+.checkout-item-box {
+background-color: #252525;
+border: none;
+border-radius: 10px;
+margin-bottom: 15px;
+text-align: left;
+display: flex;
+flex-direction: row;
+}
+
+.checkout-item-info {
+padding-top: 15px;
+text-align: left;
+flex: 1;
+top: 0;
+}
+
+.checkout-item-sum-price {
+margin-right: 5px;
+font-size: 1.3em;
+}
+
+.checkout-item-title {
+font-size: 1.5em;
+text-decoration: underline;
+}
+
+.checkout-item-qty {
+border-radius: 5px;
+border: none;
+width: 70px;
+}
+
+.checkout-item-ind-title {
+}
+
+.checkout-item-ind-price {
+font-size: 1em;
+padding-top: 8px;
+}
+
+.checkout-qty {
+flex: 1;
+padding-right: 10px;
+font-size: 1em;
+text-align: right;
+width: 80px;
+}
+
+.checkout-pricing {
+text-align: right;
+padding: 10px;
+width: 80px;
+}
+
+.checkout-poster {
+margin: 15px;
+border: 1px solid #131313;
+}
+
+.cart-checkout {
+display: flex;
+flex-direction: column;
+border-radius: 10px;
+font-family: "Roboto-Regular";
+font-size: 1em;
+width: 90%;
+margin: 10px auto 0px auto;
 padding-top: 15px;
 padding-bottom: 15px;
 text-align: center;
@@ -206,7 +317,7 @@ flex-direction: row;
 .cart-item-info {
 padding-top: 15px;
 text-align: left;
-flex: 1;
+flex: 1;    
 top: 0;
 }
 
@@ -250,6 +361,7 @@ margin: 0;
 .total-price {
 padding-top: 10px;
 padding-bottom: 10px;
+font-size: 1.4em;
 }
 
 .btn btn-to-clear-cart {
@@ -257,21 +369,21 @@ padding-bottom: 10px;
 }
 
 .cart-icon {
-    font-size: 5em;
+font-size: 5em;
 }
 
 .amount-in-cart {
-    color: white;
-    padding: 0 5px 0 5px;
-    background-color: red;
-    border: 2px white solid;
-    border-radius: 15px;
-    position: absolute;
-    font-size: 1em;
-    font-family: "Roboto-Regular";
-    float: right;
-    right: 6em;
-    top: 3.6em;
+color: white;
+padding: 0 5px 0 5px;
+background-color: red;
+border: 2px white solid;
+border-radius: 15px;
+position: absolute;
+font-size: 1em;
+font-family: "Roboto-Regular";
+float: right;
+right: 6em;
+top: 3.6em;
 }
 
 .register {
@@ -302,6 +414,29 @@ label {
 width: 95%;
 margin: 15px;
 box-sizing: border-box;
+font-family: "Roboto-Light";
+}
+
+input[type="date"] {
+border-radius: 5px;
+border: none;
+}
+
+input[type=checkbox] {
+-ms-transform: scale(3); 
+-moz-transform: scale(3); 
+-webkit-transform: scale(3);
+-o-transform: scale(3); 
+transform: scale(3);
+padding: 10px;
+width: 32px;
+height: 32px;
+margin: auto;
+}
+
+.checkboxtext {
+font-size: 0.9em;
+display: inline;
 }
 
 input[type=text], input[type=password] {
