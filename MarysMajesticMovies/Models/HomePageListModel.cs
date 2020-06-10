@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace MarysMajesticMovies.Models
+namespace MarysMajesticMovies
 {
     public class HomePageListModel
     {
@@ -12,7 +12,6 @@ namespace MarysMajesticMovies.Models
         public List<Movie> Popular { set; get; }
         public List<Movie> Action { set; get; }
         public List<Movie> Oldies { set; get; }
-
     }
 }
 

@@ -45,18 +45,6 @@ namespace MarysMajesticMovies.Areas.Identity.Pages.Account
             public bool RememberMe { get; set; }
         }
 
-        public void OnGet(string returnUrl = null)
-        {
-            if (!string.IsNullOrEmpty(ErrorMessage))
-            {
-                ModelState.AddModelError(string.Empty, ErrorMessage);
-            }
-
-            returnUrl = returnUrl ?? Url.Content("~/");
-
-            ReturnUrl = returnUrl;
-        }
-
         public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             returnUrl = returnUrl ?? Url.Content("~/");
