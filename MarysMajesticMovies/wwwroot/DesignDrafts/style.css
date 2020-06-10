@@ -174,7 +174,6 @@ transform: scale(1.02);
 .shippingCheckbox {
 display: flex;
 flex-direction: row;
-width: 300px;
 height: 100px;
 margin: auto;
 font-size: 0.9em;
@@ -184,7 +183,6 @@ vertical-align: middle;
 .cardCheckbox {
 display: flex;
 flex-direction: row;
-width: 300px;
 margin: auto;
 font-size: 0.9em;
 vertical-align: middle;
@@ -365,7 +363,7 @@ font-size: 1.4em;
 }
 
 .btn btn-to-clear-cart {
-
+font-size: 1em;
 }
 
 .cart-icon {
@@ -415,6 +413,7 @@ width: 95%;
 margin: 15px;
 box-sizing: border-box;
 font-family: "Roboto-Light";
+font-size: 1em;
 }
 
 input[type="date"] {
@@ -502,6 +501,7 @@ font-size: 1em;
 
 input[type=text]:focus, [type=password]:focus {
 background-color: #282828;
+border: none;
 }
 
 .content {
@@ -804,16 +804,26 @@ padding-bottom: 10px;
 }
 
 .category {
+margin-left: 0;
 margin-top: 20px;
-padding: 15px;
+padding-right: 15px;
+padding-bottom: 15px;
+display: inline-block;
 }
 
 .movieCategory {
-padding: 5px;
-margin-right: 10px;
+margin: 10px;
 transition: transform .2s;
-width: 254px;
-height: 406px;
+width: 200px;
+height: 320px;
+border: 1px solid black;
+}
+.movieCategory:hover {
+transform: scale(1.01);
+margin-right: 10px;
+width: 200px;
+height: 320px;
+border: 1px solid white;
 }
 
 .movie {
@@ -821,10 +831,12 @@ margin-right: 10px;
 transition: transform .2s;
 width: 254px;
 height: 406px;
+border: 1px solid black;
 }
 
 .movie:hover {
 transform: scale(1.01);
+border: 1px solid white;
 }
 
 .movie-arrow-right {
@@ -1196,11 +1208,11 @@ padding-top: 15px;
 }
 
 
+}
 
-.sidebar a {
-font-size: 18px;
-}
-}
+    .sidebar a {
+        font-size: 18px;
+    }
 
 header {
 height: 7.5em;
@@ -1397,9 +1409,162 @@ display: none;
             margin: auto;
         }
 
+    .btn-to-clear-cart {
+    font-size: 1.4em;
+    }
+
+
+    .input[type=checkbox] {
+
+        font-size: 1.3em;
+        width: 45px;
+        height: 45px;
+    }
+
+    .cart-item {
+        font-size: 1em;
+    }
+
+    .cart-item:hover {
+
+    }
+
+    .shippingCheckbox {
+    font-size: 1em;
+    }
+
+    .cardCheckbox {
+    font-size: 1em;
+    }
+
+    .validationCvc {
+    font-size: 1em;
+    }
+
+    .creditCards {
+    font-size: 1em;
+    }
+
+    .cart {
+    font-size: 1.2em;
+    }
+
+    .checkout-item-box {
+
+    }
+
+    .checkout-item-info {
+
+    }
+
+    .checkout-item-sum-price {
+
+    }
+
+    .checkout-item-title {
+
+    }
+
+    .checkout-item-qty {
+
+    }
+
+    .checkout-item-ind-title {
+    }
+
+    .checkout-item-ind-price {
+ 
+    }
+
+    .checkout-qty {
+
+    }
+
+    .checkout-pricing {
+
+    }
+
+    .checkout-poster {
+
+    }
+
+    .cart-checkout {
+
+    }
+
+    .cart-poster {
+
+    }
+
+
+    .cart h1 {
+
+    }
+
+    .cart-item-box {
+
+    }
+
+    .cart-item-info {
+
+    }
+
+    .cart-item-sum-price {
+        font-size: 1.5em;
+    }
+
+    .cart-item-title {
+
+    }
+
+    .cart-item-qty {
+        font-size: 1.4em;
+    }
+
+    .cart-item-ind-title {
+    }
+
+    .cart-item-ind-price {
+        font-size: 1.3em;
+    }
+
+    .cart-qty {
+        font-size: 1.4em;
+    }
+
+    .cart-pricing {
+
+    }
+
+    .qty-price {
+
+    }
+
+    .total-price {
+
+    }
+
+
+
+
+
+    label {
+        font-size: 1.1em;
+    }
+
+
+
+
+
+
+
+
+.btn-delete {
+font-size: 1.5em;
+}
+
 .menubutton {
 font-size: 1.4em;
-
 }
 .footertitle {
 font-size: 1.7em;

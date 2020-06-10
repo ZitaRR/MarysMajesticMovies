@@ -3,17 +3,16 @@
     ViewData["Title"] = "Category";
 }
 
-<div class="content">
-    <div class="banner4">
-    </div>
-    <h1></h1>
-    <div class="category">
-        <div style="padding: 7.2em 0em">
-            @foreach (var item in Model)
-            {
-            <a asp-action="Detail" asp-route-id="@item.Id"><img src="@item.PosterUrl" class="movieCategory"></a>
-            }
+    <div class="content">
+        <div class="banner4">
+        </div>
+        <div class="category">
+            <div>
+                @foreach (var item in Model)
+                {
+                    <a asp-action="Detail" asp-route-id="@item.Id"><img src="@item.PosterUrl" class="movieCategory"></a>
+                }
+            </div>
         </div>
     </div>
-</div>
 
