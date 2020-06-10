@@ -26,7 +26,7 @@ function AddCartItem() {
     var title = movieItem.innerHTML;
     var price = document.getElementsByClassName('btn-add-cart-item')[0].innerHTML.replace(' SEK', '');
     var posterurl = document.getElementsByClassName('movie')[0].getAttribute('src');
-    localStorage.setItem(imdbid, JSON.stringify({imdbid, title, price, qty: 1, posterurl }));
+    localStorage.setItem(imdbid, JSON.stringify({imdbid, title, price, qty: 1, posterurl, detailid: window.location.pathname }));
     document.getElementsByClassName('amount-in-cart')[0].innerHTML = localStorage.length;
 }
 
@@ -45,8 +45,8 @@ function CartOnLoad() {
             `<div class="cart-item-box">
                 <img src=${localStorageItem.posterurl} width="125px" class="cart-poster"/>
                 <div class="cart-item-info">                                                   
-                    <div class="cart-item-ind-title"><span class="cart-item-title">${localStorageItem.title}</span></div>
-                    <div class="cart-item-ind-price"><span class="cart-item-price">${localStorageItem.price} kr</span></div>  
+                    <div class="cart-item-ind-title"><span class="cart-item-title"><a href="..${localStorageItem.detailid}">${localStorageItem.title}</a></span></div>
+                    <div class="cart-item-ind-price"><span class="cart-item-price">${localStorageItem.price} kr</span></div>
                 </div>
                 <div class="qty-price">
                     <div class="cart-qty">

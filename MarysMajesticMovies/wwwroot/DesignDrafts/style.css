@@ -129,7 +129,6 @@ font-family: "Roboto-Regular";
 font-size: 1em;
 display: inline-block;
 vertical-align: middle;
-transition-
 }
 
 .btn-delete {
@@ -159,6 +158,14 @@ display: inline-block;
 vertical-align: middle;
 transition-duration: 0.2s;
 flex: 1;
+}
+
+.cart-item {
+transition: transform .2s;
+}
+
+.cart-item:hover {
+transform: scale(1.02);
 }
 
 .cart {
