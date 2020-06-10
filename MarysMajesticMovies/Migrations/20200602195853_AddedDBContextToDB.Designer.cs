@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace MarysMajesticMovies.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200529122019_AddedDbContextToDb")]
-    partial class AddedDbContextToDb
+    [Migration("20200602195853_AddedDBContextToDB")]
+    partial class AddedDBContextToDB
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -91,7 +91,7 @@ namespace MarysMajesticMovies.Migrations
                         {
                             Id = 1,
                             Actors = "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 525, DateTimeKind.Local).AddTicks(8454),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 787, DateTimeKind.Local).AddTicks(8754),
                             Director = "Christopher Nolan",
                             Genre = "Action, Adventure, Sci-Fi",
                             ImdbId = "tt1375666",
@@ -103,14 +103,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 149.0,
                             RunTime = "148",
                             Title = "Inception",
-                            TrailerUrl = "https://www.youtube.com/watch?v=YoHD9XEInc0",
+                            TrailerUrl = "https://www.youtube.com/embed/YoHD9XEInc0",
                             Year = 2010
                         },
                         new
                         {
                             Id = 2,
                             Actors = "Helena Bergström, Rikard Wolff, Sven Wollter",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6119),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5335),
                             Director = "Colin Nutley",
                             Genre = "Comedy, Drama",
                             ImdbId = "tt0105916",
@@ -122,14 +122,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 99.0,
                             RunTime = "119",
                             Title = "Änglagård",
-                            TrailerUrl = "https://www.youtube.com/watch?v=NsvkwMTXzOI",
+                            TrailerUrl = "https://www.youtube.com/embed/NsvkwMTXzOI",
                             Year = 1992
                         },
                         new
                         {
                             Id = 3,
                             Actors = "Sam Neill, Laura Dern, Jeff Goldblum",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6164),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5377),
                             Director = "Steven Spielberg",
                             Genre = "Action, Aventure, Sci-Fi",
                             ImdbId = "tt0107290",
@@ -141,14 +141,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 129.0,
                             RunTime = "127",
                             Title = "Jurrasic Park",
-                            TrailerUrl = "https://www.youtube.com/watch?v=KdGO9tL2DQ4",
+                            TrailerUrl = "https://www.youtube.com/embed/KdGO9tL2DQ4",
                             Year = 1993
                         },
                         new
                         {
                             Id = 4,
                             Actors = "Elijah Wood, Ian McKellen, Orlando Bloom",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6171),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5385),
                             Director = "Peter Jackson",
                             Genre = "Action, Aventure, Drama",
                             ImdbId = "tt0120737",
@@ -160,14 +160,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 129.0,
                             RunTime = "178",
                             Title = "The Lord of the Rings: The Fellowship of the Ring",
-                            TrailerUrl = "https://www.youtube.com/watch?v=V75dMMIW2B4",
+                            TrailerUrl = "https://www.youtube.com/embed/V75dMMIW2B4",
                             Year = 2001
                         },
                         new
                         {
                             Id = 5,
                             Actors = "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6175),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5390),
                             Director = "Lana Wachowski, Lilly Wachowski",
                             Genre = "Action, Sci-Fi",
                             ImdbId = "tt0133093",
@@ -179,14 +179,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 79.0,
                             RunTime = "136",
                             Title = "The Matrix",
-                            TrailerUrl = "https://www.youtube.com/watch?v=m8e-FF8MsqU",
+                            TrailerUrl = "https://www.youtube.com/embed/m8e-FF8MsqU",
                             Year = 1999
                         },
                         new
                         {
                             Id = 6,
                             Actors = "Hugo Weaving, Natalie Portman, Rupert Graves",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6229),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5395),
                             Director = "James McTeigue",
                             Genre = "Action, Drama, Sci-Fi",
                             ImdbId = "tt0434409",
@@ -198,14 +198,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 139.0,
                             RunTime = "132",
                             Title = "V for Vendetta",
-                            TrailerUrl = "https://www.youtube.com/watch?v=lSA7mAHolAw",
+                            TrailerUrl = "https://www.youtube.com/embed/lSA7mAHolAw",
                             Year = 2005
                         },
                         new
                         {
                             Id = 7,
                             Actors = "Tatsuya Fujiwara, Aki Maeda, Tarô Yamamoto",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6234),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5401),
                             Director = "Kinji Fukusaku",
                             Genre = "Adventure, Drama, Sci-Fi",
                             ImdbId = "tt0266308",
@@ -217,14 +217,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 159.0,
                             RunTime = "116",
                             Title = "Battle Royale",
-                            TrailerUrl = "https://www.youtube.com/watch?v=N0p1t-dC7Ko",
+                            TrailerUrl = "https://www.youtube.com/embed/N0p1t-dC7Ko",
                             Year = 2000
                         },
                         new
                         {
                             Id = 8,
                             Actors = "Robin Williams, Robert Sean Leonard, Ethan Hawke",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6238),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5405),
                             Director = "Peter Weir",
                             Genre = "Comedy, Drama",
                             ImdbId = "tt0097165",
@@ -236,14 +236,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 79.0,
                             RunTime = "128",
                             Title = "Dead Poets Society",
-                            TrailerUrl = "https://www.youtube.com/watch?v=ye4KFyWu2do",
+                            TrailerUrl = "https://www.youtube.com/embed/ye4KFyWu2do",
                             Year = 1989
                         },
                         new
                         {
                             Id = 9,
                             Actors = "Liam Neeson, Ralph Fiennes, Ben Kingsley",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6243),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5410),
                             Director = "Steven Spielberg",
                             Genre = "Biography, Drama, History",
                             ImdbId = "tt0108052",
@@ -255,14 +255,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 129.0,
                             RunTime = "195",
                             Title = "Schindler's List",
-                            TrailerUrl = "https://www.youtube.com/watch?v=gG22XNhtnoY",
+                            TrailerUrl = "https://www.youtube.com/embed/gG22XNhtnoY",
                             Year = 1993
                         },
                         new
                         {
                             Id = 10,
                             Actors = "David Sandberg, Jorma Taccone, Steven Chew",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6247),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5414),
                             Director = "David Sandberg",
                             Genre = "Short, Action, Comedy",
                             ImdbId = "tt3472226",
@@ -274,14 +274,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 229.0,
                             RunTime = "31",
                             Title = "Kung Fury",
-                            TrailerUrl = "https://www.youtube.com/watch?v=89AxvewTS90",
+                            TrailerUrl = "https://www.youtube.com/embed/89AxvewTS90",
                             Year = 2015
                         },
                         new
                         {
                             Id = 11,
                             Actors = "Jean Reno, Gary Oldman, Natalie Portman",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6252),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5419),
                             Director = "Luc Besson",
                             Genre = "Action, Crime, Drama",
                             ImdbId = "tt0110413",
@@ -293,14 +293,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 99.0,
                             RunTime = "110",
                             Title = "Leon",
-                            TrailerUrl = "https://www.youtube.com/watch?v=jawVxq1Iyl0",
+                            TrailerUrl = "https://www.youtube.com/embed/jawVxq1Iyl0",
                             Year = 1994
                         },
                         new
                         {
                             Id = 12,
                             Actors = "Elijah Wood, Ian McKellen, Viggo Mortensen",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6256),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5423),
                             Director = "Peter Jackson",
                             Genre = "Adventure, Drama, Fantasy",
                             ImdbId = "tt0167261",
@@ -312,14 +312,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 129.0,
                             RunTime = "179",
                             Title = "The Lord of the Rings: The Two Towers",
-                            TrailerUrl = "https://www.youtube.com/watch?v=hYcw5ksV8YQ",
+                            TrailerUrl = "https://www.youtube.com/embed/hYcw5ksV8YQ",
                             Year = 2002
                         },
                         new
                         {
                             Id = 13,
                             Actors = "Elijah Wood, Viggo Mortensen, Ian McKellen",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6260),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5428),
                             Director = "Peter Jackson",
                             Genre = "Adventure, Drama, Fantasy",
                             ImdbId = "tt0167260",
@@ -331,14 +331,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 129.0,
                             RunTime = "201",
                             Title = "The Lord of the Rings: The Return of the King",
-                            TrailerUrl = "https://www.youtube.com/watch?v=r5X-hFf6Bwo",
+                            TrailerUrl = "https://www.youtube.com/embed/r5X-hFf6Bwo",
                             Year = 2003
                         },
                         new
                         {
                             Id = 14,
                             Actors = "Arnold Schwarzenegger, Linda Hamilton, Michael Biehn",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6264),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5432),
                             Director = "James Cameron",
                             Genre = "Action, Sci-Fi",
                             ImdbId = "tt0088247",
@@ -350,14 +350,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 89.0,
                             RunTime = "107",
                             Title = "Terminator",
-                            TrailerUrl = "https://www.youtube.com/watch?v=k64P4l2Wmeg",
+                            TrailerUrl = "https://www.youtube.com/embed/k64P4l2Wmeg",
                             Year = 1984
                         },
                         new
                         {
                             Id = 15,
                             Actors = "Scarlett Johansson, Morgan Freeman, Min-Sik Choi",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6269),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5437),
                             Director = "Luc Besson",
                             Genre = "Action, Sci-Fi, Thriller",
                             ImdbId = "tt2872732",
@@ -369,14 +369,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 119.0,
                             RunTime = "89",
                             Title = "Lucy",
-                            TrailerUrl = "https://www.youtube.com/watch?v=bN7ksFEVO9U",
+                            TrailerUrl = "https://www.youtube.com/embed/bN7ksFEVO9U",
                             Year = 2014
                         },
                         new
                         {
                             Id = 16,
                             Actors = "Brad Pitt, Edward Norton, Helena Bonham Carter",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6273),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5441),
                             Director = "David Fincher",
                             Genre = "Drama",
                             ImdbId = "tt0137523",
@@ -388,14 +388,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 119.0,
                             RunTime = "139",
                             Title = "Fight Club",
-                            TrailerUrl = "https://www.youtube.com/watch?v=qtRKdVHc-cE",
+                            TrailerUrl = "https://www.youtube.com/embed/qtRKdVHc-cE",
                             Year = 1999
                         },
                         new
                         {
                             Id = 17,
                             Actors = "Russel Crowe, Joaquin Phoenix, Connie Nielsen",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6276),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5445),
                             Director = "Ridley Scott",
                             Genre = "Action, Drama, Adventure",
                             ImdbId = "tt0172495",
@@ -407,14 +407,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 109.0,
                             RunTime = "155",
                             Title = "Gladiator",
-                            TrailerUrl = "https://www.youtube.com/watch?v=Q-b7B8tOAQU",
+                            TrailerUrl = "https://www.youtube.com/embed/Q-b7B8tOAQU",
                             Year = 2000
                         },
                         new
                         {
                             Id = 18,
                             Actors = "Elisabeth Moss, Oliver Jackson-Cohen, Harriet Dyer",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6280),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5449),
                             Director = "Leigh Whannell",
                             Genre = "Horror, Mystery, Sci-Fi",
                             ImdbId = "tt1051906",
@@ -426,14 +426,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 229.0,
                             RunTime = "124",
                             Title = "The Invisible Man",
-                            TrailerUrl = "https://www.youtube.com/watch?v=Pso0Aj_cTh0",
+                            TrailerUrl = "https://www.youtube.com/embed/Pso0Aj_cTh0",
                             Year = 2020
                         },
                         new
                         {
                             Id = 19,
                             Actors = "Ward Horton, Annabelle Wallis, Alfre Woodard",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6285),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5454),
                             Director = "John R. Leonetti",
                             Genre = "Horror, Mystery, Thriller",
                             ImdbId = "tt3322940",
@@ -445,14 +445,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 129.0,
                             RunTime = "109",
                             Title = "Annabelle",
-                            TrailerUrl = "https://www.youtube.com/watch?v=paFgQNPGlsg",
+                            TrailerUrl = "https://www.youtube.com/embed/paFgQNPGlsg",
                             Year = 2014
                         },
                         new
                         {
                             Id = 20,
                             Actors = "Patrick Wilson, Vera Farmiga, Ron Livingston",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6289),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5458),
                             Director = "James Wan",
                             Genre = "Horror, Mystery, Thriller",
                             ImdbId = "tt1457767",
@@ -464,14 +464,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 149.0,
                             RunTime = "112",
                             Title = "The Conjuring",
-                            TrailerUrl = "https://www.youtube.com/watch?v=k10ETZ41q5o",
+                            TrailerUrl = "https://www.youtube.com/embed/k10ETZ41q5o",
                             Year = 2013
                         },
                         new
                         {
                             Id = 21,
                             Actors = "Kang-ho Son, Sun-Kyun Lee, Yeo-Yeong Jo",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6292),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5463),
                             Director = "Bong Joon Ho",
                             Genre = "Comedy, Drama, Thriller",
                             ImdbId = "tt6751668",
@@ -483,14 +483,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 199.0,
                             RunTime = "132",
                             Title = "Parasite",
-                            TrailerUrl = "https://www.youtube.com/watch?v=5xH0HfJHsaY",
+                            TrailerUrl = "https://www.youtube.com/embed/5xH0HfJHsaY",
                             Year = 2019
                         },
                         new
                         {
                             Id = 22,
                             Actors = "Jesse Eisenberg, Mark Ruffalo, Woody Harrelson",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6296),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5470),
                             Director = "Louis Leterrier",
                             Genre = "Crime, Mystery, Thriller",
                             ImdbId = "tt1670345",
@@ -502,14 +502,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 99.0,
                             RunTime = "115",
                             Title = "Now You See Me",
-                            TrailerUrl = "https://www.youtube.com/watch?v=4OtM9j2lcUA",
+                            TrailerUrl = "https://www.youtube.com/embed/4OtM9j2lcUA",
                             Year = 2013
                         },
                         new
                         {
                             Id = 23,
                             Actors = "Robert Downey Jr., Chris Evans, Scarlett Johansson",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6300),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5515),
                             Director = "Joss Whedon",
                             Genre = "Action, Adventure, Sci-Fi",
                             ImdbId = "tt0848228",
@@ -521,14 +521,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 129.0,
                             RunTime = "143",
                             Title = "The Avengers",
-                            TrailerUrl = "https://www.youtube.com/watch?v=hIR8Ar-Z4hw",
+                            TrailerUrl = "https://www.youtube.com/embed/hIR8Ar-Z4hw",
                             Year = 2012
                         },
                         new
                         {
                             Id = 24,
                             Actors = "Chris Hemsworth, Tom Hiddleston, Cate Blanchett",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6304),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5520),
                             Director = "Taika Waititi",
                             Genre = "Action, Adventure, Comedy",
                             ImdbId = "tt3501632",
@@ -540,14 +540,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 179.0,
                             RunTime = "130",
                             Title = "Thor Ragnarök",
-                            TrailerUrl = "https://www.youtube.com/watch?v=v7MGUNV8MxU",
+                            TrailerUrl = "https://www.youtube.com/embed/v7MGUNV8MxU",
                             Year = 2017
                         },
                         new
                         {
                             Id = 25,
                             Actors = "Daniel Radcliffe, Rupert Grint, Emma Watson",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6309),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5524),
                             Director = "Chris Columbus",
                             Genre = "Adventure, Family, Fantasy",
                             ImdbId = "tt0241527",
@@ -559,14 +559,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 109.0,
                             RunTime = "152",
                             Title = "Harry Potter and the Philosophers Stone",
-                            TrailerUrl = "https://www.youtube.com/watch?v=VyHV0BRtdxo",
+                            TrailerUrl = "https://www.youtube.com/embed/VyHV0BRtdxo",
                             Year = 2001
                         },
                         new
                         {
                             Id = 26,
                             Actors = "Hitoshi Takagi, Noriko Hidaka, Chika Sakamoto",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6312),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5529),
                             Director = "Hayao Miyazaki",
                             Genre = "Animation, Family, Fantasy",
                             ImdbId = "tt0096283",
@@ -578,14 +578,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 79.0,
                             RunTime = "86",
                             Title = "My Neighbour Totoro",
-                            TrailerUrl = "https://www.youtube.com/watch?v=92a7Hj0ijLs",
+                            TrailerUrl = "https://www.youtube.com/embed/92a7Hj0ijLs",
                             Year = 1988
                         },
                         new
                         {
                             Id = 27,
                             Actors = "Chieko Baishô, Takuya Kimura, Tatsuya Gashûin",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6316),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5533),
                             Director = "Hayao Miyazaki",
                             Genre = "Animation, Adventure, Family",
                             ImdbId = "tt0347149",
@@ -597,14 +597,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 79.0,
                             RunTime = "119",
                             Title = "Howl's Moving Castle",
-                            TrailerUrl = "https://www.youtube.com/watch?v=yUZCo0oWt4o",
+                            TrailerUrl = "https://www.youtube.com/embed/yUZCo0oWt4o",
                             Year = 2004
                         },
                         new
                         {
                             Id = 28,
                             Actors = "Rumi Hiiragi, Miyu Irino, Mari Natsuki",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6320),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5539),
                             Director = "Hayao Miyazaki",
                             Genre = "Animation, Adventure, Family",
                             ImdbId = "tt0245429",
@@ -616,14 +616,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 79.0,
                             RunTime = "125",
                             Title = "Spirited Away",
-                            TrailerUrl = "https://www.youtube.com/watch?v=qCgon52mp2M",
+                            TrailerUrl = "https://www.youtube.com/embed/qCgon52mp2M",
                             Year = 2001
                         },
                         new
                         {
                             Id = 29,
                             Actors = "Björn A. Ling, Kjell Bergqvist, Tuva Novotny",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6324),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5544),
                             Director = "Ulf Malmros",
                             Genre = "Comedy, Drama, Romance",
                             ImdbId = "tt1359421",
@@ -635,14 +635,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 79.0,
                             RunTime = "113",
                             Title = "Bröllopsfotografen",
-                            TrailerUrl = "https://www.youtube.com/watch?v=j2Ai6zAzkOQ",
+                            TrailerUrl = "https://www.youtube.com/embed/j2Ai6zAzkOQ",
                             Year = 2009
                         },
                         new
                         {
                             Id = 30,
                             Actors = "Tuva Novotny, Jonas Rimeika, Björn A. Ling",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6328),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5548),
                             Director = "Ulf Malmros",
                             Genre = "Comedy, Crime, Mystery",
                             ImdbId = "tt0323998",
@@ -654,14 +654,14 @@ namespace MarysMajesticMovies.Migrations
                             Price = 79.0,
                             RunTime = "117",
                             Title = "Smala Sussie",
-                            TrailerUrl = "https://www.youtube.com/watch?v=Q8Drrm6Mlco",
+                            TrailerUrl = "https://www.youtube.com/embed/Q8Drrm6Mlco",
                             Year = 2003
                         },
                         new
                         {
                             Id = 31,
                             Actors = "Tom Hardy, Charlize Theron, Nicholas Hoult",
-                            AddedToStoreDate = new DateTime(2020, 5, 29, 14, 20, 18, 528, DateTimeKind.Local).AddTicks(6332),
+                            AddedToStoreDate = new DateTime(2020, 6, 2, 21, 58, 52, 790, DateTimeKind.Local).AddTicks(5552),
                             Director = "George Miller",
                             Genre = "Action, Adventure, Sci-Fi",
                             ImdbId = "tt1392190",
@@ -673,7 +673,7 @@ namespace MarysMajesticMovies.Migrations
                             Price = 159.0,
                             RunTime = "120",
                             Title = "Mad Max: Fury Road",
-                            TrailerUrl = "https://www.youtube.com/watch?v=hEJnMQG9ev8",
+                            TrailerUrl = "https://www.youtube.com/embed/hEJnMQG9ev8",
                             Year = 2015
                         });
                 });

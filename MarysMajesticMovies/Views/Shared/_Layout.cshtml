@@ -69,7 +69,7 @@
         <div class="mobile-menu">
             <button class="mobile-menu-button" type="button" value="DROPDOWN" onclick="openNav()"></button>
         </div>
-        <img src="~/DesignDrafts/logosmall.png" class="logo-small" />
+        <a href="../Home/Index"><img src="~/DesignDrafts/logosmall.png" class="logo-small" /></a>
         <div class="menu">
             <button class="menubutton" onclick="location.href='@Url.Action("Category", "Home", new { category = "Latest" })'">LATEST</button>
             <button class="menubutton" onclick="location.href='@Url.Action("Category", "Home", new { category = "Popular" })'">POPULAR</button>
@@ -80,7 +80,8 @@
             }
         </div>
 
-        <button class="userpanel" onclick="openNavRight()"></button>
+        <a class="cart-button" asp-action="Cart"></a><div class="amount-in-cart">0</div>
+
     </header>
     <div class="container">
         <main role="main" style="padding: 7.5em 1em">

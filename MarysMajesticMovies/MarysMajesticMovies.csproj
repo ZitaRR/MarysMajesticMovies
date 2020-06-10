@@ -20,6 +20,8 @@
     <Compile Remove="Migrations\20200522083920_AddDbContextToDb.Designer.cs" />
     <Compile Remove="Migrations\20200524125749_SeedMovieTable.cs" />
     <Compile Remove="Migrations\20200524125749_SeedMovieTable.Designer.cs" />
+    <Compile Remove="Migrations\20200529122019_AddedDbContextToDb.cs" />
+    <Compile Remove="Migrations\20200529122019_AddedDbContextToDb.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
