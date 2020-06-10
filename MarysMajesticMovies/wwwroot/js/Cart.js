@@ -134,3 +134,36 @@ function ClearCart() {
     document.getElementsByClassName('amount-in-cart')[0].innerHTML = localStorage.length;
 }
 
+function CheckoutOnLoad() {
+    var totalPrice = 0;
+    var cartItems = document.getElementsByClassName('checkout-items')[0];
+
+    for (var i = 0; i < localStorage.length; i++) {
+        var localStorageItem = JSON.parse(localStorage.getItem(localStorage.key(i)));
+        var cartItem = document.createElement('div');
+        cartItem.classList.add('checkout-item');
+        cartItem.id = localStorage.key(i);
+        var cartItemSumPrice = (localStorageItem.price * localStorageItem.qty);
+
+        cartItem.innerHTML =
+            `<div class="checkout-item-box">
+                <img src=${localStorageItem.posterurl} width="47px" class="checkout-poster"/>
+                <div class="checkout-item-info">                                                   
+                    <div class="checkout-item-ind-title"><span class="checkout-item-title">${localStorageItem.title}</span></div>
+                    <br />
+                    <div class="checkout-item-ind-price"><span class="checkout-item-price">${localStorageItem.price} kr</span></div>  
+                </div>
+                <div class="qty-price">
+                    <div class="checkout-qty">
+                        <p>Qty: ${localStorageItem.qty}</p>
+                    </div>
+                    <div class="checkout-pricing">
+                        <span class="checkout-item-sum-price">${cartItemSumPrice} kr </span>
+                    </div>
+            </div>`;
+
+        cartItems.append(cartItem);
+        totalPrice += cartItemSumPrice;
+    }
+    document.getElementsByClassName('checkout-total-price')[0].innerHTML = totalPrice + ' kr';
+}
