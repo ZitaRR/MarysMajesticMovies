@@ -229,7 +229,7 @@ namespace MarysMajesticMovies.Controllers
         [HttpPost]
         public async Task<ActionResult> GetMovieInfo()
         {
-            string APIKey = "bbc7aa1d";
+            string APIKey = "GetKeyFromOmdb";
             string APIURL = $"http://www.omdbapi.com/?apikey={APIKey}&i={SearchMovieInput.ImdbId}&r=json";
 
             try
